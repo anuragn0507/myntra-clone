@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPPING BAG</title>
+    <style>
+        body{
+            margin: 0px;
+            width: 100%;
+        }
+        
+        #cartheader{
+            height: 78px;
+            width: 100%;
+            border-bottom: 1px solid #F5F5F6;
+        }
+        
+        #cartnavbar{
+            width: 93%;
+            margin: auto;
+            height: 100%;
+            display: flex;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+        #cartmyntralogo{
+            height: 100%;
+            width: 20%;
+            padding-top: 10px;
+            padding-left: 3px;
+            margin: auto;
+        }
+        #cartcheckout_position{
+            height: 100%;
+            width: 50%;
+            color: #696B79;
+            display: flex;
+            justify-content: center;
+            line-height: 78px;
+            margin-left: 7%;
+            margin-top: 0px;
+        }
+        .cartstep1{
+            color: #20BD99;
+            border-bottom: 2px solid #20BD99;
+            margin-right: 3px;
+        }
+        .cartstep2{
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+        .cartstep3{
+            margin-left: 3px;
+        }
+        #cartsecure{
+            height: 100%;
+            width: 30%;
+            display: flex;
+            justify-content: end;
+            color: #696B79;
+        }
+        #cartsecure *{
+            margin-top: 20px;
+        }
+        #cartproducts{
+            width: 100%;
+            height: 650px;
+            margin-top: 35px;
+            margin-bottom: 85px;
+        }
+        #cartproducts>#emptycart{
+            width: 40%;
+            margin: auto;
+            text-align: center;
+            
+        }
+        #cartproducts>#filledcart{
+            width: 90%;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #cartproducts>#cartalsolike{
+            width: 90%;
+            margin: auto;
+            text-align: center;
+            height: 40%;
+            border-top: px solid black;
+            
+        }
+        #emptycart img{
+            height: 150px;
+            margin-top: 45%;
+        }
+        #emptycart h3{
+            font-weight: 600;
+        }
+        #emptycart p{
+            color: #696B79;
+            margin-top: -10px;
+        }
+        #emptycart button{
+            color: #ff3f6c;
+            border: 1px solid #ff3f6c;
+            background-color: #fff;
+            font-weight: 600;
+            height: 35px;
+            cursor: pointer;
+        }
+        #cartfooter{
+            height: 37px;
+            width: 100%;
+            border-top: 1px solid #F5F5F6;
+            
+        }
+        #cartfooter>#cartfooternavbar{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            
+        }
+        #cartfooter #cartimages{
+            width: 80%;
+            margin: auto;
+        }
+        #cartfooter #carthelpcenter{
+            font-size: 16px;
+            font-weight: 800;
+            height: 37px;
+            color: black;
+            width: 20%;
+            margin: auto;
+        }
+        #filledcart>div{
+            display: flex;
+            height: 100%;
+        }
+        #filledcart>div>:first-child{
+            width: 60%;
+            height: 100%;
+            background-color: #ff3f6c;
+            border: 2px dashed black;
+        }
+        #filledcart>div>:last-child{
+            width: 40%;
+            height: 100%;
+            background-color: #ff3f6c;
+            border: 2px dashed black;
+        }
+    </style>
+</head>
+<body>
+    <div id="cartlayout">
+        <div id="cartheader">
+            <div id="cartnavbar">
+                <div id="cartmyntralogo">
+                    <img style="height:60%" src="https://images.assettype.com/afaqs%2F2021-01%2F15f5f827-8e29-4520-af8d-a0f353b8da17%2Fimages.png?auto=format%2Ccompress&w=1200" alt="myntra">
+                    
+                </div>
+                <div id="cartcheckout_position">
+                    <p class="cartstep1">BAG</p>
+                    <p>-------</p>
+                    <p class="cartstep2">ADDRESS</p>
+                    <p>-------</p>
+                    <p class="cartstep3">PAYMENT</p>
+                </div>
+                <div id="cartsecure"> 
+                    <img style="margin-right:5px" src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png" width="26" height="28"> 
+                    <div class="cartpercent" style="margin-top:30px">100% SECURE</div> 
+                </div>
+            </div>
+        </div>
+        <div id="cartproducts">
+            <div id="emptycart"></div>
+            <div id="filledcart"></div>
+            <div id="cartalsolike"></div>
+        </div>
+        <div id="cartfooter">
+            <div id="cartfooternavbar">
+                <div id="cartimages"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ssl.png" width="70" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-visa.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-mc.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ae.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-dc.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-nb.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-cod.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-rupay.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-paypal.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-bhim.png" width="60" height="37"> 
+                </div>
+                <div id="carthelpcenter">
+                    <p>Need Help? Contact Us</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var cartproducts=JSON.parse(localStorage.getItem("cart"))||[]
+    if(cartproducts.length==0){
+        var div=document.createElement("div")
+        var emptylogo=document.createElement("img")
+        emptylogo.setAttribute("src","https://constant.myntassets.com/checkout/assets/img/empty-bag.webp")
+        var h2=document.createElement("h3")
+        h2.innerText="Hey, it feels so light!"
+        var p=document.createElement("p")
+        p.innerText="There is nothing in your bag. Let's add some items"
+        var btn=document.createElement("button")
+        btn.innerText="ADD ITEMS FROM WISHLIST"
+        div.append(emptylogo,h2,p,btn)
+        document.getElementById("emptycart").append(div)
+    }
+    else{
+        var div1=document.createElement("div")
+        var child1=document.createElement("div")
+        child1.innerText="child1"
+        var child2=document.createElement("div")
+        child2.innerText="child2"
+        div1.append(child1,child2)
+        document.getElementById("filledcart").append(div1)
+        var div2=document.createElement("div")
+        div2.innerText="div2"
+        document.getElementById("cartalsolike").append(div2)
+    }
+</script>
