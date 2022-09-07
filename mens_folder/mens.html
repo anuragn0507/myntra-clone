@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens_page</title>
+    <style>
+     .header{
+        width: 100%;
+        height: auto;
+     }
+     #unbelieve_container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+     }
+     #budget_container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+        }
+
+
+        #most_loved_container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+        }
+
+        #top_brands_container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+
+        #category_container{
+            width:96%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+        }
+
+       
+     .items{
+        width: 100%;
+        height: auto;
+     }
+
+     .mySlides {
+    display: none;
+}
+img {
+    width:100%;
+    height: auto;
+    vertical-align: middle;}
+
+
+#slideshow_container {
+  max-width: 100%;
+  position: relative;
+  margin-top: 50px;
+}
+
+
+.dot {
+  height: 7px;
+  width: 7px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+    </style>
+</head>
+<body>
+
+    <div id="slideshow_container">
+
+        <div class="mySlides fade">
+          
+          <img src="mens_img_folder/header_img/1_men.jpg" style="width:100%">
+          
+        </div>
+        
+        <div class="mySlides fade">
+          
+          <img src="mens_img_folder/header_img/2_cr7.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+          <img src="mens_img_folder/header_img/3_shoe.jpg" style="width:100%">
+        </div>
+        
+        
+        <div class="mySlides fade">
+            <img src="mens_img_folder/header_img/4_wild.jpg" style="width:100%">
+          </div>
+        
+        
+          <div class="mySlides fade">
+            <img src="mens_img_folder/header_img/5_hm.jpg" style="width:100%">
+          </div>
+        
+          <div class="mySlides fade">
+            <img src="mens_img_folder/header_img/6_lancer.jpg" style="width:100%">
+          </div>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+
+    
+    <img class="header" src="mens_img_folder/unbelievable_img_folder/0_unbeli.jpg" alt="">
+
+    <div id="unbelieve_container">
+
+    </div>
+
+    <img class="header" src="mens_img_folder/budget_folder/0_budget.jpg" alt="">
+    
+    <div id="budget_container">
+
+    </div>
+
+
+    <img class="header" src="mens_img_folder/most_loved_folder/0_most.jpg" alt="">
+    
+    <div id="most_loved_container">
+
+    </div>
+
+
+    <img class="header" src="mens_img_folder/top_brands/0_top.jpg" alt="">
+    
+    <div id="top_brands_container">
+
+    </div>
+
+
+    <img class="header" src="mens_img_folder/category_shop/0_by.jpg" alt="">
+    <div id="category_container">
+  
+    </div> 
+    
+
+
+</body>
+</html>
+<script>
+    var unbelieve_data=[
+           {img_url:"mens_img_folder/unbelievable_img_folder/1_wrogn.png",},
+           {img_url:"mens_img_folder/unbelievable_img_folder/2_casuals.png",},
+           {img_url:"mens_img_folder/unbelievable_img_folder/3_trendy.png",},
+           {img_url:"mens_img_folder/unbelievable_img_folder/4_must.png",},
+           {img_url:"mens_img_folder/unbelievable_img_folder/5_casual.png",},
+           {img_url:"mens_img_folder/unbelievable_img_folder/6_wrogn.png",},
+        
+            ];
+
+unbelieve_data.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#unbelieve_container").append(anchor);
+          });
+
+
+          // budget buys code
+
+          var budget_buys_data=[
+           {img_url:"mens_img_folder/budget_folder/1_inner.jpg",},
+           {img_url:"mens_img_folder/budget_folder/2_kurta.jpg",},
+           {img_url:"mens_img_folder/budget_folder/3_lounge.jpg",},
+           {img_url:"mens_img_folder/budget_folder/4_sandals.jpg",},
+           {img_url:"mens_img_folder/budget_folder/5_tshirt.jpg",},
+           {img_url:"mens_img_folder/budget_folder/6_kurta.jpg",},
+           {img_url:"mens_img_folder/budget_folder/7_jeans.jpg",},
+           {img_url:"mens_img_folder/budget_folder/8_formal.jpg",},
+           {img_url:"mens_img_folder/budget_folder/9_belts.jpg",},
+           {img_url:"mens_img_folder/budget_folder/10_suits.jpg",},
+           {img_url:"mens_img_folder/budget_folder/11_shoes.jpg",},
+           {img_url:"mens_img_folder/budget_folder/12_active.jpg",},
+           ];
+
+budget_buys_data.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#budget_container").append(anchor);
+          });
+
+
+          // most loved brands code
+
+
+          var most_loved_data=[
+          {img_url:"mens_img_folder/most_loved_folder/skybags.jpg",},
+          {img_url:"mens_img_folder/most_loved_folder/safari.jpg",},
+          {img_url:"mens_img_folder/most_loved_folder/3_decathon.jpg",},
+          {img_url:"mens_img_folder/most_loved_folder/4_boat.jpg",},
+          {img_url:"mens_img_folder/most_loved_folder/5_varanga.jpg",},
+           {img_url:"mens_img_folder/most_loved_folder/mercedes_speaker_upto_35%off.jpg",},
+           {img_url:"mens_img_folder/most_loved_folder/peter_england_starting_599.jpg",},
+           {img_url:"mens_img_folder/most_loved_folder/vanheusen_min_40%off.jpg",},
+           {img_url:"mens_img_folder/most_loved_folder/louis_philippe.jpg",},
+           {img_url:"mens_img_folder/most_loved_folder/fire_bolt.jpg",},
+           ];
+
+most_loved_data.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#most_loved_container").append(anchor);
+          });
+      
+      
+      //top brands code
+
+      var top_brands_data=[
+           {img_url:"mens_img_folder/top_brands/1_louis.png",},
+           {img_url:"mens_img_folder/top_brands/2_us.png",},
+           {img_url:"mens_img_folder/top_brands/3_jack.png",},
+           {img_url:"mens_img_folder/top_brands/4_levis.jpg",},
+            ];
+
+top_brands_data.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#top_brands_container").append(anchor);
+          });
+
+          // category code
+
+
+          var category=[
+           {img_url:"mens_img_folder/category_shop/1_tshirt.jpg",},
+           {img_url:"mens_img_folder/category_shop/2_sports.jpg",},
+           {img_url:"mens_img_folder/category_shop/3_shirts.jpg",},
+           {img_url:"mens_img_folder/category_shop/4_jeans.jpg",},
+           {img_url:"mens_img_folder/category_shop/5_kurta.jpg",},
+           {img_url:"mens_img_folder/category_shop/6_casual.jpg",},
+           {img_url:"mens_img_folder/category_shop/7_trouser.jpg",},
+           {img_url:"mens_img_folder/category_shop/8_track.jpg",},
+           {img_url:"mens_img_folder/category_shop/9_lounge.jpg",},
+           {img_url:"mens_img_folder/category_shop/10_inner.jpg",},
+           {img_url:"mens_img_folder/category_shop/11_belts.jpg",},
+           {img_url:"mens_img_folder/category_shop/12_flip.jpg",},
+           {img_url:"mens_img_folder/category_shop/13_emp.png",},
+           {img_url:"mens_img_folder/category_shop/14_sun.jpg",},
+           {img_url:"mens_img_folder/category_shop/15_kids.jpg",},
+           {img_url:"mens_img_folder/category_shop/16_home.jpg",},
+           {img_url:"mens_img_folder/category_shop/17_act.jpg",},
+           {img_url:"mens_img_folder/category_shop/18_empt.png",},
+
+           ];
+
+          category.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#category_container").append(anchor);
+          });
+          
+
+          var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000);
+}
+
+
+</script>
