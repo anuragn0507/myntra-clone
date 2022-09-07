@@ -1,0 +1,38 @@
+#container{
+    height: 500px;
+width: 380px;
+position: absolute;
+left: 32%;
+top: 4.5%;
+
+background-color: #fff;
+/* border: dashed orangered; */
+}
+*{
+    background-color:#fcefe5;
+    font-family:  "Segoe UI",Helvetica,Arial,sans-serif;
+}
+h2, #more, .footer , a{
+    background-color: #fff;
+}
+form {
+    position: relative;
+    padding: 35px;
+    border-radius: 12px;
+    background-color: #fff;
+  }
+  
+  #contactus{
+    text-align: center;
+    border: 1.5px dashed #ff3c6f;
+    border-radius: 6px;
+  }
+  h1{
+    margin-top: 0%;
+  }
+  #contactus>p{
+    margin-bottom: 0%;
+  }
+ a{
+    color: #ff3c6f;
+ }
