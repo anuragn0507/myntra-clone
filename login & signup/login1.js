@@ -1,7 +1,16 @@
 var signArr = JSON.parse(localStorage.getItem("singupDetails")) || [];
-function gotopass() {
+document.querySelector("form").addEventListener("submit", login);
+function login() {
   event.preventDefault();
   var email = document.getElementById("email").value;
-  localStorage.setItem("sendemail", JSON.stringify(email));
-  window.location.href = "login2.html";
-  };
+  var password = document.getElementById("password").value;
+  signArr.map(function (elem) {
+    if (elem.email === email && elem.password === password) {
+      alert("Sign_in Sucessfull");
+      console.log("done");
+    } else {
+      alert("Enter Correct Details");
+      console.log("not done");
+    }
+  });
+}

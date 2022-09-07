@@ -12,6 +12,10 @@ function signup() {
   localStorage.setItem("singupDetails", JSON.stringify(singupArr));
   document.getElementById("name").value = "";
   document.getElementById("email").value = "";
+
   document.getElementById("password").value = "";
-  window.location.href = "login1.html";
+  window. location. assign("login1.html");
+  // window.open(newurl,'http://www.google.comlogin.html');
+  // window.location.href = "login.html";
+
 }
