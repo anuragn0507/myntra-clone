@@ -4,6 +4,10 @@
 #category-name >h1 >span{
     font-weight: 400;
 }
+.topfilters{
+    position: relative;
+    top:10px;
+}
 
 .title-filter{
     flex: 1.7;
@@ -23,6 +27,7 @@
     color: #282c3f;
     cursor:pointer;
     position:relative;
+    bottom:10px;
     width:150px;
     box-sizing: border-box;
     border-radius: 2px;
