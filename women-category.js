@@ -311,16 +311,40 @@ var products = [
 function showProducts() {
   document.getElementById("product-container").innerHTML = null;
   products.forEach(function (ele) {
-    // console.log(ele.price);
+    
     var pdiv = document.createElement("div");
     pdiv.setAttribute("class", "product-div");
     var pimg = document.createElement("img");
     pimg.src = ele.img[0];
+    var imgArr = [...ele.img];
+    // console.log(imgArr)
+     
+    // onhover on a image
+    var interval
+    pimg.addEventListener("mouseover", function(){
+      console.log(imgArr);
+      var i=0;
+     interval =  setInterval(function(){    
+        if(i< imgArr.length){
+          pimg.src = imgArr[i];
+          i++;
+        }
+        else{
+          i = 0
+        }
+      }, 1000)
+    });
+    pimg.addEventListener("mouseout", function(){
+      clearInterval(interval);
+      pimg.src = ele.img[0];
+    });
+
     var pbrand = document.createElement("h3");
     pbrand.innerText = ele.brand;
     var pdescription = document.createElement("h4");
     pdescription.innerText = ele.description;
-    //   console.log(pdescription);
+    
+    
 
     var pdratespan = document.createElement("span");
     pdratespan.innerText = "Rs. " + ele.discPrice;
@@ -340,6 +364,21 @@ function showProducts() {
   });
 }
 showProducts();
+
+//function onhover image slideshow
+function slideShow(imgArr){
+  var i=0;
+  setInterval(function(){    
+    while(i< imgArr.length){
+      pimg.src = ele.img[i];
+      i++;
+    }
+    if(i==imgArr.length){
+      i=0;
+    }
+  }, 500)
+}
+
 
 //onChecked filterationa
 var checkbox = document.querySelectorAll(".brand-input");
