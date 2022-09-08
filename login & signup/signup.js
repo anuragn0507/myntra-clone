@@ -7,14 +7,15 @@ function signup() {
     email: document.getElementById("email").value,
     password: document.getElementById("password").value,
   };
-  console.log(signObj);
   singupArr.push(signObj);
+  console.log(signObj);
+  
   localStorage.setItem("singupDetails", JSON.stringify(singupArr));
   document.getElementById("name").value = "";
   document.getElementById("email").value = "";
 
   document.getElementById("password").value = "";
-  window. location. assign("login1.html");
+  // window. location. assign("login1.html");
   // window.open(newurl,'http://www.google.comlogin.html');
   // window.location.href = "login.html";
 
