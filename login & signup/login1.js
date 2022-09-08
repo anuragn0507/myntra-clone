@@ -1,4 +1,4 @@
-var signArr = JSON.parse(localStorage.getItem("singupDetails")) || [];
+var signArr = JSON.parse(localStorage.getItem("signupDetails")) || [];
 document.querySelector("form").addEventListener("submit", login);
 function login() {
   event.preventDefault();
@@ -9,7 +9,7 @@ function login() {
       alert("Sign_in Sucessfull");
       console.log("done");
     } else {
-      alert("Enter Correct Details");
+      alert("Invalid Credential!");
       console.log("not done");
     }
   });
