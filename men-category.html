@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Men's Category </title>
     <link rel="stylesheet" href="men-category.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <!-- top section  -->
@@ -15,6 +16,48 @@
     <div id="category-name">
         <h1>Men T-Shirts <span>- 80023 items</span></h1>
     </div>
+    <!-- Top Filter section country of origin and sort by -->
+    <div class="topfilters">
+        <ul>
+            <li class="title-filter">FILTERS</li>
+            <!-- Bundle -->
+            <li class="bundle-dropdown">
+                <button class="bundle-dropdown-btn">Bundles <i class ="fa fa-caret-down"></i></button>
+                <ul class="bundle-dropdown-menu bhide">
+                    <li href="#"><input type="checkbox"> Single Styles</li>
+                </ul>
+            </li>
+            
+            <!-- country of origin -->
+            <li class="coi-dropdown">
+                <button class="coi-dropdown-btn">Country of Origin <i class ="fa fa-caret-down"></i></button>
+                <ul class="coi-dropdown-menu coihide">
+                    <li href="#"> <input type="checkbox"> All Countries</li>
+                    <li href="#"> <input type="checkbox"> India</li>
+                </ul>
+            </li>
+            <!-- size -->
+            <li class="title-size" class="size-dropdown">
+                <button class="size-dropdown-btn">Size <i class ="fa fa-caret-down"></i></button>
+                <ul class="size-dropdown-menu coihide">
+                </ul>
+            </li>
+           
+            <li class="sortby-dropdown">
+                <button class="sortby-dropdown-btn">Sort by: Recommended <i class ="fa fa-caret-down drop"></i></button>
+                <ul class="sortby-dropdown-menu hide">
+                    <li href="#">Recommended</li>
+                    <li href="#">What's New</li>
+                    <li href="#">Popularity</li>
+                    <li href="#">Better Discount</li>
+                    <li href="#">Price: High to Low</li>
+                    <li href="#">Price: Low to High</li>
+                    <li href="#">Customer Rating</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
     <div id="container">
         <div id="filter">
             <div class="filter-child">
@@ -78,12 +121,32 @@
             <div class="filter-child">
                 <span>COLOR</span>
                 <div>
-                    <input type="checkbox" value="">
-                    <label for="">BLack <span class="product-count">(11130)</span> </label>
+                    <input type="checkbox" value="Black">
+                    <label for=""><span id="product-black"></span>Black <span class="product-count">(11130)</span> </label>
                 </div>
                 <div>
-                    <input type="checkbox" value="">
-                    <label for="">Blue <span class="product-count">(10295)</span> </label>
+                    <input type="checkbox" value="Navy Blue">
+                    <label for=""><span id="product-navy"></span>Navy Blue <span class="product-count">(10295)</span> </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="Blue">
+                    <label for=""><span id="product-blue"></span>Blue <span class="product-count">(11130)</span> </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="Maroon">
+                    <label for=""><span id="product-maroon"></span>Maroon<span class="product-count">(10295)</span> </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="Mustard">
+                    <label for=""><span id="product-mustard"></span>Mustard <span class="product-count">(11130)</span> </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="Green">
+                    <label for=""><span id="product-green"></span>Green<span class="product-count">(10295)</span> </label>
+                </div>
+                <div>
+                    <input type="checkbox" value="Beige">
+                    <label for=""><span id="product-beige"></span>Beige<span class="product-count">(10295)</span> </label>
                 </div>
             </div>
             <div class="filter-child">

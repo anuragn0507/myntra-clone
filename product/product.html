@@ -695,7 +695,10 @@
         child.setAttribute("class","child_div");
         var img=document.createElement("img");
         img.setAttribute("class","container_img");
-        img.setAttribute("src",ele.img_url[i]);
+        var localData = JSON.parse(localStorage.getItem("productObj")) || [];
+        var imgArr = localData.img;
+        console.log(imgArr);
+        img.setAttribute("src",imgArr[i]);
         child.append(img);
         document.querySelector("#img_container").append(child);
         };
