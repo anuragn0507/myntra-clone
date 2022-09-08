@@ -688,31 +688,63 @@
         }
     ];
 
-    img_container_data.map(function(ele){
-        var length_of_img_arr=ele.img_url.length;
-        for(var i=0;i<length_of_img_arr;i++){
-        var child=document.createElement("div");
-        child.setAttribute("class","child_div");
-        var img=document.createElement("img");
-        img.setAttribute("class","container_img");
-        var localData = JSON.parse(localStorage.getItem("productObj")) || [];
-        var imgArr = localData.img;
-        console.log(imgArr);
-        img.setAttribute("src",imgArr[i]);
-        child.append(img);
-        document.querySelector("#img_container").append(child);
+    //local storage data is mapped in product page by anurag
+    var localData = JSON.parse(localStorage.getItem("productObj")) || [];
+    var localDataArr = [localData];
+    console.log(localData);
+    // localData.forEach(function(ele){
+        console.log("map function got hit");
+        var img_arr_len = localData.img.length;
+        for (var i = 0; i < img_arr_len; i++){
+            console.log("for loop is hit");
+            var child=document.createElement("div");
+            child.setAttribute("class","child_div");
+            var img=document.createElement("img");
+            img.setAttribute("class","container_img");
+            var imgArr = localData.img;
+            console.log(imgArr);
+            img.setAttribute("src",imgArr[i]);
+            child.append(img);
+            document.querySelector("#img_container").append(child);
         };
-      document.querySelector("#brand").innerText=ele.brand;
-      document.querySelector("#description").innerText=ele.description;
-      document.querySelector("#price").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' +ele.discPrice;
 
-      document.querySelector("#striked").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' +ele.price;
+    document.querySelector("#brand").innerText= localData.brand;
+    document.querySelector("#description").innerText= localData.description;
+    document.querySelector("#price").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.discPrice;
 
-     document.querySelector("#dis").innerText="("+ele.discount+"% off)";
-     document.querySelector("#best_price").innerText=ele.discPrice-20;
+    document.querySelector("#striked").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.price;
+
+    document.querySelector("#dis").innerText="("+ localData.discount+"% off)";
+    document.querySelector("#best_price").innerText=localData.discPrice-20;
+    
+                   //commented ashish code   
+    // })
+    
+    // img_container_data.map(function(ele){
+    //     var length_of_img_arr=ele.img_url.length;
+    //     for(var i=0;i<length_of_img_arr;i++){
+    //     var child=document.createElement("div");
+    //     child.setAttribute("class","child_div");
+    //     var img=document.createElement("img");
+    //     img.setAttribute("class","container_img");
+    //     var localData = JSON.parse(localStorage.getItem("productObj")) || [];
+    //     var imgArr = localData.img;
+    //     console.log(imgArr);
+    //     img.setAttribute("src",imgArr[i]);
+    //     child.append(img);
+    //     document.querySelector("#img_container").append(child);
+    //     };
+    //   document.querySelector("#brand").innerText=ele.brand;
+    //   document.querySelector("#description").innerText=ele.description;
+    //   document.querySelector("#price").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' +ele.discPrice;
+
+    //   document.querySelector("#striked").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' +ele.price;
+
+    //  document.querySelector("#dis").innerText="("+ele.discount+"% off)";
+    //  document.querySelector("#best_price").innerText=ele.discPrice-20;
 
 
-    })
+    // })
 
 
 
