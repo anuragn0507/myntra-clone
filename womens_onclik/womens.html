@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Womens_page</title>
+    <style>
+     .header{
+        width: 100%;
+        height: auto;
+     }
+     #unbelieve_container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+     }
+     #budget_container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+        }
+
+
+        #most_loved_container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+        }
+
+        #top_brands_container{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(8,1fr);
+        }
+
+        #category_container{
+            width:100%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+        }
+        #bott_category{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+        }
+
+       
+     .items{
+        width: 100%;
+        height: auto;
+     }
+
+     .mySlides {
+    display: none;
+}
+img {
+    width:100%;
+    height: auto;
+    vertical-align: middle;}
+
+
+#slideshow_container {
+  max-width: 100%;
+  position: relative;
+  margin-top: 50px;
+}
+
+
+.dot {
+  height: 7px;
+  width: 7px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+    </style>
+</head>
+<body>
+
+    <div id="slideshow_container">
+
+    </div>
+    <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+      </div>
+
+    
+    <img class="header" src="womens_folder/unbelievable_img_folder/0_unbeli.jpg" alt="">
+
+    <div id="unbelieve_container">
+
+    </div>
+
+    <img class="header" src="womens_folder/budget_folder/0_budget.jpg" alt="">
+    
+    <div id="budget_container">
+
+    </div>
+
+
+    <img class="header" src="womens_folder/most_loved_folder/0_most.jpg" alt="">
+    
+    <div id="most_loved_container">
+
+    </div>
+
+
+    <img class="header" src="womens_folder/top_brands/0_top.jpg" alt="">
+    
+    <div id="top_brands_container">
+
+    </div>
+
+
+    <img class="header" src="womens_folder/category_shop/0_categ.jpg" alt="">
+    <div id="category_container">
+  
+    </div> 
+
+    <div id="bott_category">
+
+    </div>
+    
+
+
+</body>
+</html>
+<script>
+    var unbelieve_data=[
+           {img_url:"womens_folder/unbelievable_img_folder/1_urban.png",},
+           {img_url:"womens_folder/unbelievable_img_folder/2_tokyo.png",},
+           {img_url:"womens_folder/unbelievable_img_folder/3_rubans.png",},
+           {img_url:"womens_folder/unbelievable_img_folder/4_lavie.png",},
+           {img_url:"womens_folder/unbelievable_img_folder/5_allen.jpg",},
+           {img_url:"womens_folder/unbelievable_img_folder/6_mac.jpg",},
+           {img_url:"womens_folder/unbelievable_img_folder/7_road.png",},
+        
+            ];
+
+unbelieve_data.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#unbelieve_container").append(anchor);
+          });
+
+
+          // budget buys code
+
+          var budget_buys_data=[
+           {img_url:"womens_folder/budget_folder/1_flats.jpg",},
+           {img_url:"womens_folder/budget_folder/2_tops.jpg",},
+           {img_url:"womens_folder/budget_folder/3_active.jpg",},
+           {img_url:"womens_folder/budget_folder/4_dress.jpg",},
+           {img_url:"womens_folder/budget_folder/5_kurta.jpg",},
+           {img_url:"womens_folder/budget_folder/6_hand.jpg",},
+           {img_url:"womens_folder/budget_folder/7_kurta.jpg",},
+           {img_url:"womens_folder/budget_folder/8_jeans.jpg",},
+           {img_url:"womens_folder/budget_folder/9_lounge.jpg",},
+           {img_url:"womens_folder/budget_folder/10_saree.jpg",},
+           {img_url:"womens_folder/budget_folder/11_tops.jpg",},
+           {img_url:"womens_folder/budget_folder/12_bra.jpg",},
+           ];
+
+budget_buys_data.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#budget_container").append(anchor);
+          });
+
+
+          // most loved brands code
+
+
+          var most_loved_data=[
+          {img_url:"womens_folder/most_loved_folder/1_ek.jpeg",},
+          {img_url:"womens_folder/most_loved_folder/2_boat.jpg",},
+          {img_url:"womens_folder/most_loved_folder/3_w.jpg",},
+          {img_url:"womens_folder/most_loved_folder/4_body.jfif",},
+          {img_url:"womens_folder/most_loved_folder/5_ahika.jpg",},
+           {img_url:"womens_folder/most_loved_folder/6_sass.jpg",},
+           {img_url:"womens_folder/most_loved_folder/7_navy.jpg",},
+           {img_url:"womens_folder/most_loved_folder/8_french.jpg",},
+           {img_url:"womens_folder/most_loved_folder/9_allen.jpg",},
+           {img_url:"womens_folder/most_loved_folder/10_cap.jpg",},
+           {img_url:"womens_folder/most_loved_folder/11_hm.jpg",},
+           {img_url:"womens_folder/most_loved_folder/12_cute.jpg",},
+           ];
+
+most_loved_data.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#most_loved_container").append(anchor);
+          });
+      
+      
+      //top brands code
+
+      var top_brands_data=[
+           {img_url:"womens_folder/top_brands/1_vero.png",},
+           {img_url:"womens_folder/top_brands/2_only.jpg",},
+           {img_url:"womens_folder/top_brands/3_for.png",},
+           {img_url:"womens_folder/top_brands/4_biba.jpg",},
+           {img_url:"womens_folder/top_brands/5_hm.png",},
+           {img_url:"womens_folder/top_brands/6_pant.jpg",},
+           {img_url:"womens_folder/top_brands/7_levis.png",},
+           {img_url:"womens_folder/top_brands/8_urban.png",},
+             
+        ];
+
+top_brands_data.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#top_brands_container").append(anchor);
+          });
+
+          // category code
+
+
+          var category=[
+           {img_url:"womens_folder/category_shop/1_wfh.jpg",},
+           {img_url:"womens_folder/category_shop/2_ethnic.jpg",},
+           {img_url:"womens_folder/category_shop/3_western.jpg",},
+           {img_url:"womens_folder/category_shop/4_inner.jpg",},
+           {img_url:"womens_folder/category_shop/5_active.jpg",},
+           {img_url:"womens_folder/category_shop/6_beauty.jpg",},
+           {img_url:"womens_folder/category_shop/7_kids.jpg",},
+           {img_url:"womens_folder/category_shop/8_foot.jpg",},
+           {img_url:"womens_folder/category_shop/9_hand.jpg",},
+           {img_url:"womens_folder/category_shop/10_watch.jpg",},
+           {img_url:"womens_folder/category_shop/11_jewe.jpg",},
+           {img_url:"womens_folder/category_shop/12_home.jpg",},
+           
+
+           ];
+
+          category.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#category_container").append(anchor);
+          });
+          
+         var bott_category_data=[
+            {img_url:"womens_folder/bott_category/1_empty.png",},
+            {img_url:"womens_folder/bott_category/2_head.jpg",},
+            {img_url:"womens_folder/bott_category/3_plus.jpg",},
+            {img_url:"womens_folder/bott_category/4_sun.jpg",},
+            {img_url:"womens_folder/bott_category/5_empty.png",},
+         ]
+
+         bott_category_data.map(function(ele){
+            var anchor=document.createElement("a");
+            anchor.style.cursor="pointer"
+            var child= document.createElement("div");
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.setAttribute("class","items")
+            child.append(img);
+            anchor.append(child);
+            document.querySelector("#bott_category").append(anchor);
+         });
+
+
+         var women_header=[
+            {img_url:"womens_folder/header_img/1_dress.jpg",},
+            {img_url:"womens_folder/header_img/2_dre.jpg",},
+            {img_url:"womens_folder/header_img/3_top.jpg",},
+            {img_url:"womens_folder/header_img/4_saree.jpg",},
+            {img_url:"womens_folder/header_img/5_watch.jpg",},
+            {img_url:"womens_folder/header_img/6_sand.jpg",},
+            {img_url:"womens_folder/header_img/7_bra.jpg",},
+            {img_url:"womens_folder/header_img/8_.jpg",},
+            {img_url:"womens_folder/header_img/9_loung.jpg",},
+            {img_url:"womens_folder/header_img/10_top.jpg",},
+            {img_url:"womens_folder/header_img/11_sh.jpg",},
+
+         ]
+
+         women_header.map(function(ele){
+            var child=document.createElement("div");
+            child.setAttribute("class","mySlides fade")
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.style.width="100%";
+            child.append(img);
+            document.querySelector("#slideshow_container").append(child);
+         })
+
+
+         var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000);
+}
+</script>

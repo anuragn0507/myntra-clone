@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Page</title>
+    <style>
+        .header_div{
+         width: 90%;
+         margin:0 0 0 auto;
+        }
+
+        h4{
+           font-size: 2rem;
+           width: 100%;
+           
+           color: #3e4152;
+           text-transform: uppercase;
+
+        }
+        #favourite_br{
+            width:100%;
+            display: grid;
+            grid-template-columns: repeat(9,1fr);
+        }
+        #top_picks{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(11,1fr);
+        }
+
+        #iconic_brand{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+        }
+
+        #fashion{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+        }
+
+        #explore{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        #kid_space{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        #budget{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+        }
+
+        #shop_more{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+        }
+
+        .items{
+            width: 100%;
+            height: auto;
+        }
+
+        .mySlides {
+    display: none;
+}
+img {
+    width:100%;
+    height: auto;
+    vertical-align: middle;}
+
+
+#slideshow_container {
+  max-width: 100%;
+  position: relative;
+  margin-top: 50px;
+}
+
+
+.dot {
+  height: 7px;
+  width: 7px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+    </style>
+</head>
+<body>
+
+    <div id="slideshow_container">
+
+    </div>
+    <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span>
+    </div>
+
+    <div class="header_div">
+        <h4>Favourite brands</h4>
+    </div>
+    <div id="favourite_br">
+    
+    </div>
+
+    <div class="header_div">
+        <h4>Top picks</h4>
+    </div>
+    <div id="top_picks">
+    
+    </div>
+    
+    <div class="header_div">
+        <h4>Iconic brands</h4>
+    </div>
+    <div id="iconic_brand">
+    
+    </div>
+
+
+    <div class="header_div">
+        <h4>fashion & essentials</h4>
+    </div>
+    <div id="fashion">
+    
+    </div>
+
+
+
+    <div class="header_div">
+        <h4>explore more</h4>
+    </div>
+    <div id="explore">
+    
+    </div>
+
+
+    <div class="header_div">
+        <h4>kids space</h4>
+    </div>
+    <div id="kid_space">
+    
+    </div>
+
+    <div class="header_div">
+        <h4>budget buy</h4>
+    </div>
+    <div id="budget">
+    
+    </div>
+
+
+    <div class="header_div">
+        <h4>shop more brands</h4>
+    </div>
+    <div id="shop_more">
+    
+    </div>
+
+    
+</body>
+</html>
+<script>
+    var favourite_brand_data=[
+        {img_url:"kids_img/favour_br/1_allen.jpg",},
+        {img_url:"kids_img/favour_br/2_united.jpg",},
+        {img_url:"kids_img/favour_br/3_nauti.jpg",},
+        {img_url:"kids_img/favour_br/4_us.jpg",},
+        {img_url:"kids_img/favour_br/5_mini.jpg",},
+        {img_url:"kids_img/favour_br/6_lil.jpg",}, 
+        {img_url:"kids_img/favour_br/7_pepp.jpg",},
+        {img_url:"kids_img/favour_br/8_gini.jpg",},
+        {img_url:"kids_img/favour_br/9_yk.jpg",},
+
+
+    ]
+
+
+    favourite_brand_data.map(function(ele){
+        var anchor=document.createElement("a");
+        anchor.style.cursor="pointer";
+        var child=document.createElement("div");
+        var img=document.createElement("img");
+        img.setAttribute("src",ele.img_url);
+        img.setAttribute("class","items");
+        child.append(img);
+        anchor.append(child);
+        document.querySelector("#favourite_br").append(anchor);
+    });
+
+
+    var top_pick_data=[
+        {img_url:"kids_img/top_pick/1_hm.jpg",},
+        {img_url:"kids_img/top_pick/2_kids.jpg",},
+        {img_url:"kids_img/top_pick/3_ind.jpg",},
+        {img_url:"kids_img/top_pick/4_jeans.jpg",},
+        {img_url:"kids_img/top_pick/5_foot.jpg",},
+        {img_url:"kids_img/top_pick/6_max.jpg",}, 
+        {img_url:"kids_img/top_pick/7_top.jpg",},
+        {img_url:"kids_img/top_pick/8_tops.jpg",},
+        {img_url:"kids_img/top_pick/9_wear.jpg",},
+
+        {img_url:"kids_img/top_pick/10_teens.jpg",},
+        {img_url:"kids_img/top_pick/11_baby.jpg",},
+
+
+    ]
+
+
+    top_pick_data.map(function(ele){
+        var anchor=document.createElement("a");
+        anchor.style.cursor="pointer";
+        var child=document.createElement("div");
+        var img=document.createElement("img");
+        img.setAttribute("src",ele.img_url);
+        img.setAttribute("class","items");
+        child.append(img);
+        anchor.append(child);
+        document.querySelector("#top_picks").append(anchor);
+    });
+
+
+
+    var iconic_br_data=[
+        {img_url:"kids_img/iconic/1_hm.jpg",},
+        {img_url:"kids_img/iconic/2_mango.jpg",},
+        {img_url:"kids_img/iconic/3_chicco.jpg",},
+        {img_url:"kids_img/iconic/4_marks.jpg",},
+        {img_url:"kids_img/iconic/5_tommy.jpg",},
+
+    ]
+
+
+    iconic_br_data.map(function(ele){
+        var anchor=document.createElement("a");
+        anchor.style.cursor="pointer";
+        var child=document.createElement("div");
+        var img=document.createElement("img");
+        img.setAttribute("src",ele.img_url);
+        img.setAttribute("class","items");
+        child.append(img);
+        anchor.append(child);
+        document.querySelector("#iconic_brand").append(anchor);
+    });
+
+
+    var fashion_data=[
+        {img_url:"kids_img/fashion/1_pro.jpg",},
+        {img_url:"kids_img/fashion/2_care.jpg",},
+        {img_url:"kids_img/fashion/3_short.jpg",},
+        {img_url:"kids_img/fashion/4_value.jpg",},
+        {img_url:"kids_img/fashion/5_sleep.jpg",},
+        {img_url:"kids_img/fashion/6_ethnic.jpg",}, 
+        {img_url:"kids_img/fashion/7_onesies.jpg",},
+        {img_url:"kids_img/fashion/8_flip.jpg",},
+        {img_url:"kids_img/fashion/9_dress.jpg",},
+
+        {img_url:"kids_img/fashion/10_t.jpg",},
+    ]
+
+
+    fashion_data.map(function(ele){
+        var anchor=document.createElement("a");
+        anchor.style.cursor="pointer";
+        var child=document.createElement("div");
+        var img=document.createElement("img");
+        img.setAttribute("src",ele.img_url);
+        img.setAttribute("class","items");
+        child.append(img);
+        anchor.append(child);
+        document.querySelector("#fashion").append(anchor);
+    });
+
+
+    var explore_data=[
+        {img_url:"kids_img/explore/1_logo.jpg",},
+        {img_url:"kids_img/explore/2_logo.jpg",},
+        {img_url:"kids_img/explore/3_all.jpg",},
+        {img_url:"kids_img/explore/4_essen.jpg",},
+        {img_url:"kids_img/explore/5_unik.jpg",},
+        {img_url:"kids_img/explore/6_active.jpg",}, 
+
+    ]
+
+
+    explore_data.map(function(ele){
+        var anchor=document.createElement("a");
+        anchor.style.cursor="pointer";
+        var child=document.createElement("div");
+        var img=document.createElement("img");
+        img.setAttribute("src",ele.img_url);
+        img.setAttribute("class","items");
+        child.append(img);
+        anchor.append(child);
+        document.querySelector("#explore").append(anchor);
+    });
+
+
+    var kid_space_data=[
+        {img_url:"kids_img/kid_space/1_ex.jpg",},
+        {img_url:"kids_img/kid_space/2_home.jpg",},
+         ]
+
+
+    kid_space_data.map(function(ele){
+        var anchor=document.createElement("a");
+        anchor.style.cursor="pointer";
+        var child=document.createElement("div");
+        var img=document.createElement("img");
+        img.setAttribute("src",ele.img_url);
+        img.setAttribute("class","items");
+        child.append(img);
+        anchor.append(child);
+        document.querySelector("#kid_space").append(anchor);
+    });
+
+
+
+    var budget_data=[
+        {img_url:"kids_img/budget_buy/1_tshirt.jpg",},
+        {img_url:"kids_img/budget_buy/2_dress.jpg",},
+        {img_url:"kids_img/budget_buy/3_ethnic.jpg",},
+        {img_url:"kids_img/budget_buy/4_short.jpg",},
+        {img_url:"kids_img/budget_buy/5_val.jpg",},
+        {img_url:"kids_img/budget_buy/6_foot.jpg",}, 
+
+    ]
+
+
+    budget_data.map(function(ele){
+        var anchor=document.createElement("a");
+        anchor.style.cursor="pointer";
+        var child=document.createElement("div");
+        var img=document.createElement("img");
+        img.setAttribute("src",ele.img_url);
+        img.setAttribute("class","items");
+        child.append(img);
+        anchor.append(child);
+        document.querySelector("#budget").append(anchor);
+    });
+
+
+    var shop_more_data=[
+        {img_url:"kids_img/shop_more/1_life.jpg",},
+        {img_url:"kids_img/shop_more/2_pepe.jpg",},
+        {img_url:"kids_img/shop_more/3_hrx.jpg",},
+        {img_url:"kids_img/shop_more/4_sabg.jpg",},
+        {img_url:"kids_img/shop_more/5_chero.jpg",},
+        
+    ]
+
+
+    shop_more_data.map(function(ele){
+        var anchor=document.createElement("a");
+        anchor.style.cursor="pointer";
+        var child=document.createElement("div");
+        var img=document.createElement("img");
+        img.setAttribute("src",ele.img_url);
+        img.setAttribute("class","items");
+        child.append(img);
+        anchor.append(child);
+        document.querySelector("#shop_more").append(anchor);
+    });
+
+
+    var kids_header=[
+            {img_url:"kids_img/header_img/1_kid.jpg",},
+            {img_url:"kids_img/header_img/2_top.jpg",},
+            {img_url:"kids_img/header_img/3_tshirt.jpg",},
+            {img_url:"kids_img/header_img/4_bra.jpg",},
+            {img_url:"kids_img/header_img/5_super.jpg",},
+            
+         ]
+
+         kids_header.map(function(ele){
+            var child=document.createElement("div");
+            child.setAttribute("class","mySlides fade")
+            var img=document.createElement("img");
+            img.setAttribute("src",ele.img_url);
+            img.style.width="100%";
+            child.append(img);
+            document.querySelector("#slideshow_container").append(child);
+         })
+
+
+         var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000);
+}
+</script>
