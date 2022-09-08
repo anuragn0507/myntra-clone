@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+#parent{
+    position: fixed;
+    z-index: 2;
+}
 #parent {
     /* border: 1px solid brown; */
     width: 100%;
@@ -224,6 +228,7 @@ sup {
     border: 1px solid navy;
     justify-content: space-between;
     background-color: white;
+    
 
 }
 

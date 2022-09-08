@@ -301,7 +301,7 @@
            </div>
 
            <div id="add_to_cart">
-               <button id="bag_button"><i class="fa-solid fa-bag-shopping"></i><span>   </span>Add to Bag</button>
+               <button id="bag_button" onclick="add_to_bag()"><i class="fa-solid fa-bag-shopping"></i><span>   </span>Add to Bag</button>
                <button id="wish_button"><i class="fa-solid fa-heart"></i><span>   </span>Wishlist</button>
            </div>
            <hr>
@@ -710,9 +710,24 @@
 
      document.querySelector("#dis").innerText="("+ele.discount+"% off)";
      document.querySelector("#best_price").innerText=ele.discPrice-20;
-
-
+     
     })
+
+    function add_to_bag(){
+       var cart_imgs_to_add=JSON.parse(localStorage.getItem("cart_object_imgs")) || [];
+
+     
+
+       var localData = JSON.parse(localStorage.getItem("productObj")) || [];
+       cart_imgs_to_add.push(localData[0]);
+       
+       localStorage.setItem("cart_object_imgs",JSON.stringify(cart_imgs_to_add));
+
+    }
+
+    
+
+   
 
 
 
