@@ -46,8 +46,7 @@
             margin-top: 0px;
         }
         .cartstep1{
-            color: #20BD99;
-            border-bottom: 2px solid #20BD99;
+            
             margin-right: 3px;
         }
         .cartstep2{
@@ -55,6 +54,8 @@
             margin-right: 3px;
         }
         .cartstep3{
+            color: #20BD99;
+            border-bottom: 2px solid #20BD99;
             margin-left: 3px;
         }
         #cartsecure{
@@ -174,18 +175,22 @@
         }
         .show>.products{
             margin-bottom: 20px;
-            padding: 10px 5px 10px 5px;
+            padding: 0 5px 10px 0;
             display: flex;
+            border: 1px solid #ccccd8;
         }
         .show>.products>.options{
             width: 30%;
             text-align: center;
-            background-color: #d8d9dd;
+            
+            background-color: #ffffffdc;
         }
         .show>.products>.options>div{
             height: 67px;
-            border: 1px solid black;
-            background-color: #d8d9dd;
+            border: 1px solid #ccccd8;
+            background-color: #e2e2eb;
+            font-weight: 900;
+            color: #424553;
         }
         .show>.products>.pay{
             width: 70%;
@@ -195,6 +200,7 @@
         .show>.products>.pay button{
             
             height: 40px;
+            border: 0ch;
             border-radius: 10px;
             background-color: #ff3f6c;
             color: #F5F5F6;
@@ -207,48 +213,42 @@
 
         .div>.calculation{
             width: 40%;
-            
             padding: 15px 0 0 15px;
-            
-        }
-        .calculation>.coupon{
-            padding: 10px 0 15px 15px;
-            width: 100%;
-            margin-bottom: 20px;
         }
         .calculation>.price{
             padding: 10px 0 15px 15px;
-            border-top: 2px solid #F5F5F6;
-            height: 200px;
+            border: 2px solid #F5F5F6;
+            height: 150px;
             width: 100%;
             
         }
         .calculation>.price>div{
-            height: 15%;
+            height: 20%;
             width: 100%;
             display: flex;
         }
         .calculation>.price>div>div{
-            height: 15%;
+            height: 20%;
             width: 50%;
             
         }
-        .calculation>.price>:nth-last-child(2){
-            height: 15%;
+        .calculation>.price>:nth-last-child(1){
+            height: 20%;
             width: 100%;
-            
+            font-weight: 700;
             border-top: 2px solid #696B79;
         }
-        .calculation>.price>button{
-            height: 15%;
-            width: 100%;
-            background-color: #ff3f6c;
-            color: #F5F5F6;
-            border: 0ch;
-            cursor: pointer;
+        
+        ul>h4,ul>h5{
+            color: #ff3f6c;
         }
-        .calculation>.price>button:hover{
-            background-color: #b93957;
+        @media screen and (max-width: 768px){
+            #cartcheckout_position{
+                display: none;
+            }
+            #cartsecure{
+                margin-left: 40%;
+            }
         }
     </style>
 </head>
@@ -274,7 +274,7 @@
             </div>
         </div>
         <div id="cartproducts">
-            <div id="emptycart"></div>
+            
         </div>
         <div id="cartfooter">
             <div id="cartfooternavbar">
@@ -300,7 +300,7 @@
 </body>
 </html>
 <script>
-    var cartproducts=JSON.parse(localStorage.getItem("cart"))||[]
+    var cartproducts=JSON.parse(localStorage.getItem("cart_object_imgs"))||[]
     if(cartproducts.length==0){
         var div=document.createElement("div")
         var emptylogo=document.createElement("img")
@@ -420,10 +420,8 @@
                 var div62=document.createElement("div")
                 div62.innerText="₹"+total
             div6.append(div61,div62)
-            var btn=document.createElement("button")
-            btn.innerText="PLACE ORDER"
             
-            price.append(div1,div2,div3,div4,div6,btn)
+            price.append(div1,div2,div3,div4,div6)
         }
         function cod(){
             pay.innerText=""
@@ -452,6 +450,7 @@
             pay.append(check1,check2,check3)
         }
         function less(){
+            ul.innerText=""
                 var l1=document.createElement("li")
                 l1.innerText="10% Instant Discount on Bank of Baroda Credit Cards on a min spend of Rs 3,000. TCA"
                 var l2=document.createElement("li")
@@ -459,7 +458,8 @@
                 var l3=document.createElement("li")
                 l3.innerText="10% Cashback upto Rs 150 on Ola Money Postpaid or wallet transaction on a min spend of Rs 1000 . TCA"
                 var l4=document.createElement("li")
-                h5.innerText="See More V"
+                var h5=document.createElement("h4")
+                h5.innerText="See More >"
                 h5.addEventListener("click",more)
                 ul.append(l1,l2,l3,h5)  
         }
@@ -473,11 +473,11 @@
                 l3.innerText="10% Cashback upto Rs 150 on Ola Money Postpaid or wallet transaction on a min spend of Rs 1000 . TCA"
                 var l4=document.createElement("li")
                 l4.innerText="10% Cashback upto Rs 150 on Freecharge Paylater transaction. TCA"
+                var l5=document.createElement("li")
+                l5.innerText="5% Cashback upto Rs 100 on a minimum spend of Rs 1,500 with PayZapp. TCA"
                 var h4=document.createElement("h4")
                 h4.innerText="See Less >"
                 h4.addEventListener("click",less)
-                ul.append(l1,l2,l3,l4,h4)  
+                ul.append(l1,l2,l3,l4,l5,h4)  
         }
-        
-        //modal in css html for coupon and pincode
 </script>

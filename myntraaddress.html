@@ -106,28 +106,40 @@
             width: 60%;
             margin: auto;
             display: flex;
-            background-color: #20BD99;
+            
         }
         #cartproducts>div>.div2{
             width: 40%;
+            height: 250px;
+            padding-left: 15px;
             margin: auto;
             display: flex;
             background-color: #696B79;
         }
         #cartproducts>div>.div1>.adddiv{
-            width: 80%;
-            height: 500px;
+            width: 60%;
+            height: 400px;
             display: grid;
             border: 1px solid #F5F5F6;
-            background-color: #696B79;
+            
             margin: auto;
             padding-left: 10px;
             margin-top: 40px;
             margin-bottom: 40px;
         }
         #cartproducts>div>.div1>.adddiv>input{
-            height: 30px;
-            margin-top: -70px;
+            background-color: #F5F5F6;
+            
+        }
+        .adddiv>button{
+            color: #F5F5F6;
+            background-color: #ff3f6c;
+            height: 50px;
+            border: 0ch;
+            width: 80%;
+
+            margin: auto;
+           
         }
     </style>
 </head>
@@ -197,8 +209,8 @@
             var input4=document.createElement("input")
             var input5=document.createElement("input")
             var btn=document.createElement("button")
-            
-            adddiv.append(contact,input1,input2,add,input3,input4,input5)
+            btn.innerText="ADD ADDRESS"
+            adddiv.append(contact,input1,input2,add,input3,input4,input5,btn)
             div1.append(adddiv)
             
         }
