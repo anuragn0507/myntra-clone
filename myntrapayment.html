@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOPPING BAG</title>
-    <script src="https://kit.fontawesome.com/47b88dd7de.js" crossorigin="anonymous"></script>
+    <title>PAYMENT</title>
     <style>
         body{
             margin: 0px;
@@ -176,28 +175,36 @@
         .show>.products{
             margin-bottom: 20px;
             padding: 10px 5px 10px 5px;
-            
-        }
-        .products>.productdiv{
             display: flex;
-            border: 2px solid #F5F5F6;
-            border-radius: 5px;
-            margin-bottom: 10px;
         }
-        .products>.productdiv>:first-child{
-            width: 20%;
-            margin-right: 20px;
+        .show>.products>.options{
+            width: 30%;
+            text-align: center;
+            background-color: #d8d9dd;
         }
-        .products>.productdiv>:first-child img{
-            width: 100%;
+        .show>.products>.options>div{
+            height: 67px;
+            border: 1px solid black;
+            background-color: #d8d9dd;
         }
-        .products>.productdiv>:nth-child(2){
-            width: 70%
+        .show>.products>.pay{
+            width: 70%;
+            height: 200px;
+            display: grid;
         }
-        .products>.productdiv>:nth-child(3){
-            width: 5%
+        .show>.products>.pay button{
             
+            height: 40px;
+            border-radius: 10px;
+            background-color: #ff3f6c;
+            color: #F5F5F6;
         }
+        .show>.products>.pay button:hover{
+            cursor: pointer;
+            background-color: rgb(172, 84, 168);
+        }
+        
+
         .div>.calculation{
             width: 40%;
             
@@ -212,7 +219,7 @@
         .calculation>.price{
             padding: 10px 0 15px 15px;
             border-top: 2px solid #F5F5F6;
-            height: 300px;
+            height: 200px;
             width: 100%;
             
         }
@@ -312,19 +319,6 @@
         div1.setAttribute("class","div")
             var show=document.createElement("div")
             show.setAttribute("class","show")
-                var checkdelivery=document.createElement("div")
-                checkdelivery.setAttribute("class","delivery")
-                    var textdiv=document.createElement("div")
-                    textdiv.setAttribute("class","textdiv")
-                        var p=document.createElement("p")
-                        p.innerText="Check delivery time & service"
-                    textdiv.append(p)
-                    var btndiv=document.createElement("div")
-                    btndiv.setAttribute("class","btndiv")
-                        var btn=document.createElement("button")
-                        btn.innerText="ENTER PIN CODE"
-                    btndiv.append(btn)
-                    checkdelivery.append(textdiv,btndiv)
                 var offer=document.createElement("div")
                 offer.setAttribute("class","offer")
                 var h3=document.createElement("h3")
@@ -336,31 +330,44 @@
                 l2.innerText="5% Unlimited Cashback on Flipkart Axis Bank Credit Card. TCA"
                 var l3=document.createElement("li")
                 l3.innerText="10% Cashback upto Rs 150 on Ola Money Postpaid or wallet transaction on a min spend of Rs 1000 . TCA"
-                var l4=document.createElement("li")
-                l4.innerText="10% Cashback upto Rs 150 on Freecharge Paylater transaction. TCA"
-                ul.append(l1,l2,l3,l4)
+                var h4=document.createElement("h4")
+                h4.innerText="See More >"
+                h4.addEventListener("click",more)
+                ul.append(l1,l2,l3,h4)
                 offer.append(h3,ul)
+                var h4=document.createElement("h4")
+                h4.innerText="Choose Payment Method"
                 var products=document.createElement("div")
                 products.setAttribute("class","products")
-                
-                displayproducts();
-            show.append(checkdelivery,offer,products)
+                var options=document.createElement("div")
+                var cash=document.createElement("div")
+                cash.innerText="Cash On Delivery"
+                cash.addEventListener("click",cod)
+                var card=document.createElement("div")
+                card.innerText="Credit/Debit Card"
+                card.addEventListener("click",debit)
+                var upi=document.createElement("div")
+                upi.innerText="UPI"
+                upi.addEventListener("click",upit)
+                options.append(cash,card,upi)
+                options.setAttribute("class","options")
+                var pay=document.createElement("div")
+                pay.setAttribute("class","pay")
+                products.append(options,pay)
+            show.append(offer,h4,products)
             var calculation=document.createElement("div")
             calculation.setAttribute("class","calculation")
-                var coupon=document.createElement("div")
-                coupon.setAttribute("class","coupon")
-                //coupon.innerText="coupon"
+               
                 var price=document.createElement("div")
                 price.setAttribute("class","price")
                 docalculation()
                 
-            calculation.append(coupon,price)
+            calculation.append(price)
         div1.append(show,calculation)
         document.getElementById("cartproducts").append(div1)
     }
     function displayproducts(){
-        products.innerText=""
-        cartproducts.map(function(ele,index){
+        cartproducts.map(function(ele){
             var div=document.createElement("div")
             var div1=document.createElement("div")
             var div2=document.createElement("div")
@@ -375,24 +382,12 @@
             price.innerText=ele.price;
             div2.append(h5,price)
             var h6=document.createElement("h5")
-            var i=document.createElement("i")
-            //i.innerHTML=<i class="fa-regular fa-x"></i>
-            h6.innerText="X"
-            h6.addEventListener("click",function(){
-                cdelete(index)
-            })
+            h6.innerText="X";
             div3.append(h6)
             div.append(div1,div2,div3)
             products.append(div)
         })
-
     }
-    function cdelete(index){
-    cartproducts.splice(index,1);
-    console.log(index)
-    localStorage.setItem("cart",JSON.stringify(cartproducts))
-    displayproducts();
-}
     function docalculation(){
         var total=cartproducts.reduce(function(acc,el){
             return acc+el.price;
@@ -418,12 +413,7 @@
                 var div42=document.createElement("div")
                 div42.innerText="Price"
             div4.append(div41,div42)
-            var div5=document.createElement("div")
-                var div51=document.createElement("div")
-                div51.innerText="Convenience Fee"
-                var div52=document.createElement("div")
-                div52.innerText="0"
-            div5.append(div51,div52)
+            
             var div6=document.createElement("div")
                 var div61=document.createElement("div")
                 div61.innerText="Total Amount"
@@ -433,7 +423,60 @@
             var btn=document.createElement("button")
             btn.innerText="PLACE ORDER"
             
-            price.append(div1,div2,div3,div4,div5,div6,btn)
+            price.append(div1,div2,div3,div4,div6,btn)
+        }
+        function cod(){
+            pay.innerText=""
+            var check=document.createElement("button")
+            check.innerText="PLACE ORDER"
+            pay.append(check)
+        }
+        function debit(){
+            pay.innerText=""
+            var check1=document.createElement("button")
+            check1.innerText="Credit Card"
+            var check2=document.createElement("button")
+            check2.innerText="Debit ard"
+            
+            pay.append(check1,check2)
+        
+        }
+        function upit(){
+            pay.innerText=""
+            var check1=document.createElement("button")
+            check1.innerText="Paytm"
+            var check2=document.createElement("button")
+            check2.innerText="Phonepe"
+            var check3=document.createElement("button")
+            check3.innerText="Google Pay"
+            pay.append(check1,check2,check3)
+        }
+        function less(){
+                var l1=document.createElement("li")
+                l1.innerText="10% Instant Discount on Bank of Baroda Credit Cards on a min spend of Rs 3,000. TCA"
+                var l2=document.createElement("li")
+                l2.innerText="5% Unlimited Cashback on Flipkart Axis Bank Credit Card. TCA"
+                var l3=document.createElement("li")
+                l3.innerText="10% Cashback upto Rs 150 on Ola Money Postpaid or wallet transaction on a min spend of Rs 1000 . TCA"
+                var l4=document.createElement("li")
+                h5.innerText="See More V"
+                h5.addEventListener("click",more)
+                ul.append(l1,l2,l3,h5)  
+        }
+        function more(){
+            ul.innerText=""
+            var l1=document.createElement("li")
+                l1.innerText="10% Instant Discount on Bank of Baroda Credit Cards on a min spend of Rs 3,000. TCA"
+                var l2=document.createElement("li")
+                l2.innerText="5% Unlimited Cashback on Flipkart Axis Bank Credit Card. TCA"
+                var l3=document.createElement("li")
+                l3.innerText="10% Cashback upto Rs 150 on Ola Money Postpaid or wallet transaction on a min spend of Rs 1000 . TCA"
+                var l4=document.createElement("li")
+                l4.innerText="10% Cashback upto Rs 150 on Freecharge Paylater transaction. TCA"
+                var h4=document.createElement("h4")
+                h4.innerText="See Less >"
+                h4.addEventListener("click",less)
+                ul.append(l1,l2,l3,l4,h4)  
         }
         
         //modal in css html for coupon and pincode
