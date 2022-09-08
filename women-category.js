@@ -314,11 +314,6 @@ var sortbyMenu = document.querySelector(".sortby-dropdown-menu");
 sortbyBtn.addEventListener("mouseover", () =>{
   sortbyMenu.classList.toggle('hide');
 });
-// sortbyBtn.addEventListener("mouseout", () =>{
-//   sortbyMenu.classList.toggle('sortby-dropdown-menu');
-// });
-
-//bundle filter dropdown
 var bundleBtn = document.querySelector(".bundle-dropdown-btn");
 var bundleMenu = document.querySelector(".bundle-dropdown-menu");
 
@@ -347,9 +342,7 @@ function showProducts() {
     var pimg = document.createElement("img");
     pimg.src = ele.img[0];
     var imgArr = [...ele.img];
-    // console.log(imgArr)
-     
-    // onhover on a image
+    
     var interval
     pimg.addEventListener("mouseover", function(){
       console.log(imgArr);
