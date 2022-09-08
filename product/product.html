@@ -301,7 +301,7 @@
            </div>
 
            <div id="add_to_cart">
-               <button id="bag_button"><i class="fa-solid fa-bag-shopping"></i><span>   </span>Add to Bag</button>
+               <button id="bag_button" onclick="add_to_bag()"><i class="fa-solid fa-bag-shopping"></i><span>   </span>Add to Bag</button>
                <button id="wish_button"><i class="fa-solid fa-heart"></i><span>   </span>Wishlist</button>
            </div>
            <hr>
@@ -708,43 +708,25 @@
             document.querySelector("#img_container").append(child);
         };
 
-    document.querySelector("#brand").innerText= localData.brand;
-    document.querySelector("#description").innerText= localData.description;
-    document.querySelector("#price").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.discPrice;
 
-    document.querySelector("#striked").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.price;
+   
 
-    document.querySelector("#dis").innerText="("+ localData.discount+"% off)";
-    document.querySelector("#best_price").innerText=localData.discPrice-20;
+    function add_to_bag(){
+       var cart_imgs_to_add=JSON.parse(localStorage.getItem("cart_object_imgs")) || [];
+
+     
+
+       var localData = JSON.parse(localStorage.getItem("productObj")) || [];
+       cart_imgs_to_add.push(localData[0]);
+       
+       localStorage.setItem("cart_object_imgs",JSON.stringify(cart_imgs_to_add));
+
+    }
+
     
-                   //commented ashish code   
-    // })
-    
-    // img_container_data.map(function(ele){
-    //     var length_of_img_arr=ele.img_url.length;
-    //     for(var i=0;i<length_of_img_arr;i++){
-    //     var child=document.createElement("div");
-    //     child.setAttribute("class","child_div");
-    //     var img=document.createElement("img");
-    //     img.setAttribute("class","container_img");
-    //     var localData = JSON.parse(localStorage.getItem("productObj")) || [];
-    //     var imgArr = localData.img;
-    //     console.log(imgArr);
-    //     img.setAttribute("src",imgArr[i]);
-    //     child.append(img);
-    //     document.querySelector("#img_container").append(child);
-    //     };
-    //   document.querySelector("#brand").innerText=ele.brand;
-    //   document.querySelector("#description").innerText=ele.description;
-    //   document.querySelector("#price").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' +ele.discPrice;
 
-    //   document.querySelector("#striked").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' +ele.price;
+   
 
-    //  document.querySelector("#dis").innerText="("+ele.discount+"% off)";
-    //  document.querySelector("#best_price").innerText=ele.discPrice-20;
-
-
-    // })
 
 
 

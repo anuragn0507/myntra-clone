@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address</title>
+    <style>
+        body{
+            margin: 0px;
+            width: 100%;
+        }
+        #carlayout{
+            flex-wrap: wrap;
+        }
+        #cartheader{
+            height: 78px;
+            width: 100%;
+            border-bottom: 1px solid #F5F5F6;
+        }
+        
+        #cartnavbar{
+            width: 93%;
+            margin: auto;
+            height: 100%;
+            display: flex;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+        #cartmyntralogo{
+            height: 100%;
+            width: 20%;
+            padding-top: 10px;
+            padding-left: 3px;
+            margin: auto;
+        }
+        #cartcheckout_position{
+            height: 100%;
+            width: 50%;
+            color: #696B79;
+            display: flex;
+            justify-content: center;
+            line-height: 78px;
+            margin-left: 7%;
+            margin-top: 0px;
+        }
+        .cartstep1{
+            
+            margin-right: 3px;
+        }
+        .cartstep2{
+            margin-left: 3px;
+            margin-right: 3px;
+            color: #20BD99;
+            border-bottom: 2px solid #20BD99;
+        }
+        .cartstep3{
+            margin-left: 3px;
+        }
+        #cartsecure{
+            height: 100%;
+            width: 30%;
+            display: flex;
+            justify-content: end;
+            color: #696B79;
+        }
+        #cartsecure *{
+            margin-top: 20px;
+        }
+        
+        #cartfooter{
+            height: 50px;
+            width: 100%;
+            border-top: 1px solid #F5F5F6;
+            justify-content: flex-end;
+        }
+        #cartfooter>#cartfooternavbar{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            
+        }
+        #cartfooter #cartimages{
+            width: 80%;
+            margin: auto;
+        }
+        #cartfooter #carthelpcenter{
+            font-size: 16px;
+            font-weight: 800;   
+            color: black;
+            width: 20%;
+            margin: auto;
+        }
+        #cartproducts{
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        #cartproducts>div{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            
+        }
+        #cartproducts>div>.div1{
+            width: 60%;
+            margin: auto;
+            display: flex;
+            background-color: #20BD99;
+        }
+        #cartproducts>div>.div2{
+            width: 40%;
+            margin: auto;
+            display: flex;
+            background-color: #696B79;
+        }
+        #cartproducts>div>.div1>.adddiv{
+            width: 80%;
+            height: 500px;
+            display: grid;
+            border: 1px solid #F5F5F6;
+            background-color: #696B79;
+            margin: auto;
+            padding-left: 10px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        #cartproducts>div>.div1>.adddiv>input{
+            height: 30px;
+            margin-top: -70px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cartlayout">
+        <div id="cartheader">
+            <div id="cartnavbar">
+                <div id="cartmyntralogo">
+                    <img style="height:60%" src="https://images.assettype.com/afaqs%2F2021-01%2F15f5f827-8e29-4520-af8d-a0f353b8da17%2Fimages.png?auto=format%2Ccompress&w=1200" alt="myntra">
+                    
+                </div>
+                <div id="cartcheckout_position">
+                    <p class="cartstep1">BAG</p>
+                    <p>-------</p>
+                    <p class="cartstep2">ADDRESS</p>
+                    <p>-------</p>
+                    <p class="cartstep3">PAYMENT</p>
+                </div>
+                <div id="cartsecure"> 
+                    <img style="margin-right:5px" src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png" width="26" height="28"> 
+                    <div class="cartpercent" style="margin-top:30px">100% SECURE</div> 
+                </div>
+            </div>
+        </div>
+        <div id="cartproducts">
+        
+        </div>
+        <div id="cartfooter">
+            <div id="cartfooternavbar">
+                <div id="cartimages"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ssl.png" width="70" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-visa.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-mc.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ae.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-dc.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-nb.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-cod.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-rupay.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-paypal.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-bhim.png" width="60" height="37"> 
+                </div>
+                <div id="carthelpcenter">
+                    <p>Need Help? Contact Us</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var cartproducts=JSON.parse(localStorage.getItem("cart"))||[]
+    var addressarr=JSON.parse(localStorage.getItem("address"))||[]
+    var div=document.createElement("div")
+        var div1=document.createElement("div")
+        div1.setAttribute("class","div1")
+        if(addressarr.length==0){
+            var adddiv=document.createElement("div")
+            adddiv.setAttribute("class","adddiv")
+            var contact=document.createElement("h5")
+            contact.innerText="CONTACT DETAILS"
+            var input1=document.createElement("input")
+            var input2=document.createElement("input")
+            var add=document.createElement("h5")
+            add.innerText="ADDRESS"
+            var input3=document.createElement("input")
+            var input4=document.createElement("input")
+            var input5=document.createElement("input")
+            var btn=document.createElement("button")
+            
+            adddiv.append(contact,input1,input2,add,input3,input4,input5)
+            div1.append(adddiv)
+            
+        }
+        else{
+            div1.innerText="length 1"
+        }
+    var div2=document.createElement("div")
+    div2.setAttribute("class","div2")
+    div2.innerText="calculation"
+    div.append(div1,div2)
+    document.getElementById("cartproducts").append(div)
+    function docalculation(){
+        var total=cartproducts.reduce(function(acc,el){
+            return acc+el.price;
+        },0)
+            
+            var div1=document.createElement("div")
+            div1.innerText="Price Details"+" ("+cartproducts.length+"Items)"
+            var div2=document.createElement("div")
+                var div21=document.createElement("div")
+                div21.innerText="Total MRP"
+                var div22=document.createElement("div")
+                div22.innerText="Price"
+            div2.append(div21,div22)
+            var div4=document.createElement("div")
+                var div41=document.createElement("div")
+                div41.innerText="Coupon Discount"
+                var div42=document.createElement("div")
+                div42.innerText="Price"
+            div4.append(div41,div42)
+            var div5=document.createElement("div")
+                var div51=document.createElement("div")
+                div51.innerText="Convenience Fee"
+                var div52=document.createElement("div")
+                div52.innerText="0"
+            div5.append(div51,div52)
+            var div6=document.createElement("div")
+                var div61=document.createElement("div")
+                div61.innerText="Total Amount"
+                var div62=document.createElement("div")
+                div62.innerText="₹"+total
+            div6.append(div61,div62)
+            var btn=document.createElement("button")
+            btn.innerText="CONTINUE"
+            price.append(div1,div2,div3,div4,div5,div6,btn)
+        }
+</script>
