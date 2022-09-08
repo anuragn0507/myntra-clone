@@ -707,6 +707,18 @@
             child.append(img);
             document.querySelector("#img_container").append(child);
         };
+        document.querySelector("#brand").innerText= localData.brand;
+    document.querySelector("#description").innerText= localData.description;
+    document.querySelector("#price").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.discPrice;
+    document.querySelector("#striked").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.price;
+    document.querySelector("#dis").innerText="("+ localData.discount+"% off)";
+    document.querySelector("#best_price").innerText=localData.discPrice-20;
+                   
+   
+     document.querySelector("#dis").innerText="("+localData.discount+"% off)";
+     document.querySelector("#best_price").innerText=localData.discPrice-20;
+     //commented ashish code
+    
 
 
    
