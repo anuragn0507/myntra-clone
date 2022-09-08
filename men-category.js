@@ -11,17 +11,23 @@ var products = [
     price: 499,
     discPrice: 199,
     discount: 60,
-    
+    color:"Grey",
+    category: "T-shirt",
   },
   {
     img: [
-      "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11948298/2022/3/24/ba4a8e4a-8e7b-4bfe-9ea2-fd5693598f931648115076887-Roadster-Men-Grey-Melange-T-shirt-8701648115076447-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/3314157/2018/4/18/11524041081440-Roadster-Men-Grey-Melange-Solid-Round-Neck-T-shirt-3461524041081257-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/3314157/2018/4/18/11524041081413-Roadster-Men-Grey-Melange-Solid-Round-Neck-T-shirt-3461524041081257-2.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/3314157/2018/4/18/11524041081398-Roadster-Men-Grey-Melange-Solid-Round-Neck-T-shirt-3461524041081257-3.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/3314157/2018/4/18/11524041081378-Roadster-Men-Grey-Melange-Solid-Round-Neck-T-shirt-3461524041081257-4.jpg",
     ],
     brand: "Roadster",
-    description: "Solid Round Neck T-shirt",
+    description: "Men Grey Melange Solid Round Neck T-shirt",
     price: 399,
-    discPrice: 176,
-    discount: 55,
+    discPrice: 159,
+    discount: 60,
+    color:"Grey",
+    category: "T-shirt",
   },
   {
     img: [
@@ -501,7 +507,7 @@ function showProducts() {
         } else {
           i = 0;
         }
-      }, 1000);
+      }, 700);
     });
     pimg.addEventListener("mouseout", function () {
       clearInterval(interval);

@@ -209,9 +209,8 @@
     width:80%;
     /* border:1px solid red; */
     display:flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    margin-left: -10px;
     padding : 10px;
     border-top: 1px solid #e9e9ed;
     
@@ -222,6 +221,7 @@
     padding-top: 10px;;
     margin-right: 4px;
     margin-bottom: 4px;
+    margin-left: 25px;
 }
 .product-div > img{
     width: 100%;
