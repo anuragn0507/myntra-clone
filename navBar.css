@@ -6,6 +6,7 @@
     padding: 0;
 }
 
+
 #parent {
     /* border: 1px solid brown; */
     width: 100%;
@@ -13,8 +14,11 @@
     height: 48px;
     display: flex;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    position: sticky;
+    position: fixed;
+    /* position: relative; */
+    background-color: white;
     color: #282c3f;
+    z-index: 1;
 }
 
 sup {
@@ -241,15 +245,56 @@ sup {
     color: #282c3f;
 }
 
-#dropDown{
+
+
+
+
+
+ #dropDown{
     display: none;
-  }
-  /* #men:hover#dropDown{
-    display: block;
-  } */
-#men:hover#dropDown+div{
-    display: flex;
-  }
+    position: absolute;
+    right: 320px;;
+  } 
+  #dropDown1{
+    display: none;
+    position: absolute;
+    right: 320px;
+  }  
+  /* #dropDown2{
+    display: none;
+    position: absolute;
+    right: 320px;;
+  } 
+  #dropDown3{
+    display: none;
+    position: absolute;
+    right: 320px;;
+  } 
+  #dropDown4{
+    display: none;
+    position: absolute;
+    right: 320px;;
+  }  */ */
+
+
+
+
+
+
+
+
+
+
+  /* #men:hover + # { */
+    /* display: flex; */
+    /* background-color: blue; */
+    /* #dropDown{
+        visibility: hidden;
+    }
+    .contentNames:hover ~ #dropDown{
+
+        visibility: visible;
+    } */
 
 
 #dropDown1 {
@@ -428,4 +473,24 @@ sup {
   .myDIV:hover + .hide {
     display: block;
     color: red;
+  }
+  @media screen and (min-width:594) and (max-width:652){
+    #whole>div{
+        height: 35px;
+    }
+    #content>div>p{
+        font-size: 4px;
+        justify-content: center;
+        align-items: center;
+        margin-top: -5px;
+        line-height: 40px;
+        font-weight: 500;
+        margin-left: 1px;
+    }
+    #dropDown1>div>p{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    
   }

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NavBar</title>
-    <link rel="stylesheet" href="/navBar.css">
+    <link rel="stylesheet" href="navBar.css">
 </head>
 
 <body>
@@ -507,8 +507,53 @@
        
     </div>
 
-    <div class="myDIV">Hover over mee.</div>
-    <div class="hide">I am shown when someone hovers over the div above.</div>
+    <!-- <div class="myDIV">Hover over mee.</div> -->
+    <!-- <div class="hide">I am shown when someone hovers over the div above.</div> -->
 </body>
+<script>
+    document.querySelector("#men").addEventListener("mouseover",function(){
+        document.querySelector("#dropDown").style.display="flex";
+
+    });
+    document.querySelector("#men").addEventListener("mouseout",function(){
+        document.querySelector("#dropDown").style.display="none"
+    });
+
+
+    // document.querySelector(".contentNames").addEventListener("mouseover",function(){
+    //     document.querySelector("#dropDown1").style.display="flex";
+
+    // });
+    // document.querySelector(".contentNames").addEventListener("mouseout",function(){
+    //     document.querySelector("#dropDown1").style.display="none"
+    // });
+
+
+    // document.querySelector(".contentNames").addEventListener("mouseover",function(){
+    //     document.querySelector("#dropDown2").style.display="flex";
+
+    // });
+    // document.querySelector(".contentNames").addEventListener("mouseout",function(){
+    //     document.querySelector("#dropDown2").style.display="none"
+    // });
+
+
+    // document.querySelector(".contentNames").addEventListener("mouseover",function(){
+    //     document.querySelector("#dropDown3").style.display="flex";
+
+    // });
+    // document.querySelector(".contentNames").addEventListener("mouseout",function(){
+    //     document.querySelector("#dropDown3").style.display="none"
+    // });
+
+    // document.querySelector(".contentNames").addEventListener("mouseover",function(){
+    //     document.querySelector("#dropDown4").style.display="flex";
+
+    // });
+    // document.querySelector(".contentNames").addEventListener("mouseout",function(){
+    //     document.querySelector("#dropDown4").style.display="none"
+    // });
+
+</script>
 
 </html>
