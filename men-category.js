@@ -635,55 +635,299 @@ var products = [
  
 ];
 
-//Men top filter section last changes on 08Sep22 4am
+// //Men top filter section last changes on 08Sep22 4am
+// // sortby filter dropdown
+// var sortbyBtn = document.querySelector(".sortby-dropdown");
+// var sortbyMenu = document.querySelector(".sortby-dropdown-menu");
+// sortbyBtn.addEventListener("mouseover", () => {
+//   sortbyMenu.classList.toggle("hide");
+// });
+// var bundleBtn = document.querySelector(".bundle-dropdown-btn");
+// var bundleMenu = document.querySelector(".bundle-dropdown-menu");
+
+// bundleBtn.addEventListener("click", () => {
+//   bundleMenu.classList.toggle("bhide");
+// });
+
+// //coi filter dropdown
+// var coiBtn = document.querySelector(".coi-dropdown-btn");
+// var coiMenu = document.querySelector(".coi-dropdown-menu");
+
+// coiBtn.addEventListener("click", () => {
+//   console.log("bundle on click is called");
+//   coiMenu.classList.toggle("coihide");
+// });
+
+// //Showing the products on men's category section
+
+
+// function showProducts() {
+//   document.getElementById("product-container").innerHTML = null;
+//   products.forEach(function (ele) {
+//     var pdiv = document.createElement("div");
+//     pdiv.setAttribute("class", "product-div");
+//     var pimg = document.createElement("img");
+//     pimg.src = ele.img[0];
+
+//     //On hover image slideshow js code
+//     var imgArr = [...ele.img];
+//     var interval;
+//     pimg.addEventListener("mouseover", function () {
+//       var i = 0;
+//       interval = setInterval(function () {
+//         if (i < imgArr.length) {
+//           pimg.src = imgArr[i];
+//           i++;
+//         } else {
+//           i = 0;
+//         }
+//       }, 700);
+//     });
+//     pimg.addEventListener("mouseout", function () {
+//       clearInterval(interval);
+//       pimg.src = ele.img[0];
+//     });
+
+//     var pbrand = document.createElement("h3");
+//     pbrand.innerText = ele.brand;
+//     var pdescription = document.createElement("h4");
+//     pdescription.innerText = ele.description;
+//     //   console.log(pdescription);
+
+//     var pdratespan = document.createElement("span");
+//     pdratespan.innerText = "Rs. " + ele.discPrice;
+//     pdratespan.setAttribute("class", "drate-span");
+
+//     var pratespan = document.createElement("span");
+//     pratespan.innerText = "Rs. " + ele.price;
+//     pratespan.setAttribute("class", "rate-span");
+
+//     var pdiscount = document.createElement("span");
+//     pdiscount.innerText = "(" + ele.discount + "% OFF)";
+//     pdiscount.setAttribute("class", "discount-span");
+
+//     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+    
+//     document.getElementById("product-container").append(pdiv);
+
+//     // Data storing in LS on click on the product card 
+
+//     pdiv.addEventListener("click", function(){
+//       var localData = JSON.parse(localStorage.getItem("productObj")) || [] ;
+//       localData = null;
+//       localStorage.setItem("productObj", JSON.stringify(ele));      
+//       window.location.href = "./product/product.html"
+      
+//     });
+
+//   });
+// }
+// showProducts();
+
+// //onChecked filterationa
+// var checkbox = document.querySelectorAll(".brand-input");
+
+// checkbox.forEach(function (e) {
+//   e.addEventListener("change", function () {
+//     if (this.checked) {
+//       var value = e.value;
+//       checkBox(value);
+//       console.log("checkbox function is called");
+//     } else {
+//       showProducts();
+//     }
+//   });
+// });
+
+// function checkBox(value) { 
+
+//   var brandList = products.filter(function (elem) {
+//     return elem.brand == value;
+//   });
+//   document.getElementById("product-container").innerHTML = null;
+//   brandList.forEach(function (ele) {
+//     var pdiv = document.createElement("div");
+//     pdiv.setAttribute("class", "product-div");
+//     var pimg = document.createElement("img");
+//     pimg.src = ele.img;
+//     var pbrand = document.createElement("h3");
+//     pbrand.innerText = ele.brand;
+//     var pdescription = document.createElement("h4");
+//     pdescription.innerText = ele.description;
+
+//     var pdratespan = document.createElement("span");
+//     pdratespan.innerText = "Rs. " + ele.discPrice;
+//     pdratespan.setAttribute("class", "drate-span");
+
+//     var pratespan = document.createElement("span");
+//     pratespan.innerText = "Rs. " + ele.price;
+//     pratespan.setAttribute("class", "rate-span");
+
+//     var pdiscount = document.createElement("span");
+//     pdiscount.innerText = "(" + ele.discount + "% OFF)";
+//     pdiscount.setAttribute("class", "discount-span");
+
+//     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+    
+//     document.getElementById("product-container").append(pdiv);
+//   });
+// }
+
+// //filter by rates
+// var checkbox = document.querySelectorAll(".price-input");
+// console.log(checkbox);
+
+// checkbox.forEach(function (e) {
+//   e.addEventListener("change", function () {
+//     if (this.checked) {
+//       var max = e.value;
+//       var min = e.name;
+//       filterRate(min, max);
+//       console.log("checkbox function is called");
+//     } else {
+//       showProducts();
+//     }
+//   });
+// });
+
+// function filterRate(min, max) {
+//   console.log("brand checkbox clicked");
+//   e;
+//   var brandList = products.filter(function (elem) {
+//     return elem.discPrice >= min && elem.discPrice <= max;
+//   });
+
+//   document.getElementById("product-container").innerHTML = null;
+//   brandList.forEach(function (ele) {
+//     var pdiv = document.createElement("div");
+//     pdiv.setAttribute("class", "product-div");
+//     var pimg = document.createElement("img");
+//     pimg.src = ele.img;
+//     var pbrand = document.createElement("h3");
+//     pbrand.innerText = ele.brand;
+//     var pdescription = document.createElement("h4");
+//     pdescription.innerText = ele.description;
+
+//     var pdratespan = document.createElement("span");
+//     pdratespan.innerText = "Rs. " + ele.discPrice;
+//     pdratespan.setAttribute("class", "drate-span");
+
+//     var pratespan = document.createElement("span");
+//     pratespan.innerText = "Rs. " + ele.price;
+//     pratespan.setAttribute("class", "rate-span");
+
+//     var pdiscount = document.createElement("span");
+//     pdiscount.innerText = "(" + ele.discount + "% OFF)";
+//     pdiscount.setAttribute("class", "discount-span");
+
+//     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+//     document.getElementById("product-container").append(pdiv);
+//   });
+// }
+
+// //filter by discount
+
+// var checkbox = document.querySelectorAll(".discount-input");
+// console.log(checkbox);
+
+// checkbox.forEach(function (e) {
+//   e.addEventListener("change", function () {
+//     if (this.checked) {
+//       var discount = e.value;
+//       console.log("discount is " + discount);
+//       filterDiscount(discount);
+//       console.log("checkbox function is called");
+//     } else {
+//       showProducts();
+//     }
+//   });
+// });
+
+// function filterDiscount(discount) {
+//   console.log("brand checkbox clicked");
+//   var brandList = products.filter(function (elem) {
+//     return elem.discount >= discount;
+//   });
+//   console.log(brandList);
+//   document.getElementById("product-container").innerHTML = null;
+//   brandList.forEach(function (ele) {
+//     var pdiv = document.createElement("div");
+//     pdiv.setAttribute("class", "product-div");
+//     var pimg = document.createElement("img");
+//     pimg.src = ele.img;
+//     var pbrand = document.createElement("h3");
+//     pbrand.innerText = ele.brand;
+//     var pdescription = document.createElement("h4");
+//     pdescription.innerText = ele.description;
+
+//     var pdratespan = document.createElement("span");
+//     pdratespan.innerText = "Rs. " + ele.discPrice;
+//     pdratespan.setAttribute("class", "drate-span");
+
+//     var pratespan = document.createElement("span");
+//     pratespan.innerText = "Rs. " + ele.price;
+//     pratespan.setAttribute("class", "rate-span");
+
+//     var pdiscount = document.createElement("span");
+//     pdiscount.innerText = "(" + ele.discount + "% OFF)";
+//     pdiscount.setAttribute("class", "discount-span");
+
+//     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+//     document.getElementById("product-container").append(pdiv);
+//   });
+// }
+
+
 // sortby filter dropdown
 var sortbyBtn = document.querySelector(".sortby-dropdown");
 var sortbyMenu = document.querySelector(".sortby-dropdown-menu");
-sortbyBtn.addEventListener("mouseover", () => {
-  sortbyMenu.classList.toggle("hide");
+sortbyBtn.addEventListener("mouseover", () =>{
+  sortbyMenu.classList.toggle('hide');
 });
 var bundleBtn = document.querySelector(".bundle-dropdown-btn");
 var bundleMenu = document.querySelector(".bundle-dropdown-menu");
 
-bundleBtn.addEventListener("click", () => {
-  bundleMenu.classList.toggle("bhide");
+bundleBtn.addEventListener("click", () =>{
+  bundleMenu.classList.toggle('bhide');
 });
 
 //coi filter dropdown
 var coiBtn = document.querySelector(".coi-dropdown-btn");
 var coiMenu = document.querySelector(".coi-dropdown-menu");
 
-coiBtn.addEventListener("click", () => {
-  console.log("bundle on click is called");
-  coiMenu.classList.toggle("coihide");
+coiBtn.addEventListener("click", () =>{
+  console.log("bundle on click is called")
+  coiMenu.classList.toggle('coihide');
 });
 
-//Showing the products on men's category section
+
 
 
 function showProducts() {
   document.getElementById("product-container").innerHTML = null;
   products.forEach(function (ele) {
+    
     var pdiv = document.createElement("div");
     pdiv.setAttribute("class", "product-div");
     var pimg = document.createElement("img");
     pimg.src = ele.img[0];
-
-    //On hover image slideshow js code
     var imgArr = [...ele.img];
-    var interval;
-    pimg.addEventListener("mouseover", function () {
-      var i = 0;
-      interval = setInterval(function () {
-        if (i < imgArr.length) {
+    
+    var interval
+    pimg.addEventListener("mouseover", function(){
+      
+      var i=0;
+     interval =  setInterval(function(){    
+        if(i< imgArr.length){
           pimg.src = imgArr[i];
           i++;
-        } else {
-          i = 0;
         }
-      }, 700);
+        else{
+          i = 0
+        }
+      }, 1000)
     });
-    pimg.addEventListener("mouseout", function () {
+    pimg.addEventListener("mouseout", function(){
       clearInterval(interval);
       pimg.src = ele.img[0];
     });
@@ -692,7 +936,8 @@ function showProducts() {
     pbrand.innerText = ele.brand;
     var pdescription = document.createElement("h4");
     pdescription.innerText = ele.description;
-    //   console.log(pdescription);
+    
+    
 
     var pdratespan = document.createElement("span");
     pdratespan.innerText = "Rs. " + ele.discPrice;
@@ -709,47 +954,59 @@ function showProducts() {
     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
     
     document.getElementById("product-container").append(pdiv);
-
-    // Data storing in LS on click on the product card 
-
-    pdiv.addEventListener("click", function(){
-      var localData = JSON.parse(localStorage.getItem("productObj")) || [] ;
-      localData = null;
-      localStorage.setItem("productObj", JSON.stringify(ele));      
-      window.location.href = "./product/product.html"
-      
-    });
-
   });
 }
 showProducts();
 
+//function onhover image slideshow
+function slideShow(imgArr){
+  var i=0;
+  setInterval(function(){    
+    while(i< imgArr.length){
+      pimg.src = ele.img[i];
+      i++;
+    }
+    if(i==imgArr.length){
+      i=0;
+    }
+  }, 500)
+}
+
+
 //onChecked filterationa
 var checkbox = document.querySelectorAll(".brand-input");
+console.log(checkbox);
 
 checkbox.forEach(function (e) {
   e.addEventListener("change", function () {
     if (this.checked) {
       var value = e.value;
       checkBox(value);
-      console.log("checkbox function is called");
+      
     } else {
       showProducts();
     }
   });
 });
 
-function checkBox(value) { 
+function checkBox(value) {
+  
 
+  
+  // var b = document.getElementById("roadster").value;
   var brandList = products.filter(function (elem) {
     return elem.brand == value;
   });
+  
+
+  //empty product container to before appending the filter products
+
   document.getElementById("product-container").innerHTML = null;
   brandList.forEach(function (ele) {
     var pdiv = document.createElement("div");
     pdiv.setAttribute("class", "product-div");
     var pimg = document.createElement("img");
-    pimg.src = ele.img;
+    pimg.src = ele.img[0];
     var pbrand = document.createElement("h3");
     pbrand.innerText = ele.brand;
     var pdescription = document.createElement("h4");
@@ -768,14 +1025,13 @@ function checkBox(value) {
     pdiscount.setAttribute("class", "discount-span");
 
     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
-    
     document.getElementById("product-container").append(pdiv);
   });
 }
 
 //filter by rates
 var checkbox = document.querySelectorAll(".price-input");
-console.log(checkbox);
+
 
 checkbox.forEach(function (e) {
   e.addEventListener("change", function () {
@@ -783,7 +1039,7 @@ checkbox.forEach(function (e) {
       var max = e.value;
       var min = e.name;
       filterRate(min, max);
-      console.log("checkbox function is called");
+      
     } else {
       showProducts();
     }
@@ -791,8 +1047,8 @@ checkbox.forEach(function (e) {
 });
 
 function filterRate(min, max) {
-  console.log("brand checkbox clicked");
-  e;
+  
+
   var brandList = products.filter(function (elem) {
     return elem.discPrice >= min && elem.discPrice <= max;
   });
@@ -802,7 +1058,7 @@ function filterRate(min, max) {
     var pdiv = document.createElement("div");
     pdiv.setAttribute("class", "product-div");
     var pimg = document.createElement("img");
-    pimg.src = ele.img;
+    pimg.src = ele.img[0];
     var pbrand = document.createElement("h3");
     pbrand.innerText = ele.brand;
     var pdescription = document.createElement("h4");
@@ -828,15 +1084,13 @@ function filterRate(min, max) {
 //filter by discount
 
 var checkbox = document.querySelectorAll(".discount-input");
-console.log(checkbox);
+
 
 checkbox.forEach(function (e) {
   e.addEventListener("change", function () {
     if (this.checked) {
       var discount = e.value;
-      console.log("discount is " + discount);
       filterDiscount(discount);
-      console.log("checkbox function is called");
     } else {
       showProducts();
     }
@@ -844,17 +1098,71 @@ checkbox.forEach(function (e) {
 });
 
 function filterDiscount(discount) {
-  console.log("brand checkbox clicked");
   var brandList = products.filter(function (elem) {
     return elem.discount >= discount;
   });
-  console.log(brandList);
   document.getElementById("product-container").innerHTML = null;
   brandList.forEach(function (ele) {
     var pdiv = document.createElement("div");
     pdiv.setAttribute("class", "product-div");
     var pimg = document.createElement("img");
-    pimg.src = ele.img;
+    pimg.src = ele.img[0];
+    var pbrand = document.createElement("h3");
+    pbrand.innerText = ele.brand;
+    var pdescription = document.createElement("h4");
+    pdescription.innerText = ele.description;
+
+    var pdratespan = document.createElement("span");
+    pdratespan.innerText = "Rs. " + ele.discPrice;
+    pdratespan.setAttribute("class", "drate-span");
+
+    var pratespan = document.createElement("span");
+    pratespan.innerText = "Rs. " + ele.price;
+    pratespan.setAttribute("class", "rate-span");
+
+    var pdiscount = document.createElement("span");
+    pdiscount.innerText = "(" + ele.discount + "% OFF)";
+    pdiscount.setAttribute("class", "discount-span");
+
+    pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+    document.getElementById("product-container").append(pdiv);
+  });
+}
+
+
+//color filter
+var checkbox = document.querySelectorAll(".color-input");
+
+
+checkbox.forEach(function (e) {
+  e.addEventListener("change", function () {
+    if (this.checked) {
+      var value = e.value;
+      colorFilter(value);
+     
+    } else {
+      showProducts();
+    }
+  });
+});
+
+function colorFilter(value) {
+ 
+
+  
+  var brandList = products.filter(function (elem) {
+    return elem.color == value;
+  });
+  
+
+  //empty product container to before appending the filter products
+
+  document.getElementById("product-container").innerHTML = null;
+  brandList.forEach(function (ele) {
+    var pdiv = document.createElement("div");
+    pdiv.setAttribute("class", "product-div");
+    var pimg = document.createElement("img");
+    pimg.src = ele.img[0];
     var pbrand = document.createElement("h3");
     pbrand.innerText = ele.brand;
     var pdescription = document.createElement("h4");
