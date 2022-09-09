@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Women's Category </title>
     <link rel="stylesheet" href="women-category.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <!-- top section  -->
@@ -15,6 +16,50 @@
     <div id="category-name">
         <h1>Kurtis For Women<span>- 102514 items</span></h1>
     </div>
+    <!-- Top Filter section country of origin and sort by -->
+    <div class="topfilters">
+        <ul>
+            <li class="title-filter">FILTERS</li>
+            <!-- Bundle -->
+            <li class="bundle-dropdown">
+                <button class="bundle-dropdown-btn">Bundles <i class ="fa fa-caret-down"></i></button>
+                <ul class="bundle-dropdown-menu bhide">
+                    <li href="#"><input type="checkbox"> Single Styles</li>
+                </ul>
+            </li>
+            
+            <!-- country of origin -->
+            <li class="coi-dropdown">
+                <button class="coi-dropdown-btn">Country of Origin <i class ="fa fa-caret-down"></i></button>
+                <ul class="coi-dropdown-menu coihide">
+                    <li href="#"> <input type="checkbox"> All Countries</li>
+                    <li href="#"> <input type="checkbox"> India</li>
+                </ul>
+            </li>
+            <!-- size -->
+            <li class="title-size" class="size-dropdown">
+                <button class="size-dropdown-btn">Size <i class ="fa fa-caret-down"></i></button>
+                <ul class="size-dropdown-menu coihide">
+                </ul>
+            </li>
+           
+            <li class="sortby-dropdown">
+                <button class="sortby-dropdown-btn">Sort by: Recommended <i class ="fa fa-caret-down drop"></i></button>
+                <ul class="sortby-dropdown-menu hide">
+                    <li href="#">Recommended</li>
+                    <li href="#">What's New</li>
+                    <li href="#">Popularity</li>
+                    <li href="#">Better Discount</li>
+                    <li href="#">Price: High to Low</li>
+                    <li href="#">Price: Low to High</li>
+                    <li href="#">Customer Rating</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+        <!--Product container div -->
+
     <div id="container">
         <div id="filter">
             <div class="filter-child">
@@ -79,6 +124,7 @@
                     <label for="">Rs. 5326 to Rs. 7518 <span class="product-count">(2117)</span> </label>
                 </div>
             </div>
+            <!-- color filter -->
             <div class="filter-child">
                 <span>COLOR</span>
                 <div>
@@ -142,6 +188,8 @@
 
         </div>
     </div>
+
+
 </body>
 </html>
 

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADDRESS</title>
+    <style>
+        body{
+            margin: 0px;
+            width: 100%;
+        }
+        #carlayout{
+            flex-wrap: wrap;
+        }
+        #cartheader{
+            height: 78px;
+            width: 100%;
+            border-bottom: 1px solid #F5F5F6;
+        }
+        
+        #cartnavbar{
+            width: 93%;
+            margin: auto;
+            height: 100%;
+            display: flex;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+        #cartmyntralogo{
+            height: 100%;
+            width: 20%;
+            padding-top: 10px;
+            padding-left: 3px;
+            margin: auto;
+        }
+        #cartcheckout_position{
+            height: 100%;
+            width: 50%;
+            color: #696B79;
+            display: flex;
+            justify-content: center;
+            line-height: 78px;
+            margin-left: 7%;
+            margin-top: 0px;
+        }
+        .cartstep1{
+            
+            margin-right: 3px;
+        }
+        .cartstep2{
+            margin-left: 3px;
+            margin-right: 3px;
+            color: #20BD99;
+            border-bottom: 2px solid #20BD99;
+        }
+        .cartstep3{
+            
+            margin-left: 3px;
+        }
+        #cartsecure{
+            height: 100%;
+            width: 30%;
+            display: flex;
+            justify-content: end;
+            color: #696B79;
+        }
+        #cartsecure *{
+            margin-top: 20px;
+        }
+        
+        #cartfooter{
+            height: 50px;
+            width: 100%;
+            border-top: 1px solid #F5F5F6;
+            justify-content: flex-end;
+        }
+        #cartfooter>#cartfooternavbar{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            
+        }
+        #cartfooter #cartimages{
+            width: 80%;
+            margin: auto;
+        }
+        #cartfooter #carthelpcenter{
+            font-size: 16px;
+            font-weight: 800;   
+            color: black;
+            width: 20%;
+            margin: auto;
+        }
+        /*cart body*/
+        #cartproducts{
+            width: 100%;
+            
+            margin-bottom: 15px;
+        }
+        #cartproducts>#emptycart{
+            width: 40%;
+            
+            margin: auto;
+            text-align: center;
+        }  
+        #cartproducts>#emptycart>div{
+           
+            height: 650px;
+            
+        }  
+        #emptycart img{
+            height: 150px;
+            margin-top: 30%;
+        }
+        #emptycart h3{
+            font-weight: 600;
+        }
+        #emptycart p{
+            color: #696B79;
+            margin-top: -10px;
+        }
+        #emptycart button{
+            color: #ff3f6c;
+            border: 1px solid #ff3f6c;
+            background-color: #fff;
+            font-weight: 600;
+            height: 35px;
+            cursor: pointer;
+        }
+        #cartproducts>.div{
+            width: 80%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+
+        }
+        .div>.show{
+            width: 60%;
+            padding: 30px 20px 10px 10px;
+            border-right: 2px solid #F5F5F6;
+            flex-wrap: wrap;
+        }
+        .show>.delivery{
+            margin-bottom: 20px;
+            height: 65px;
+            border-radius: 5px;
+            display: flex;
+            border: 2px solid #F5F5F6;
+        }
+        .delivery>.textdiv{
+            font-weight: 800;
+            width: 70%;
+            margin-left: 15px;
+        }
+        .delivery>.btndiv *{
+            color: #ff3f6c;
+            border: 1px solid #ff3f6c;
+            background-color: #fff;
+            font-weight: 600;
+            margin-top: 15px;
+            height: 60%;
+            margin-right: 0;
+            cursor: pointer;
+            
+        }
+        .btndiv>button:hover{
+            background-color: rgb(255, 235, 240);
+        }
+        .show>.offer{
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border: 2px solid #F5F5F6;
+            border-radius: 5px;
+        }
+        .show>.products{
+            margin-bottom: 20px;
+            padding: 0 5px 10px 0;
+            
+            border: 1px solid #ccccd8;
+        }
+        .show>.products>div{
+            margin-bottom: 5px;
+            padding: 0 5px 10px 0;
+            border: 1px solid #ccccd8;
+            display: flex;
+            font-size: 13px;
+    line-height: 0.8;
+    color: #424553;
+    
+        }
+        .show>.products>div>:nth-child(2)>:first-child{
+           color: black;
+        }
+        .show>.products>div input{
+            fill: #ff3f6c;
+            cursor: pointer;
+            
+        }
+        .div>.calculation{
+            width: 40%;
+            padding: 15px 0 0 15px;
+        }
+        
+        .calculation>.price{
+            padding: 10px 0 15px 15px;
+            border-top: 2px solid #F5F5F6;
+            height: 300px;
+            width: 100%;
+            font-size: 15px;
+        }
+        .calculation>.price>:first-child{
+            font-weight: 500;
+            color: #696B79;
+            font-size: 20px;
+        }
+        .calculation>.price{
+            color: #696B79;
+            
+        }
+        .calculation>.price>:nth-child(3)>:nth-child(2){
+            color: #20BD99;
+            
+        }
+        .calculation>.price>div{
+            height: 15%;
+            width: 100%;
+            display: flex;
+        }
+        .calculation>.price>div>div{
+            height: 15%;
+            width: 50%;
+            
+        }
+        .calculation>.price>:nth-last-child(2){
+            height: 15%;
+            width: 100%;
+            font-weight: 600;
+            border-top: 2px solid #696B79;
+        }
+        .calculation>.price button{
+            height: 15%;
+            width: 100%;
+            font-weight: 600;
+            background-color: #ff3f6c;
+            color: #F5F5F6;
+            border: 0ch;
+            cursor: pointer;
+        }
+        .calculation>.price button:hover{
+            background-color: #b93957;
+        }
+        ul>h4,ul>h5{
+            color: #ff3f6c;
+        }
+        @media screen and (max-width: 768px){
+            #cartcheckout_position{
+                display: none;
+            }
+            #cartsecure{
+                margin-left: 40%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="cartlayout">
+        <div id="cartheader">
+            <div id="cartnavbar">
+                <div id="cartmyntralogo">
+                    <img style="height:60%" src="https://images.assettype.com/afaqs%2F2021-01%2F15f5f827-8e29-4520-af8d-a0f353b8da17%2Fimages.png?auto=format%2Ccompress&w=1200" alt="myntra">
+                    
+                </div>
+                <div id="cartcheckout_position">
+                    <p class="cartstep1">BAG</p>
+                    <p>-------</p>
+                    <p class="cartstep2">ADDRESS</p>
+                    <p>-------</p>
+                    <p class="cartstep3">PAYMENT</p>
+                </div>
+                <div id="cartsecure"> 
+                    <img style="margin-right:5px" src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png" width="26" height="28"> 
+                    <div class="cartpercent" style="margin-top:30px">100% SECURE</div> 
+                </div>
+            </div>
+        </div>
+        <div id="cartproducts">
+            
+        </div>
+        <div id="cartfooter">
+            <div id="cartfooternavbar">
+                <div id="cartimages"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ssl.png" width="70" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-visa.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-mc.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-ae.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-dc.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-nb.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-cod.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-rupay.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-paypal.png" width="60" height="37"> 
+                    <img  src="https://constant.myntassets.com/checkout/assets/img/footer-bank-bhim.png" width="60" height="37"> 
+                </div>
+                <div id="carthelpcenter">
+                    <p>Need Help? Contact Us</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var arr=[{
+        name:"Masai",
+        mobile:99999999999,
+        house:"18042 Bridgette Spring, Suite 484, 14313, Jaylenfort, South Dakota, United States"
+    },{
+        name:"Masai",
+        mobile:99999999999,
+        house:"222 Harmony Gardens, Apt. 024, 79856, East Ronton, New Mexico, United States"
+    }]
+    localStorage.setItem("address",JSON.stringify(arr))
+    var addarr=JSON.parse(localStorage.getItem("address"))||[]
+    var cartproducts=JSON.parse(localStorage.getItem("cart_object_imgs"))||[]
+    if(cartproducts.length==0){
+        var div=document.createElement("div")
+        var emptylogo=document.createElement("img")
+        emptylogo.setAttribute("src","https://constant.myntassets.com/checkout/assets/img/empty-bag.webp")
+        var h2=document.createElement("h3")
+        h2.innerText="Hey, it feels so light!"
+        var p=document.createElement("p")
+        p.innerText="There is nothing in your bag. Let's add some items"
+        var btn=document.createElement("button")
+        btn.innerText="ADD ITEMS FROM WISHLIST"
+        div.append(emptylogo,h2,p,btn)
+        document.getElementById("cartproducts").append(div)
+    }
+    else{
+        var div1=document.createElement("div")
+        div1.setAttribute("class","div")
+            var show=document.createElement("div")
+            show.setAttribute("class","show")
+            var checkdelivery=document.createElement("div")
+                checkdelivery.setAttribute("class","delivery")
+                    var textdiv=document.createElement("div")
+                    textdiv.setAttribute("class","textdiv")
+                        var p=document.createElement("h3")
+                        p.innerText="Select Delivery Address"
+                    textdiv.append(p)
+                    var btndiv=document.createElement("div")
+                    btndiv.setAttribute("class","btndiv")
+                        var btn=document.createElement("button")
+                        btn.innerText="ADD NEW ADDRESS"
+                    btndiv.append(btn)
+                    checkdelivery.append(textdiv,btndiv)
+                var h4=document.createElement("h4")
+                h4.innerText="Choose Default Address"
+                var products=document.createElement("div")
+                products.setAttribute("class","products")
+                
+                if(addarr!=[]){
+                    displayaddress()
+                }
+                
+            show.append(checkdelivery,h4,products)
+            var calculation=document.createElement("div")
+            calculation.setAttribute("class","calculation")
+               
+                var price=document.createElement("div")
+                price.setAttribute("class","price")
+                docalculation()
+                
+            calculation.append(price)
+        div1.append(show,calculation)
+        document.getElementById("cartproducts").append(div1)
+    }
+function displayaddress(){
+    products.innerText=""  
+    addarr.map(function(ele,index){
+        var div=document.createElement("div")
+        var div1=document.createElement("div")
+        var input=document.createElement("input")
+        input.setAttribute("type","checkbox")
+        div1.append(input)
+        var div2=document.createElement("div")
+        var name=document.createElement("h3")
+        name.innerText=ele.name
+        var address=document.createElement("p")
+        address.innerText=ele.house
+        var mobile=document.createElement("p")
+        mobile.innerText="Mobile:"+ele.mobile
+        var btn=document.createElement("button")
+        btn.innerText="REMOVE"
+        btn.addEventListener("click",cdelete)
+        div2.append(name,address,mobile,btn)
+        div.append(div1,div2)
+        products.append(div)
+    })
+}
+function cdelete(index){
+    addarr.splice(index,1);
+    console.log(index)
+    localStorage.setItem("address",JSON.stringify(addarr))
+    displayaddress();
+}
+    function docalculation(){
+        var total=cartproducts.reduce(function(acc,el){
+            return acc+el.discPrice;
+        },0)
+        var total1=cartproducts.reduce(function(acc,el){
+            return acc+el.price;
+        },0)
+        var total3=total1-total
+            var div1=document.createElement("div")
+            div1.innerText="Price Details"+" ("+cartproducts.length+" Items)"
+            var div2=document.createElement("div")
+                var div21=document.createElement("div")
+                div21.innerText="Total MRP"
+                var div22=document.createElement("div")
+                div22.innerText="₹ "+total1
+            div2.append(div21,div22)
+            var div3=document.createElement("div")
+                var div31=document.createElement("div")
+                div31.innerText="Discount on MRP"
+                var div32=document.createElement("div")
+                div32.innerText="- ₹ "+total3
+            div3.append(div31,div32)
+            var div4=document.createElement("div")
+                var div41=document.createElement("div")
+                div41.innerText="Coupon Discount"
+                var div42=document.createElement("div")
+                div42.innerText="₹ 0"
+            div4.append(div41,div42)
+            var div6=document.createElement("div")
+                var div61=document.createElement("div")
+                div61.innerText="Total Amount"
+                var div62=document.createElement("div")
+                div62.innerText="₹"+total
+            div6.append(div61,div62)
+            var anchor=document.createElement("a")
+            anchor.setAttribute("href","myntrapayment.html")
+            var btn=document.createElement("button")
+            btn.innerText="CONTINUE"
+            anchor.append(btn)
+            price.append(div1,div2,div3,div4,div6,anchor)
+    }
+        
+            
+</script>
