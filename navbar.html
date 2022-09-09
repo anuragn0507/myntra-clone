@@ -22,37 +22,38 @@
                     </div>
                     <div id="women">
                         <div class="contentNames">
-                            <p>WOMEN</p>
+                            <p id="WOMEN">WOMEN</p>
                         </div>
                     </div>
                     <div id="kids">
                         <div class="contentNames">
-                            <p>KIDS</p>
+                            <p id="KIDS">KIDS</p>
                         </div>
                     </div>
                     <div id="homeAndLiving">
                         <div class="contentNames">
-                            <p>HOME & LIVING</p>
+                            <p id="HOME">HOME&LIVING</p>
                         </div>
                     </div>
                     <div class="contentNames">
-                        <p>BEAUTY</p>
+                        <p id="BEAUTY">BEAUTY</p>
                     </div>
                     <div id="last">
                         <div class="contentNames">
-                            <p>STUDIO<sup style="color: crimson;">NEW </sup></p>
+                            <p id="STUDIO">STUDIO<sup style="color: crimson; font-size: 10px;">NEW </sup></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="navRight">
                 <div id="search">
+                    <div id="Slogo"> <img src="/myntra-clone/searchlogo.png" alt=""></div>
                     <input placeholder="Search for products,brands and more" type="text">
 
                 </div>
                 <div id="awesomeFonts">
                     <div id="profile">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBOCrPETbArave0mb2imaayVSXjCHbs5jmOA&usqp=CAU"
+                        <img id="pro" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBOCrPETbArave0mb2imaayVSXjCHbs5jmOA&usqp=CAU"
                             alt="profile_img">
                         <p>Profile</p>
                     </div>
@@ -480,9 +481,14 @@
         </div>
         <br>
         <br>
+        <div id="studio">
+           <div> <img src="/myntra-clone/studio logo.png" alt=""></div>
+            <p style="font-weight:bold">Your daily inspiration for everything fashion</p>
+            <img src="/myntra-clone/viratPic.png" alt="viratPic">
+        </div>
         <div id="box">
             <div id="hello">
-                <p><strong>Hello Mohammed</strong></p>
+                <p><strong> Hello Team-MyntraClone</strong></p>
                 <p>6300537467</p>
             </div>
             <div id="hello1">
@@ -490,7 +496,7 @@
                 <p>Wishlist</p>
                 <p>Gift Cards</p>
                 <p>Contact Us</p>
-                <p>Myntra Insider</p>
+                <p>Myntra Insider <sup style="font-size: 10px; color:white; background-color:crimson; font-style :italic;font-weight:bold; padding-left: 8px;  padding-right: 8px" >NEW</sup></p>
             </div>
             <div id="hello3">
                 <p>Myntra Credit</p>
@@ -507,8 +513,6 @@
        
     </div>
 
-    <!-- <div class="myDIV">Hover over mee.</div> -->
-    <!-- <div class="hide">I am shown when someone hovers over the div above.</div> -->
 </body>
 <script>
     document.querySelector("#men").addEventListener("mouseover",function(){
@@ -520,39 +524,56 @@
     });
 
 
-    // document.querySelector(".contentNames").addEventListener("mouseover",function(){
-    //     document.querySelector("#dropDown1").style.display="flex";
+    document.querySelector("#WOMEN").addEventListener("mouseover",function(){
+        document.querySelector("#dropDown1").style.display="flex";
 
-    // });
-    // document.querySelector(".contentNames").addEventListener("mouseout",function(){
-    //     document.querySelector("#dropDown1").style.display="none"
-    // });
-
-
-    // document.querySelector(".contentNames").addEventListener("mouseover",function(){
-    //     document.querySelector("#dropDown2").style.display="flex";
-
-    // });
-    // document.querySelector(".contentNames").addEventListener("mouseout",function(){
-    //     document.querySelector("#dropDown2").style.display="none"
-    // });
+    });
+    document.querySelector("#WOMEN").addEventListener("mouseout",function(){
+        document.querySelector("#dropDown1").style.display="none"
+    });
 
 
-    // document.querySelector(".contentNames").addEventListener("mouseover",function(){
-    //     document.querySelector("#dropDown3").style.display="flex";
+    document.querySelector("#KIDS").addEventListener("mouseover",function(){
+        document.querySelector("#dropDown2").style.display="flex";
 
-    // });
-    // document.querySelector(".contentNames").addEventListener("mouseout",function(){
-    //     document.querySelector("#dropDown3").style.display="none"
-    // });
+    });
+    document.querySelector("#KIDS").addEventListener("mouseout",function(){
+        document.querySelector("#dropDown2").style.display="none"
+    });
 
-    // document.querySelector(".contentNames").addEventListener("mouseover",function(){
-    //     document.querySelector("#dropDown4").style.display="flex";
 
-    // });
-    // document.querySelector(".contentNames").addEventListener("mouseout",function(){
-    //     document.querySelector("#dropDown4").style.display="none"
-    // });
+    document.querySelector("#HOME").addEventListener("mouseover",function(){
+        document.querySelector("#dropDown3").style.display="flex";
+
+    });
+    document.querySelector("#HOME").addEventListener("mouseout",function(){
+        document.querySelector("#dropDown3").style.display="none"
+    });
+
+    document.querySelector("#BEAUTY").addEventListener("mouseover",function(){
+        document.querySelector("#dropDown4").style.display="flex";
+
+    });
+    document.querySelector("#BEAUTY").addEventListener("mouseout",function(){
+        document.querySelector("#dropDown4").style.display="none"
+    });
+
+
+    document.querySelector("#profile").addEventListener("mouseover",function(){
+        document.querySelector("#box" ).style.display="block";
+
+    });
+    document.querySelector("#profile").addEventListener("mouseout",function(){
+        document.querySelector("#box" ).style.display="none";
+    });
+
+    document.querySelector("#STUDIO").addEventListener("mouseover",function(){
+        document.querySelector("#studio").style.display="block";
+
+    });
+    document.querySelector("#STUDIO").addEventListener("mouseout",function(){
+        document.querySelector("#studio" ).style.display="none";
+    });
 
 </script>
 
