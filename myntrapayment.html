@@ -211,34 +211,77 @@
         }
         
 
-        .div>.calculation{
-            width: 40%;
-            padding: 15px 0 0 15px;
-        }
         .calculation>.price{
             padding: 10px 0 15px 15px;
-            border: 2px solid #F5F5F6;
-            height: 150px;
+            border-top: 2px solid #F5F5F6;
+            height: 300px;
             width: 100%;
+            font-size: 15px;
+        }
+        .calculation>.price>:first-child{
+            font-weight: 500;
+            color: #696B79;
+            font-size: 20px;
+        }
+        .calculation>.price{
+            color: #696B79;
+            
+        }
+        .calculation>.price>:nth-child(3)>:nth-child(2){
+            color: #20BD99;
             
         }
         .calculation>.price>div{
-            height: 20%;
+            height: 15%;
             width: 100%;
             display: flex;
         }
         .calculation>.price>div>div{
-            height: 20%;
+            height: 15%;
             width: 50%;
             
         }
         .calculation>.price>:nth-last-child(1){
-            height: 20%;
+            height: 15%;
             width: 100%;
-            font-weight: 700;
+            font-weight: 600;
             border-top: 2px solid #696B79;
         }
         
+        #modal{
+            background-color: #fff;
+            width: 400px;
+            height: 100px;
+            max-height: 80%;
+            max-width: 80%;
+            justify-items: center;
+            margin: auto;
+        }
+        #modal>button:hover{
+            cursor: pointer;
+            background-color: rgba(235, 235, 132, 0.918);
+
+        }
+        
+        #modal-container{
+            height: 400px;
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            align-items: center;
+            color: crimson;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+            background: rgba(0,0,0,0.6);
+        }
+        .active{
+            opacity: 5;
+        }
         ul>h4,ul>h5{
             color: #ff3f6c;
         }
@@ -274,7 +317,12 @@
             </div>
         </div>
         <div id="cartproducts">
-            
+            <div id="modal-container">
+                <div id="modal">
+                    <h1>Order Confirmed</h1>
+                    <button>close</button>
+                </div>
+            </div>
         </div>
         <div id="cartfooter">
             <div id="cartfooternavbar">
@@ -390,30 +438,32 @@
     }
     function docalculation(){
         var total=cartproducts.reduce(function(acc,el){
+            return acc+el.discPrice;
+        },0)
+        var total1=cartproducts.reduce(function(acc,el){
             return acc+el.price;
         },0)
-            
+        var total3=total1-total
             var div1=document.createElement("div")
-            div1.innerText="Price Details"+" ("+cartproducts.length+"Items)"
+            div1.innerText="Price Details"+" ("+cartproducts.length+" Items)"
             var div2=document.createElement("div")
                 var div21=document.createElement("div")
                 div21.innerText="Total MRP"
                 var div22=document.createElement("div")
-                div22.innerText="Price"
+                div22.innerText="₹ "+total1
             div2.append(div21,div22)
             var div3=document.createElement("div")
                 var div31=document.createElement("div")
                 div31.innerText="Discount on MRP"
                 var div32=document.createElement("div")
-                div32.innerText="Price"
+                div32.innerText="- ₹ "+total3
             div3.append(div31,div32)
             var div4=document.createElement("div")
                 var div41=document.createElement("div")
                 div41.innerText="Coupon Discount"
                 var div42=document.createElement("div")
-                div42.innerText="Price"
+                div42.innerText="₹ 0"
             div4.append(div41,div42)
-            
             var div6=document.createElement("div")
                 var div61=document.createElement("div")
                 div61.innerText="Total Amount"
@@ -422,13 +472,15 @@
             div6.append(div61,div62)
             
             price.append(div1,div2,div3,div4,div6)
-        }
+    }
+        var modalcontainer=document.querySelector(".modal-container")
         function cod(){
             pay.innerText=""
             var check=document.createElement("button")
             check.innerText="PLACE ORDER"
             pay.append(check)
         }
+        
         function debit(){
             pay.innerText=""
             var check1=document.createElement("button")
