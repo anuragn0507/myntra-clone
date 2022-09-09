@@ -356,7 +356,8 @@
 <script>
 
 
-   
+   var cartproducts=JSON.parse(localStorage.getItem("cart_object_imgs"))||[]
+
 
     if(cartproducts.length==0){
         var div=document.createElement("div")
@@ -431,7 +432,10 @@
             div.setAttribute("class","productdiv");
             var image=document.createElement("img");
 
-            
+
+            image.setAttribute("src",ele.img_url[0]);
+
+
             div1.append(image)
             var h5=document.createElement("h5")
             h5.innerText=ele.brand;
