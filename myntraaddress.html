@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Address</title>
+    <title>ADDRESS</title>
     <style>
         body{
             margin: 0px;
@@ -56,6 +56,7 @@
             border-bottom: 2px solid #20BD99;
         }
         .cartstep3{
+            
             margin-left: 3px;
         }
         #cartsecure{
@@ -92,42 +93,174 @@
             width: 20%;
             margin: auto;
         }
+        /*cart body*/
         #cartproducts{
             width: 100%;
+            
             margin-bottom: 15px;
         }
-        #cartproducts>div{
+        #cartproducts>#emptycart{
+            width: 40%;
+            
+            margin: auto;
+            text-align: center;
+        }  
+        #cartproducts>#emptycart>div{
+           
+            height: 650px;
+            
+        }  
+        #emptycart img{
+            height: 150px;
+            margin-top: 30%;
+        }
+        #emptycart h3{
+            font-weight: 600;
+        }
+        #emptycart p{
+            color: #696B79;
+            margin-top: -10px;
+        }
+        #emptycart button{
+            color: #ff3f6c;
+            border: 1px solid #ff3f6c;
+            background-color: #fff;
+            font-weight: 600;
+            height: 35px;
+            cursor: pointer;
+        }
+        #cartproducts>.div{
             width: 80%;
+            height: 100%;
             margin: auto;
             display: flex;
+
+        }
+        .div>.show{
+            width: 60%;
+            padding: 30px 20px 10px 10px;
+            border-right: 2px solid #F5F5F6;
+            flex-wrap: wrap;
+        }
+        .show>.delivery{
+            margin-bottom: 20px;
+            height: 65px;
+            border-radius: 5px;
+            display: flex;
+            border: 2px solid #F5F5F6;
+        }
+        .delivery>.textdiv{
+            font-weight: 800;
+            width: 70%;
+            margin-left: 15px;
+        }
+        .delivery>.btndiv *{
+            color: #ff3f6c;
+            border: 1px solid #ff3f6c;
+            background-color: #fff;
+            font-weight: 600;
+            margin-top: 15px;
+            height: 60%;
+            margin-right: 0;
+            cursor: pointer;
             
         }
-        #cartproducts>div>.div1{
-            width: 60%;
-            margin: auto;
-            display: flex;
-            background-color: #20BD99;
+        .btndiv>button:hover{
+            background-color: rgb(255, 235, 240);
         }
-        #cartproducts>div>.div2{
+        .show>.offer{
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border: 2px solid #F5F5F6;
+            border-radius: 5px;
+        }
+        .show>.products{
+            margin-bottom: 20px;
+            padding: 0 5px 10px 0;
+            
+            border: 1px solid #ccccd8;
+        }
+        .show>.products>div{
+            margin-bottom: 5px;
+            padding: 0 5px 10px 0;
+            border: 1px solid #ccccd8;
+            display: flex;
+            font-size: 13px;
+    line-height: 0.8;
+    color: #424553;
+    
+        }
+        .show>.products>div>:nth-child(2)>:first-child{
+           color: black;
+        }
+        .show>.products>div input{
+            fill: #ff3f6c;
+            cursor: pointer;
+            
+        }
+        .div>.calculation{
             width: 40%;
-            margin: auto;
+            padding: 15px 0 0 15px;
+        }
+        
+        .calculation>.price{
+            padding: 10px 0 15px 15px;
+            border-top: 2px solid #F5F5F6;
+            height: 300px;
+            width: 100%;
+            font-size: 15px;
+        }
+        .calculation>.price>:first-child{
+            font-weight: 500;
+            color: #696B79;
+            font-size: 20px;
+        }
+        .calculation>.price{
+            color: #696B79;
+            
+        }
+        .calculation>.price>:nth-child(3)>:nth-child(2){
+            color: #20BD99;
+            
+        }
+        .calculation>.price>div{
+            height: 15%;
+            width: 100%;
             display: flex;
-            background-color: #696B79;
         }
-        #cartproducts>div>.div1>.adddiv{
-            width: 80%;
-            height: 500px;
-            display: grid;
-            border: 1px solid #F5F5F6;
-            background-color: #696B79;
-            margin: auto;
-            padding-left: 10px;
-            margin-top: 40px;
-            margin-bottom: 40px;
+        .calculation>.price>div>div{
+            height: 15%;
+            width: 50%;
+            
         }
-        #cartproducts>div>.div1>.adddiv>input{
-            height: 30px;
-            margin-top: -70px;
+        .calculation>.price>:nth-last-child(2){
+            height: 15%;
+            width: 100%;
+            font-weight: 600;
+            border-top: 2px solid #696B79;
+        }
+        .calculation>.price button{
+            height: 15%;
+            width: 100%;
+            font-weight: 600;
+            background-color: #ff3f6c;
+            color: #F5F5F6;
+            border: 0ch;
+            cursor: pointer;
+        }
+        .calculation>.price button:hover{
+            background-color: #b93957;
+        }
+        ul>h4,ul>h5{
+            color: #ff3f6c;
+        }
+        @media screen and (max-width: 768px){
+            #cartcheckout_position{
+                display: none;
+            }
+            #cartsecure{
+                margin-left: 40%;
+            }
         }
     </style>
 </head>
@@ -153,7 +286,7 @@
             </div>
         </div>
         <div id="cartproducts">
-        
+            
         </div>
         <div id="cartfooter">
             <div id="cartfooternavbar">
@@ -179,70 +312,140 @@
 </body>
 </html>
 <script>
-    var cartproducts=JSON.parse(localStorage.getItem("cart"))||[]
-    var addressarr=JSON.parse(localStorage.getItem("address"))||[]
-    var div=document.createElement("div")
+    var arr=[{
+        name:"Masai",
+        mobile:99999999999,
+        house:"18042 Bridgette Spring, Suite 484, 14313, Jaylenfort, South Dakota, United States"
+    },{
+        name:"Masai",
+        mobile:99999999999,
+        house:"222 Harmony Gardens, Apt. 024, 79856, East Ronton, New Mexico, United States"
+    }]
+    localStorage.setItem("address",JSON.stringify(arr))
+    var addarr=JSON.parse(localStorage.getItem("address"))||[]
+    var cartproducts=JSON.parse(localStorage.getItem("cart_object_imgs"))||[]
+    if(cartproducts.length==0){
+        var div=document.createElement("div")
+        var emptylogo=document.createElement("img")
+        emptylogo.setAttribute("src","https://constant.myntassets.com/checkout/assets/img/empty-bag.webp")
+        var h2=document.createElement("h3")
+        h2.innerText="Hey, it feels so light!"
+        var p=document.createElement("p")
+        p.innerText="There is nothing in your bag. Let's add some items"
+        var btn=document.createElement("button")
+        btn.innerText="ADD ITEMS FROM WISHLIST"
+        div.append(emptylogo,h2,p,btn)
+        document.getElementById("cartproducts").append(div)
+    }
+    else{
         var div1=document.createElement("div")
-        div1.setAttribute("class","div1")
-        if(addressarr.length==0){
-            var adddiv=document.createElement("div")
-            adddiv.setAttribute("class","adddiv")
-            var contact=document.createElement("h5")
-            contact.innerText="CONTACT DETAILS"
-            var input1=document.createElement("input")
-            var input2=document.createElement("input")
-            var add=document.createElement("h5")
-            add.innerText="ADDRESS"
-            var input3=document.createElement("input")
-            var input4=document.createElement("input")
-            var input5=document.createElement("input")
-            var btn=document.createElement("button")
-            
-            adddiv.append(contact,input1,input2,add,input3,input4,input5)
-            div1.append(adddiv)
-            
-        }
-        else{
-            div1.innerText="length 1"
-        }
-    var div2=document.createElement("div")
-    div2.setAttribute("class","div2")
-    div2.innerText="calculation"
-    div.append(div1,div2)
-    document.getElementById("cartproducts").append(div)
+        div1.setAttribute("class","div")
+            var show=document.createElement("div")
+            show.setAttribute("class","show")
+            var checkdelivery=document.createElement("div")
+                checkdelivery.setAttribute("class","delivery")
+                    var textdiv=document.createElement("div")
+                    textdiv.setAttribute("class","textdiv")
+                        var p=document.createElement("h3")
+                        p.innerText="Select Delivery Address"
+                    textdiv.append(p)
+                    var btndiv=document.createElement("div")
+                    btndiv.setAttribute("class","btndiv")
+                        var btn=document.createElement("button")
+                        btn.innerText="ADD NEW ADDRESS"
+                    btndiv.append(btn)
+                    checkdelivery.append(textdiv,btndiv)
+                var h4=document.createElement("h4")
+                h4.innerText="Choose Default Address"
+                var products=document.createElement("div")
+                products.setAttribute("class","products")
+                
+                if(addarr!=[]){
+                    displayaddress()
+                }
+                
+            show.append(checkdelivery,h4,products)
+            var calculation=document.createElement("div")
+            calculation.setAttribute("class","calculation")
+               
+                var price=document.createElement("div")
+                price.setAttribute("class","price")
+                docalculation()
+                
+            calculation.append(price)
+        div1.append(show,calculation)
+        document.getElementById("cartproducts").append(div1)
+    }
+function displayaddress(){
+    products.innerText=""  
+    addarr.map(function(ele,index){
+        var div=document.createElement("div")
+        var div1=document.createElement("div")
+        var input=document.createElement("input")
+        input.setAttribute("type","checkbox")
+        div1.append(input)
+        var div2=document.createElement("div")
+        var name=document.createElement("h3")
+        name.innerText=ele.name
+        var address=document.createElement("p")
+        address.innerText=ele.house
+        var mobile=document.createElement("p")
+        mobile.innerText="Mobile:"+ele.mobile
+        var btn=document.createElement("button")
+        btn.innerText="REMOVE"
+        btn.addEventListener("click",cdelete)
+        div2.append(name,address,mobile,btn)
+        div.append(div1,div2)
+        products.append(div)
+    })
+}
+function cdelete(index){
+    addarr.splice(index,1);
+    console.log(index)
+    localStorage.setItem("address",JSON.stringify(addarr))
+    displayaddress();
+}
     function docalculation(){
         var total=cartproducts.reduce(function(acc,el){
+            return acc+el.discPrice;
+        },0)
+        var total1=cartproducts.reduce(function(acc,el){
             return acc+el.price;
         },0)
-            
+        var total3=total1-total
             var div1=document.createElement("div")
-            div1.innerText="Price Details"+" ("+cartproducts.length+"Items)"
+            div1.innerText="Price Details"+" ("+cartproducts.length+" Items)"
             var div2=document.createElement("div")
                 var div21=document.createElement("div")
                 div21.innerText="Total MRP"
                 var div22=document.createElement("div")
-                div22.innerText="Price"
+                div22.innerText="₹ "+total1
             div2.append(div21,div22)
+            var div3=document.createElement("div")
+                var div31=document.createElement("div")
+                div31.innerText="Discount on MRP"
+                var div32=document.createElement("div")
+                div32.innerText="- ₹ "+total3
+            div3.append(div31,div32)
             var div4=document.createElement("div")
                 var div41=document.createElement("div")
                 div41.innerText="Coupon Discount"
                 var div42=document.createElement("div")
-                div42.innerText="Price"
+                div42.innerText="₹ 0"
             div4.append(div41,div42)
-            var div5=document.createElement("div")
-                var div51=document.createElement("div")
-                div51.innerText="Convenience Fee"
-                var div52=document.createElement("div")
-                div52.innerText="0"
-            div5.append(div51,div52)
             var div6=document.createElement("div")
                 var div61=document.createElement("div")
                 div61.innerText="Total Amount"
                 var div62=document.createElement("div")
                 div62.innerText="₹"+total
             div6.append(div61,div62)
+            var anchor=document.createElement("a")
+            anchor.setAttribute("href","myntrapayment.html")
             var btn=document.createElement("button")
             btn.innerText="CONTINUE"
-            price.append(div1,div2,div3,div4,div5,div6,btn)
-        }
+            anchor.append(btn)
+            price.append(div1,div2,div3,div4,div6,anchor)
+    }
+        
+            
 </script>

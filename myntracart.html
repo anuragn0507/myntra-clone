@@ -172,6 +172,10 @@
             padding-left: 20px;
             border: 2px solid #F5F5F6;
             border-radius: 5px;
+            
+        }
+        .show>.offer>ul{
+            color: #696B79;
         }
         .show>.products{
             margin-bottom: 20px;
@@ -187,12 +191,44 @@
         .products>.productdiv>:first-child{
             width: 20%;
             margin-right: 20px;
+            padding:5px 2px 3px 5px
         }
         .products>.productdiv>:first-child img{
             width: 100%;
         }
         .products>.productdiv>:nth-child(2){
-            width: 70%
+            width: 80%
+        }
+        .products>.productdiv>:nth-child(2)>h5{
+
+            width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 16px;
+        }
+        .products>.productdiv>:nth-child(2)>p{
+            width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 16px;
+        margin-top: -15px;
+        }
+        .products>.productdiv>:nth-child(2)>div{
+            display: flex;
+            column-gap: 15px;
+        }
+        .products>.productdiv>:nth-child(2)>div>:first-child{
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .products>.productdiv>:nth-child(2)>div>:nth-child(2){
+            text-decoration: line-through;
+            color: #696B79;
+        }
+        .products>.productdiv>:nth-child(2)>div>:nth-child(3){
+            color: #20BD99;
         }
         .products>.productdiv>:nth-child(3){
             width: 5%
@@ -214,6 +250,19 @@
             border-top: 2px solid #F5F5F6;
             height: 300px;
             width: 100%;
+            font-size: 15px;
+        }
+        .calculation>.price>:first-child{
+            font-weight: 500;
+            color: #696B79;
+            font-size: 20px;
+        }
+        .calculation>.price{
+            color: #696B79;
+            
+        }
+        .calculation>.price>:nth-child(3)>:nth-child(2){
+            color: #20BD99;
             
         }
         .calculation>.price>div{
@@ -229,19 +278,31 @@
         .calculation>.price>:nth-last-child(2){
             height: 15%;
             width: 100%;
-            
+            font-weight: 600;
             border-top: 2px solid #696B79;
         }
-        .calculation>.price>button{
+        .calculation>.price button{
             height: 15%;
             width: 100%;
+            font-weight: 600;
             background-color: #ff3f6c;
             color: #F5F5F6;
             border: 0ch;
             cursor: pointer;
         }
-        .calculation>.price>button:hover{
+        .calculation>.price button:hover{
             background-color: #b93957;
+        }
+        ul>h4,ul>h5{
+            color: #ff3f6c;
+        }
+        @media screen and (max-width: 768px){
+            #cartcheckout_position{
+                display: none;
+            }
+            #cartsecure{
+                margin-left: 40%;
+            }
         }
     </style>
 </head>
@@ -293,7 +354,9 @@
 </body>
 </html>
 <script>
-    var cartproducts=JSON.parse(localStorage.getItem("cart_object_imgs"))||[]
+
+   var cartproducts=JSON.parse(localStorage.getItem("cart_object_imgs"))||[]
+
     if(cartproducts.length==0){
         var div=document.createElement("div")
         var emptylogo=document.createElement("img")
@@ -336,9 +399,10 @@
                 l2.innerText="5% Unlimited Cashback on Flipkart Axis Bank Credit Card. TCA"
                 var l3=document.createElement("li")
                 l3.innerText="10% Cashback upto Rs 150 on Ola Money Postpaid or wallet transaction on a min spend of Rs 1000 . TCA"
-                var l4=document.createElement("li")
-                l4.innerText="10% Cashback upto Rs 150 on Freecharge Paylater transaction. TCA"
-                ul.append(l1,l2,l3,l4)
+                var h4=document.createElement("h4")
+                h4.innerText="See More >"
+                h4.addEventListener("click",more)
+                ul.append(l1,l2,l3,h4)
                 offer.append(h3,ul)
                 var products=document.createElement("div")
                 products.setAttribute("class","products")
@@ -347,17 +411,15 @@
             show.append(checkdelivery,offer,products)
             var calculation=document.createElement("div")
             calculation.setAttribute("class","calculation")
-                var coupon=document.createElement("div")
-                coupon.setAttribute("class","coupon")
-                //coupon.innerText="coupon"
                 var price=document.createElement("div")
                 price.setAttribute("class","price")
                 docalculation()
                 
-            calculation.append(coupon,price)
+            calculation.append(price)
         div1.append(show,calculation)
         document.getElementById("cartproducts").append(div1)
     }
+    
     function displayproducts(){
         products.innerText=""
         cartproducts.map(function(ele,index){
@@ -367,16 +429,24 @@
             var div3=document.createElement("div")
             div.setAttribute("class","productdiv");
             var image=document.createElement("img");
-            image.setAttribute("src",ele.img[0]);
+
+            image.setAttribute("src",ele.img_url[0]);
+
             div1.append(image)
             var h5=document.createElement("h5")
-            h5.innerText=ele.name;
-            var price=document.createElement("p")
-            price.innerText=ele.price;
-            div2.append(h5,price)
+            h5.innerText=ele.brand;
+            var h6=document.createElement("p")
+            h6.innerText=ele.description;
+            var price=document.createElement("div")
+            var original=document.createElement("div")
+            original.innerText="₹"+ele.price
+            var discountt=document.createElement("div")
+            discountt.innerText="₹"+ele.discPrice
+            var percent=document.createElement("div")
+            percent.innerText=ele.discount+"% OFF"
+            price.append(discountt,original,percent)
+            div2.append(h5,h6,price)
             var h6=document.createElement("h5")
-            var i=document.createElement("i")
-            //i.innerHTML=<i class="fa-regular fa-x"></i>
             h6.innerText="X"
             h6.addEventListener("click",function(){
                 cdelete(index)
@@ -395,46 +465,74 @@
 }
     function docalculation(){
         var total=cartproducts.reduce(function(acc,el){
+            return acc+el.discPrice;
+        },0)
+        var total1=cartproducts.reduce(function(acc,el){
             return acc+el.price;
         },0)
-            
+        var total3=total1-total
             var div1=document.createElement("div")
-            div1.innerText="Price Details"+" ("+cartproducts.length+"Items)"
+            div1.innerText="Price Details"+" ("+cartproducts.length+" Items)"
             var div2=document.createElement("div")
                 var div21=document.createElement("div")
                 div21.innerText="Total MRP"
                 var div22=document.createElement("div")
-                div22.innerText="Price"
+                div22.innerText="₹ "+total1
             div2.append(div21,div22)
             var div3=document.createElement("div")
                 var div31=document.createElement("div")
                 div31.innerText="Discount on MRP"
                 var div32=document.createElement("div")
-                div32.innerText="Price"
+                div32.innerText="- ₹ "+total3
             div3.append(div31,div32)
             var div4=document.createElement("div")
                 var div41=document.createElement("div")
                 div41.innerText="Coupon Discount"
                 var div42=document.createElement("div")
-                div42.innerText="Price"
+                div42.innerText="₹ 0"
             div4.append(div41,div42)
-            var div5=document.createElement("div")
-                var div51=document.createElement("div")
-                div51.innerText="Convenience Fee"
-                var div52=document.createElement("div")
-                div52.innerText="0"
-            div5.append(div51,div52)
             var div6=document.createElement("div")
                 var div61=document.createElement("div")
                 div61.innerText="Total Amount"
                 var div62=document.createElement("div")
                 div62.innerText="₹"+total
             div6.append(div61,div62)
+            var anchor=document.createElement("a")
+            anchor.setAttribute("href","myntraaddress.html")
             var btn=document.createElement("button")
             btn.innerText="PLACE ORDER"
-            
-            price.append(div1,div2,div3,div4,div5,div6,btn)
+            anchor.append(btn)
+            price.append(div1,div2,div3,div4,div6,anchor)
+    }
+    function less(){
+            ul.innerText=""
+                var l1=document.createElement("li")
+                l1.innerText="10% Instant Discount on Bank of Baroda Credit Cards on a min spend of Rs 3,000. TCA"
+                var l2=document.createElement("li")
+                l2.innerText="5% Unlimited Cashback on Flipkart Axis Bank Credit Card. TCA"
+                var l3=document.createElement("li")
+                l3.innerText="10% Cashback upto Rs 150 on Ola Money Postpaid or wallet transaction on a min spend of Rs 1000 . TCA"
+                var l4=document.createElement("li")
+                var h5=document.createElement("h4")
+                h5.innerText="See More >"
+                h5.addEventListener("click",more)
+                ul.append(l1,l2,l3,h5)  
         }
-        
-        //modal in css html for coupon and pincode
+        function more(){
+            ul.innerText=""
+            var l1=document.createElement("li")
+                l1.innerText="10% Instant Discount on Bank of Baroda Credit Cards on a min spend of Rs 3,000. TCA"
+                var l2=document.createElement("li")
+                l2.innerText="5% Unlimited Cashback on Flipkart Axis Bank Credit Card. TCA"
+                var l3=document.createElement("li")
+                l3.innerText="10% Cashback upto Rs 150 on Ola Money Postpaid or wallet transaction on a min spend of Rs 1000 . TCA"
+                var l4=document.createElement("li")
+                l4.innerText="10% Cashback upto Rs 150 on Freecharge Paylater transaction. TCA"
+                var l5=document.createElement("li")
+                l5.innerText="5% Cashback upto Rs 100 on a minimum spend of Rs 1,500 with PayZapp. TCA"
+                var h4=document.createElement("h4")
+                h4.innerText="See Less >"
+                h4.addEventListener("click",less)
+                ul.append(l1,l2,l3,l4,l5,h4)  
+        }
 </script>
