@@ -1,5 +1,8 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500&family=Roboto+Condensed:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400&display=swap');
+#footer_css_ki{
+    background-color: #fafbfc;
+}
 #mainDiv{
     width: 72%;
     /* height: 1200px; */
@@ -132,14 +135,14 @@
 ul>p{
     font-family: 'Prompt', sans-serif;
     font-size: 14px;
-    line-height: 25px
+    line-height: 25px;
     font-weight: 250;
     
 }
 li>p{
     font-family: 'Prompt', sans-serif;
     font-size: 14px;
-    line-height: 25px
+    line-height: 25px;
     font-weight: 250;
 }
 @media only screen and(min-wid:51px) and (max-width:700px)  {
