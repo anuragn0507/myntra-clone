@@ -835,27 +835,17 @@
   //commented ashish code
 
   function add_to_bag() {
-    var cart_imgs_to_add =
-      JSON.parse(localStorage.getItem("cart_object_imgs")) || [];
+    var cart_imgs_to_add =JSON.parse(localStorage.getItem("cart_object_imgs")) || [];
 
     var localData = JSON.parse(localStorage.getItem("productObj")) || [];
-
-
     
-
-   
-
-
-
-
-    
-
-
     cart_imgs_to_add.push(localData);
 
     localStorage.setItem("cart_object_imgs", JSON.stringify(cart_imgs_to_add));
     window.location.assign("../myntracart.html");
   }
+
+  
 
  </script>
 

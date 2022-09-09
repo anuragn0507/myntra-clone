@@ -1,5 +1,9 @@
+#men_category_body{
+    padding-left: 10px;
+}
 #category-name >h1{
     font-size: 16px;
+    
 }
 #category-name >h1 >span{
     font-weight: 400;
@@ -7,7 +11,8 @@
 .topfilters{
     position: relative;
     top:10px;
-    z-index: 0;
+    z-index: -1;
+    
 }
 
 .title-filter{
@@ -45,7 +50,6 @@
 .sortby-dropdown-menu{
     list-style:none;
     text-align: left;
-    z-index: 99;
 }
 .drop {
     position: absolute;

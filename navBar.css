@@ -18,7 +18,7 @@
     /* position: relative; */
     background-color: white;
     color: #282c3f;
-    z-index: 1;
+    z-index: 100;
 }
 
 sup {
