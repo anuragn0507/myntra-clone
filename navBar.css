@@ -85,13 +85,16 @@ sup {
     /* z-index: -1; */
 }
 #Slogo{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
+    background-color: #f5f5f6;
 }
 #Slogo>img{
     width: 100%;
-    padding-left: 70px;
+    padding-left: 88px;
+    padding-top: 25px;
     z-index: 2;
+    display: block;
 }
 
 #awesomeFonts {
@@ -224,7 +227,7 @@ sup {
 
 #search>input {
     outline: none;
-    z-index: 1;
+    z-index: -1;
 }
 
 ::placeholder {
@@ -235,7 +238,7 @@ sup {
     /* padding-bottom: 6px; */
     font-family: 'Prompt', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
-    z-index: 1;
+    /* z-index: 1; */
 
 }
 
