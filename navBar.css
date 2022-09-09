@@ -250,6 +250,7 @@ sup {
     /* border: 1px solid navy; */
     justify-content: space-between;
     background-color: white;
+    z-index:1000;
 
 
 }
@@ -279,6 +280,7 @@ sup {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px;
+    z-index:1000;
 
 }
 
@@ -311,6 +313,7 @@ sup {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px;
+    z-index:1000;
 
 }
 
@@ -339,6 +342,7 @@ sup {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px;
+    z-index:1000;
 
 }
 
@@ -368,6 +372,7 @@ sup {
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 10px;
+    z-index:1000;
 
 }
 
@@ -432,11 +437,14 @@ sup {
     position: absolute;
     right: 650px;
     top: 75px;
+    z-index:10000;
+    background-color: white;
     /* display: flex; */
 }
 #studio>img{
     margin-top: 25px;
     width: 100%;
+    /* z-index:10000; */
 }
 #studio>div{
     width: 80px;
@@ -444,6 +452,7 @@ sup {
     /* border: 1px solid black; */
     display: flex;
     /* justify-content: center; */
+    /* z-index:10000; */
 }
 #studio>div>img{
     /* width: 100%; */
@@ -452,6 +461,7 @@ sup {
     margin-top: -30px;
     /* justify-content: center; */
     margin-left: 200px;
+    /* z-index:100; */
 }
 
 #box {
@@ -469,6 +479,7 @@ sup {
     color: #282c3f;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    z-index:1000;
 }
 #box{
     display: none;
