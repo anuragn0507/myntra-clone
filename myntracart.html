@@ -354,7 +354,11 @@
 </body>
 </html>
 <script>
+
+
    var cartproducts=JSON.parse(localStorage.getItem("cart_object_imgs"))||[]
+
+
     if(cartproducts.length==0){
         var div=document.createElement("div")
         var emptylogo=document.createElement("img")
@@ -427,7 +431,11 @@
             var div3=document.createElement("div")
             div.setAttribute("class","productdiv");
             var image=document.createElement("img");
-            image.setAttribute("src",ele.img_url[0]);
+
+
+            image.setAttribute("src",ele.img[0]);
+
+
             div1.append(image)
             var h5=document.createElement("h5")
             h5.innerText=ele.brand;
@@ -458,8 +466,10 @@
     console.log(index)
     localStorage.setItem("cart_object_imgs",JSON.stringify(cartproducts))
     displayproducts();
+    docalculation();
 }
     function docalculation(){
+        price.innerHTML="";
         var total=cartproducts.reduce(function(acc,el){
             return acc+el.discPrice;
         },0)
@@ -497,6 +507,13 @@
             anchor.setAttribute("href","myntraaddress.html")
             var btn=document.createElement("button")
             btn.innerText="PLACE ORDER"
+           // var logged_in=JSON.parse(localStorage.getItem("user_active"))||[];
+           // if(logged_in[0]===1){
+            btn.addEventListener("click",function(){
+                window.location.href="/myntraadress.html";
+            });
+
+           // }
             anchor.append(btn)
             price.append(div1,div2,div3,div4,div6,anchor)
     }
