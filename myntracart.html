@@ -293,7 +293,7 @@
 </body>
 </html>
 <script>
-    var cartproducts=JSON.parse(localStorage.getItem("cart"))||[]
+    var cartproducts=JSON.parse(localStorage.getItem("cart_object_imgs"))||[]
     if(cartproducts.length==0){
         var div=document.createElement("div")
         var emptylogo=document.createElement("img")
@@ -367,7 +367,7 @@
             var div3=document.createElement("div")
             div.setAttribute("class","productdiv");
             var image=document.createElement("img");
-            image.setAttribute("src",ele.image_url);
+            image.setAttribute("src",ele.img[0]);
             div1.append(image)
             var h5=document.createElement("h5")
             h5.innerText=ele.name;
@@ -390,7 +390,7 @@
     function cdelete(index){
     cartproducts.splice(index,1);
     console.log(index)
-    localStorage.setItem("cart",JSON.stringify(cartproducts))
+    localStorage.setItem("cart_object_imgs",JSON.stringify(cartproducts))
     displayproducts();
 }
     function docalculation(){

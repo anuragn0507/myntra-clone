@@ -719,9 +719,10 @@
      
 
        var localData = JSON.parse(localStorage.getItem("productObj")) || [];
-       cart_imgs_to_add.push(localData[0]);
+       cart_imgs_to_add.push(localData);
        
        localStorage.setItem("cart_object_imgs",JSON.stringify(cart_imgs_to_add));
+       window. location. assign("../myntracart.html");
 
     }
 
