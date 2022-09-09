@@ -237,6 +237,72 @@ var products = [
     color: "Green",
     category: "Kurtas",
   },
+
+  {
+    img: [
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/1bac65e5-21a0-4183-a105-fb4094cd39851649138323163-Libas-Women-Kurtas-1231649138322537-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f15de608-a12b-4ad2-9d0e-06d63e4acb281649138323143-Libas-Women-Kurtas-1231649138322537-2.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f388dbb7-e0d1-4e02-835c-6d43cb1811111649138323123-Libas-Women-Kurtas-1231649138322537-3.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/dd33b40b-5d23-4194-b628-09a25e21d7481649138323103-Libas-Women-Kurtas-1231649138322537-4.jpg",
+    ],
+    brand: "Libas",
+    description: "Women Green Embellished Kurta",
+    price: 1899,
+    discPrice: 759,
+    discount: 60,
+    color: "Green",
+    category: "Kurtas",
+  },
+
+  {
+    img: [
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/1bac65e5-21a0-4183-a105-fb4094cd39851649138323163-Libas-Women-Kurtas-1231649138322537-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f15de608-a12b-4ad2-9d0e-06d63e4acb281649138323143-Libas-Women-Kurtas-1231649138322537-2.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f388dbb7-e0d1-4e02-835c-6d43cb1811111649138323123-Libas-Women-Kurtas-1231649138322537-3.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/dd33b40b-5d23-4194-b628-09a25e21d7481649138323103-Libas-Women-Kurtas-1231649138322537-4.jpg",
+    ],
+    brand: "Libas",
+    description: "Women Green Embellished Kurta",
+    price: 1899,
+    discPrice: 759,
+    discount: 60,
+    color: "Green",
+    category: "Kurtas",
+  },
+
+  {
+    img: [
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/1bac65e5-21a0-4183-a105-fb4094cd39851649138323163-Libas-Women-Kurtas-1231649138322537-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f15de608-a12b-4ad2-9d0e-06d63e4acb281649138323143-Libas-Women-Kurtas-1231649138322537-2.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f388dbb7-e0d1-4e02-835c-6d43cb1811111649138323123-Libas-Women-Kurtas-1231649138322537-3.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/dd33b40b-5d23-4194-b628-09a25e21d7481649138323103-Libas-Women-Kurtas-1231649138322537-4.jpg",
+    ],
+    brand: "Libas",
+    description: "Women Green Embellished Kurta",
+    price: 1899,
+    discPrice: 759,
+    discount: 60,
+    color: "Green",
+    category: "Kurtas",
+  },
+
+  {
+    img: [
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/1bac65e5-21a0-4183-a105-fb4094cd39851649138323163-Libas-Women-Kurtas-1231649138322537-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f15de608-a12b-4ad2-9d0e-06d63e4acb281649138323143-Libas-Women-Kurtas-1231649138322537-2.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f388dbb7-e0d1-4e02-835c-6d43cb1811111649138323123-Libas-Women-Kurtas-1231649138322537-3.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/dd33b40b-5d23-4194-b628-09a25e21d7481649138323103-Libas-Women-Kurtas-1231649138322537-4.jpg",
+    ],
+    brand: "Libas",
+    description: "Women Green Embellished Kurta",
+    price: 1899,
+    discPrice: 759,
+    discount: 60,
+    color: "Green",
+    category: "Kurtas",
+  },
+
+
   {
     img: [
       "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/19043654/2022/7/11/597646a6-90e8-41f4-98a9-745a429804a51657515759444CharuWomenMustardYellowGeometricKurta1.jpg",
@@ -311,6 +377,54 @@ var products = [
     discPrice: 674,
     discount: 55,
     color: "Maroon",
+    category: "Kurtas",
+  },
+
+  {
+    img: [
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/1bac65e5-21a0-4183-a105-fb4094cd39851649138323163-Libas-Women-Kurtas-1231649138322537-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f15de608-a12b-4ad2-9d0e-06d63e4acb281649138323143-Libas-Women-Kurtas-1231649138322537-2.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f388dbb7-e0d1-4e02-835c-6d43cb1811111649138323123-Libas-Women-Kurtas-1231649138322537-3.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/dd33b40b-5d23-4194-b628-09a25e21d7481649138323103-Libas-Women-Kurtas-1231649138322537-4.jpg",
+    ],
+    brand: "Libas",
+    description: "Women Green Embellished Kurta",
+    price: 1899,
+    discPrice: 759,
+    discount: 60,
+    color: "Green",
+    category: "Kurtas",
+  },
+
+  {
+    img: [
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/1bac65e5-21a0-4183-a105-fb4094cd39851649138323163-Libas-Women-Kurtas-1231649138322537-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f15de608-a12b-4ad2-9d0e-06d63e4acb281649138323143-Libas-Women-Kurtas-1231649138322537-2.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f388dbb7-e0d1-4e02-835c-6d43cb1811111649138323123-Libas-Women-Kurtas-1231649138322537-3.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/dd33b40b-5d23-4194-b628-09a25e21d7481649138323103-Libas-Women-Kurtas-1231649138322537-4.jpg",
+    ],
+    brand: "Libas",
+    description: "Women Green Embellished Kurta",
+    price: 1899,
+    discPrice: 759,
+    discount: 60,
+    color: "Green",
+    category: "Kurtas",
+  },
+
+  {
+    img: [
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/1bac65e5-21a0-4183-a105-fb4094cd39851649138323163-Libas-Women-Kurtas-1231649138322537-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f15de608-a12b-4ad2-9d0e-06d63e4acb281649138323143-Libas-Women-Kurtas-1231649138322537-2.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/f388dbb7-e0d1-4e02-835c-6d43cb1811111649138323123-Libas-Women-Kurtas-1231649138322537-3.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17644420/2022/4/5/dd33b40b-5d23-4194-b628-09a25e21d7481649138323103-Libas-Women-Kurtas-1231649138322537-4.jpg",
+    ],
+    brand: "Libas",
+    description: "Women Green Embellished Kurta",
+    price: 1899,
+    discPrice: 759,
+    discount: 60,
+    color: "Green",
     category: "Kurtas",
   },
 
@@ -728,7 +842,7 @@ function showProducts() {
     
     var interval
     pimg.addEventListener("mouseover", function(){
-      console.log(imgArr);
+      
       var i=0;
      interval =  setInterval(function(){    
         if(i< imgArr.length){
@@ -765,7 +879,7 @@ function showProducts() {
     pdiscount.setAttribute("class", "discount-span");
 
     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
-    //   console.log(pdiv);
+    
     document.getElementById("product-container").append(pdiv);
   });
 }
@@ -795,24 +909,21 @@ checkbox.forEach(function (e) {
     if (this.checked) {
       var value = e.value;
       checkBox(value);
-      console.log("checkbox function is called");
+      
     } else {
       showProducts();
     }
   });
 });
 
-function checkBox(value) {
-  // var brand = document.querySelector("input").value;
-  console.log(value);
-  // console.log(brand);
+function checkBox(value) { 
 
-  console.log("brand checkbox clicked");
+  
   // var b = document.getElementById("roadster").value;
   var brandList = products.filter(function (elem) {
     return elem.brand == value;
   });
-  console.log(brandList);
+  
 
   //empty product container to before appending the filter products
 
@@ -846,7 +957,7 @@ function checkBox(value) {
 
 //filter by rates
 var checkbox = document.querySelectorAll(".price-input");
-console.log(checkbox);
+
 
 checkbox.forEach(function (e) {
   e.addEventListener("change", function () {
@@ -854,7 +965,7 @@ checkbox.forEach(function (e) {
       var max = e.value;
       var min = e.name;
       filterRate(min, max);
-      console.log("checkbox function is called");
+      
     } else {
       showProducts();
     }
@@ -862,7 +973,7 @@ checkbox.forEach(function (e) {
 });
 
 function filterRate(min, max) {
-  console.log("brand checkbox clicked");
+  
 
   var brandList = products.filter(function (elem) {
     return elem.discPrice >= min && elem.discPrice <= max;
@@ -899,15 +1010,13 @@ function filterRate(min, max) {
 //filter by discount
 
 var checkbox = document.querySelectorAll(".discount-input");
-console.log(checkbox);
+
 
 checkbox.forEach(function (e) {
   e.addEventListener("change", function () {
     if (this.checked) {
       var discount = e.value;
-      console.log("discount is " + discount);
       filterDiscount(discount);
-      console.log("checkbox function is called");
     } else {
       showProducts();
     }
@@ -915,11 +1024,9 @@ checkbox.forEach(function (e) {
 });
 
 function filterDiscount(discount) {
-  console.log("brand checkbox clicked");
   var brandList = products.filter(function (elem) {
     return elem.discount >= discount;
   });
-  console.log(brandList);
   document.getElementById("product-container").innerHTML = null;
   brandList.forEach(function (ele) {
     var pdiv = document.createElement("div");
@@ -947,3 +1054,67 @@ function filterDiscount(discount) {
     document.getElementById("product-container").append(pdiv);
   });
 }
+
+
+//color filter
+var checkbox = document.querySelectorAll(".color-input");
+
+
+checkbox.forEach(function (e) {
+  e.addEventListener("change", function () {
+    if (this.checked) {
+      var value = e.value;
+      colorFilter(value);
+     
+    } else {
+      showProducts();
+    }
+  });
+});
+
+function colorFilter(value) {
+ 
+
+  
+  var brandList = products.filter(function (elem) {
+    return elem.color == value;
+  });
+  
+
+  //empty product container to before appending the filter products
+
+  document.getElementById("product-container").innerHTML = null;
+  brandList.forEach(function (ele) {
+    var pdiv = document.createElement("div");
+    pdiv.setAttribute("class", "product-div");
+    var pimg = document.createElement("img");
+    pimg.src = ele.img[0];
+    var pbrand = document.createElement("h3");
+    pbrand.innerText = ele.brand;
+    var pdescription = document.createElement("h4");
+    pdescription.innerText = ele.description;
+
+    var pdratespan = document.createElement("span");
+    pdratespan.innerText = "Rs. " + ele.discPrice;
+    pdratespan.setAttribute("class", "drate-span");
+
+    var pratespan = document.createElement("span");
+    pratespan.innerText = "Rs. " + ele.price;
+    pratespan.setAttribute("class", "rate-span");
+
+    var pdiscount = document.createElement("span");
+    pdiscount.innerText = "(" + ele.discount + "% OFF)";
+    pdiscount.setAttribute("class", "discount-span");
+
+    pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+    document.getElementById("product-container").append(pdiv);
+  });
+}
+
+
+//multiple color filters
+ 
+
+
+
+
