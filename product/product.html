@@ -7,27 +7,26 @@
     <title>Product</title>
 
     <style>
+      #brand {
+        font-size: 24px;
+        color: #282c3f;
+      }
+      #description {
+        font-size: 20px;
+        color: #535665;
+        margin-top: -10px;
+      }
 
-        #brand{
-            font-size: 24px;
-            color:#282c3f
-        }
-        #description{
-            font-size: 20px;
-            color: #535665;
-            margin-top: -10px;
-        }
+      #rating_button {
+        padding: 5px 5px;
+        margin-bottom: 5px;
+        border: 1px #535665;
+      }
 
-        #rating_button{
-            padding: 5px 5px;
-            margin-bottom: 5px;
-            border: 1px #535665;
-        }
-
-        #tax{
-            font-size: 18px;
-            margin-top: -15px;
-        }
+      #tax {
+        font-size: 18px;
+        margin-top: -15px;
+      }
       #similar_prod {
         width: 100%;
         display: grid;
@@ -827,63 +826,52 @@
     var localDataArr = [localData];
     console.log(localData);
     // localData.forEach(function(ele){
-        console.log("map function got hit");
-        var img_arr_len = localData.img.length;
-        for (var i = 0; i < img_arr_len; i++){
-            console.log("for loop is hit");
-            var child=document.createElement("div");
-            child.setAttribute("class","child_div");
-            var img=document.createElement("img");
-            img.setAttribute("class","container_img");
-            var imgArr = localData.img;
-            console.log(imgArr);
-            img.setAttribute("src",imgArr[i]);
-            child.append(img);
-            document.querySelector("#img_container").append(child);
-        };
-        document.querySelector("#brand").innerText= localData.brand;
-    document.querySelector("#description").innerText= localData.description;
-    document.querySelector("#price").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.discPrice;
-    document.querySelector("#striked").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.price;
-    document.querySelector("#dis").innerText="("+ localData.discount+"% off)";
-    document.querySelector("#best_price").innerText=localData.discPrice-20;
-                   
-   
-     document.querySelector("#dis").innerText="("+localData.discount+"% off)";
-     document.querySelector("#best_price").innerText=localData.discPrice-20;
-     //commented ashish code
-    
-
-   
-    
-    
-     function add_to_bag(){
-       var cart_imgs_to_add=JSON.parse(localStorage.getItem("cart_object_imgs")) || [];
-
-     
-
-       var localData = JSON.parse(localStorage.getItem("productObj")) || [];
-       cart_imgs_to_add.push(localData[0]);
-       
-       localStorage.setItem("cart_object_imgs",JSON.stringify(cart_imgs_to_add));
-
+    console.log("map function got hit");
+    var img_arr_len = localData.img.length;
+    for (var i = 0; i < img_arr_len; i++) {
+      console.log("for loop is hit");
+      var child = document.createElement("div");
+      child.setAttribute("class", "child_div");
+      var img = document.createElement("img");
+      img.setAttribute("class", "container_img");
+      var imgArr = localData.img;
+      console.log(imgArr);
+      img.setAttribute("src", imgArr[i]);
+      child.append(img);
+      document.querySelector("#img_container").append(child);
     }
+  }
+  document.querySelector("#brand").innerText = localData.brand;
+  document.querySelector("#description").innerText = localData.description;
+  document.querySelector("#price").innerHTML =
+    '<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.discPrice;
+  document.querySelector("#striked").innerHTML =
+    '<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.price;
+  document.querySelector("#dis").innerText =
+    "(" + localData.discount + "% off)";
+  document.querySelector("#best_price").innerText = localData.discPrice - 20;
 
-    
+  document.querySelector("#dis").innerText =
+    "(" + localData.discount + "% off)";
+  document.querySelector("#best_price").innerText = localData.discPrice - 20;
+  //commented ashish code
 
-   
+  function add_to_bag() {
+    var cart_imgs_to_add =
+      JSON.parse(localStorage.getItem("cart_object_imgs")) || [];
 
+    var localData = JSON.parse(localStorage.getItem("productObj")) || [];
+    cart_imgs_to_add.push(localData[0]);
 
+    localStorage.setItem("cart_object_imgs", JSON.stringify(cart_imgs_to_add));
+  }
 
-
-      //{img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-       // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-       // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-       // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-       // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-       // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-     
-
+  //{img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
+  // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
+  // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
+  // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
+  // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
+  // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
 </script>
 
 <script
