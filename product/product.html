@@ -1,759 +1,844 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product</title>
 
     <style>
-       
-        #similar_prod{
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(6,1fr);
-            margin-top: -20px;
-        }
 
-        #custmr_like{
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(6,1fr);
+        #brand{
+            font-size: 24px;
+            color:#282c3f
         }
-
-        .pricebox{
-            display: flex;
-            margin-left: 10px;
+        #description{
+            font-size: 20px;
+            color: #535665;
             margin-top: -10px;
-            justify-content:space-between;
-            align-items: baseline;
-
-        }
-        .child{
-            text-decoration: none;
         }
 
-        .simi_imgs{
-            width: 100%;
-            height: auto;
-            border-collapse:collapse ;
-        }
-        
-        .subchild{
-            margin-top: 40px;
-            margin-left: 40px;
-
+        #rating_button{
+            padding: 5px 5px;
+            margin-bottom: 5px;
+            border: 1px #535665;
         }
 
-        .subchild:hover{
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-        }
-
-        .name_para{
-            font-size: 16px;
-            font-weight: 700;
-            color: #282c3f;
-            text-align: left;
-             margin: 0;
-             margin-left: 10px;
-             margin-top:10px ;
-             
-        }
-
-        .desc_para{
-            width: 100%;
-           white-space: nowrap;
-           overflow: hidden;
-           text-overflow: ellipsis;
-           margin: 4px 0 8px;
-           color: #535766;
-           font-size: 14px;
-            text-decoration: none;
-            margin-left: 10px;
-        }
-
-
-        .price_css{
-            font-size:18px;
-
-            font-weight: 600;
-            color: #282c3f;
-
-        }
-
-        .striked_price{
-            color: #535766;
-           font-size: 14px;
-           text-decoration: line-through;
-        }
-
-        .disc_css{
-            color: crimson;
-        }
-        #middle_headings{
-            display: flex;
-            width:50%;
-            margin:auto;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-
-        #more_by{
-            border: 1px solid #535766;
-            display: flex;
-            width:45%;
-            padding: 15px 5px;
-            text-transform: uppercase;
-            color:  palevioletred;
-            text-overflow:ellipsis;
-            border-radius: 20px;
-            margin-right: 20px;
-            justify-content: space-around;
-            align-items: center;
-            font-size: 13px;
-            font-weight: 700;
-
-        }
-
-        #more_color{
-            border: 1px solid #535766;
-            display: flex;
-            width:22%;
-            padding:15px 5px;
-            text-transform: uppercase;
-            color:  palevioletred;
-            border-radius: 20px;
-            margin-right: 20px;
-            justify-content: space-around;
-            align-items: center;
-            font-size: 13px;
-            font-weight: 700;
-
-        }
-
-        #more_item{
-            border: 1px solid #535766;
-            display: flex;
-            width:18%;
-            padding: 15px 5px;
-            text-transform: uppercase;
-            color:  palevioletred;
-            border-radius: 20px;
-            justify-content: space-around;
-            align-items: center;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        .greater_icon{
-            height: 10px;
-            justify-content: center;
-            margin-bottom:5px;
-        }
-
-
-
-        #main_container{
-            display: flex;
-            gap:40px;
-        }
-        #img_container{
-            width:60%;
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 10px;
-            margin-left: 20px;
-        }
-        #description_cont{
-            width: 40%;
-        }
-        .container_img{
-            width: 100%;
-            height: auto;
-        }
-        .child_div{
-            display: flex;
-        }
-        hr{
-            width: 100%;
-        }
-        #price_box{
-            width:35%;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        #striked{
-            text-decoration: line-through;
-        }
-        #disc{
-            color: orange;
-        }
         #tax{
+            font-size: 18px;
+            margin-top: -15px;
+        }
+      #similar_prod {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        margin-top: -20px;
+      }
+
+      #custmr_like {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      .pricebox {
+        display: flex;
+        margin-left: 10px;
+        margin-top: -10px;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 20px;
+      }
+      .child {
+        text-decoration: none;
+      }
+
+      .simi_imgs {
+        width: 100%;
+        height: auto;
+        border-collapse: collapse;
+      }
+
+      .subchild {
+        margin-top: 40px;
+        margin-left: 40px;
+      }
+
+      .subchild:hover {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+          rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      }
+
+      .name_para {
+        font-size: 16px;
+        font-weight: 700;
+        color: #282c3f;
+        text-align: left;
+        margin: 0;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+
+      .desc_para {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 4px 0 8px;
+        color: #535766;
+        font-size: 14px;
+        text-decoration: none;
+        margin-left: 10px;
+      }
+
+      .price_css {
+        font-size: 18px;
+
+        font-weight: 600;
+        color: #282c3f;
+      }
+
+      .striked_price {
+        color: #535766;
+        font-size: 14px;
+        text-decoration: line-through;
+      }
+
+      .disc_css {
+        color: crimson;
+      }
+      #middle_headings {
+        display: flex;
+        width: 50%;
+        margin: auto;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+
+      #more_by {
+        border: 1px solid #535766;
+        display: flex;
+        width: 45%;
+        padding: 15px 5px;
+        text-transform: uppercase;
+        color: palevioletred;
+        text-overflow: ellipsis;
+        border-radius: 20px;
+        margin-right: 20px;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      #more_color {
+        border: 1px solid #535766;
+        display: flex;
+        width: 22%;
+        padding: 15px 5px;
+        text-transform: uppercase;
+        color: palevioletred;
+        border-radius: 20px;
+        margin-right: 20px;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      #more_item {
+        border: 1px solid #535766;
+        display: flex;
+        width: 18%;
+        padding: 15px 5px;
+        text-transform: uppercase;
+        color: palevioletred;
+        border-radius: 20px;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .greater_icon {
+        height: 10px;
+        justify-content: center;
+        margin-bottom: 5px;
+      }
+
+      #main_container {
+        display: flex;
+        gap: 40px;
+      }
+      #img_container {
+        width: 60%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-left: 20px;
+      }
+      #description_cont {
+        width: 40%;
+      }
+      .container_img {
+        width: 100%;
+        height: auto;
+      }
+      .child_div {
+        display: flex;
+      }
+      hr {
+        width: 100%;
+      }
+      #price_box {
+        width: 35%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #striked {
+        text-decoration: line-through;
+      }
+      #disc {
+        color: orange;
+      }
+      #tax {
         color: teal;
-        }
-        #more_col{
-            width:10%;
-            height: auto;
-        }
-        .color{
-            width:100%;
-            height: auto;
-        }
-        #size_select{
-            width:30%;
-            display: flex;
-            justify-content: space-between;
-        }
-        #size{
-            width: 60%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .size_of{
-            width:50px;
-            height: 50px;
-            border-radius: 25px;
-            align-items: baseline;
-            justify-content: center;
-            border: 1px solid #d4d5d9;
-        }
+      }
+      #more_col {
+        width: 10%;
+        height: auto;
+      }
+      .color {
+        width: 100%;
+        height: auto;
+      }
+      #size_select {
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+      }
+      #size {
+        width: 60%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .size_of {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        align-items: baseline;
+        justify-content: center;
+        border: 1px solid #d4d5d9;
+      }
 
-        #add_to_cart{
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
-        }
+      #add_to_cart {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+      }
 
-        #bag_button{
-            width:40%;
-          background-color: #ff3e6c;
-          padding:12px 15px;
-          font-size: 16px;
-          border: 1px #ff3e6c;
-          color: white;
-          border-radius: 5px;
+      #bag_button {
+        width: 40%;
+        background-color: #ff3e6c;
+        padding: 12px 15px;
+        font-size: 16px;
+        border: 1px #ff3e6c;
+        color: white;
+        border-radius: 5px;
+      }
+      #wish_button {
+        width: 30%;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 12px 15px;
+        border: 1px solid #d4d5d9;
+      }
+      .spec {
+        color: #282c3f;
+        font-size: 16px;
+      }
 
-        }
-        #wish_button{
-            width:30%;
-            border-radius: 5px;
-            font-size: 16px;
-            padding:12px 15px;
-            border: 1px solid #d4d5d9;
-        }
-        .spec{
-            color:#282c3f;
-            font-size:16px;
-        }
-
-        #heading_of{
-            color:#282c3f;
-            text-transform: uppercase;
-            font-size: 16px;
-            margin-top: 30px;
-        }
-
-        
-
-        
-
+      #heading_of {
+        color: #282c3f;
+        text-transform: uppercase;
+        font-size: 16px;
+        margin-top: 30px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <p>
+      Home<span>/ </span> Clothing <span>/ </span>Men Clothing
+      <span>/ </span>T-shirts <span>/ </span>HRX by Hrithik Roshan T-shirts<span
+        >/ </span
+      >More by HRX
+    </p>
 
+    <div id="main_container">
+      <div id="img_container"></div>
 
-    <p>Home<span>/ </span> Clothing <span>/ </span>Men Clothing <span>/ </span>T-shirts
-        <span>/ </span>HRX by Hrithik Roshan T-shirts<span>/ </span>More by HRX</p>
+      <div id="description_cont">
+        <h2 id="brand">HRX by Hrithik Roshan</h2>
+        <p id="description">Men Yellow Printed Cotton Pure Cotton T-shirt</p>
+        <button id="rating_button">
+          4.3<i class="fa-solid fa-star"></i> <span>|</span> 54.4k Ratings
+        </button>
+        <hr />
 
-        <div id="main_container">
-
-        <div id="img_container">
-
+        <div id="price_box">
+          <p id="price"><i class="fa-solid fa-indian-rupee-sign"></i>279</p>
+          <p id="striked">
+            MRP
+            <span id="striked"
+              ><i class="fa-solid fa-indian-rupee-sign"></i>699</span
+            >
+          </p>
+          <p id="dis" style="color: orangered">( 50% off)</p>
+        </div>
+        <p id="tax">*inclucive of all taxes</p>
+        <p>More Color</p>
+        <div id="more_col">
+          <img
+            class="color"
+            src="https://assets.myntassets.com/f_auto,h_150,q_auto:best,w_112/assets/images/1700946/2017/2/21/11487675507806-HRX-by-Hrithik-Roshan-Men-Off-white-Printed-Round-Neck-T-Shirt-211487675507525-1.jpg"
+            alt=""
+          />
         </div>
 
-        <div id="description_cont">
-           <h2 id="brand">HRX by Hrithik Roshan</h2>
-           <p id="description">Men Yellow Printed Cotton Pure Cotton T-shirt</p>
-           <button id="rating_button">4.3<i class="fa-solid fa-star"></i> <span>|</span> 54.4k Ratings</button>
-           <hr>
-
-           <div id="price_box">
-               <p id="price"><i class="fa-solid fa-indian-rupee-sign"></i>279</p>
-               <p id="striked">MRP <span id="striked"><i class="fa-solid fa-indian-rupee-sign"></i>699</span></p>
-               <p id="dis"  style="color:orangered">( 50% off)</p>
-           </div>
-           <p id="tax">inclucive of all taxes</p>
-           <p>More Color</p>
-           <div id="more_col">
-           <img class="color" src="https://assets.myntassets.com/f_auto,h_150,q_auto:best,w_112/assets/images/1700946/2017/2/21/11487675507806-HRX-by-Hrithik-Roshan-Men-Off-white-Printed-Round-Neck-T-Shirt-211487675507525-1.jpg" alt="">
-           </div>
-
-           <div id="size_select">
-               <p>Select Size</p>
-               <p>Size Chart</p>
-           </div>
-
-           <div id="size">
-               <button class="size_of"><p>S</p></button>
-               <button class="size_of"><p>M</p></button>
-               <button class="size_of"><p>L</p></button>
-               <button class="size_of"><p>XL</p></button>
-               <button class="size_of"><p>XXL</p></button>
-           </div>
-
-           <div id="add_to_cart">
-               <button id="bag_button" onclick="add_to_bag()"><i class="fa-solid fa-bag-shopping"></i><span>   </span>Add to Bag</button>
-               <button id="wish_button"><i class="fa-solid fa-heart"></i><span>   </span>Wishlist</button>
-           </div>
-           <hr>
-           <p>Delivery Options<span>  <i class="fa-solid fa-truck"></i></span></p>
-           <input type="number" placeholder="enter pincode">
-           <p>Please enter PIN code to check delivery time & Pay on Delivery Availability</p>
-           <p class="spec">100% Original Products</p>
-           <p class="spec">Pay on delivery might be available</p>
-           <p class="spec">Easy 30 days returns and exchanges</p>
-           <p class="spec">Try & Buy might be available</p>
-           <h3>Best Offers <i class="fa-sharp fa-solid fa-tag"></i></h3>
-           <h4>Best Price: <span  id="best_price" style="color:orangered">Rs.209</span></h4>
-           <ul >
-               <li class="spec">Coupon Discount: Rs. 105 off (check cart for final savings)</li>
-               <li class="spec">Applicable on: Orders above Rs. 599 (only on first purchase)</li>
-               <li class="spec">Coupon code: <b> MYNTRA200</b></li>
-           </ul>
-
-
-           <hr>
-
-           <h3>Product Details<i class="fa-solid fa-memo-pad"></i></h3>
-           <p class="spec">Keep this hip this season with the HRX Men's Athleisure T-shirt. This versatile T-shirt can be styled any way you like for the ultimate gym-to-street look.</p>
-
-           <h3>Features</h3>
-           <p class="spec">Athleisure T-shirt can be paired with tracks, khakis or jeans</p>
-           <p class="spec">Style: Round Neck</p>
-           <p class="spec">Sleeve: Short Sleeves</p>
-           <p class="spec">Colour: Yellow</p>
-           <p class="spec">Print: Typography</p>
-           <p class="spec" >Fit: Regular</p>
-
-           <h3>Size & Fit</h3>
-           <p class="spec">The model height 6' is wearing a size M</p>
-
-           <h3>Material & Care</h3>
-           <p class="spec">100% cotton</p>
-           <p class="spec">Machine-wash</p>
+        <div id="size_select">
+          <p>Select Size</p>
+          <p>Size Chart</p>
         </div>
 
-       </div>
+        <div id="size">
+          <button class="size_of"><p>S</p></button>
+          <button class="size_of"><p>M</p></button>
+          <button class="size_of"><p>L</p></button>
+          <button class="size_of"><p>XL</p></button>
+          <button class="size_of"><p>XXL</p></button>
+        </div>
 
+        <div id="add_to_cart">
+          <button id="bag_button" onclick="add_to_bag()">
+            <i class="fa-solid fa-bag-shopping"></i><span> </span>Add to Bag
+          </button>
+          <button id="wish_button">
+            <i class="fa-solid fa-heart"></i><span> </span>Wishlist
+          </button>
+        </div>
+        <hr />
+        <p>
+          Delivery Options<span> <i class="fa-solid fa-truck"></i></span>
+        </p>
+        <input type="number" placeholder="enter pincode" />
+        <p>
+          Please enter PIN code to check delivery time & Pay on Delivery
+          Availability
+        </p>
+        <p class="spec">100% Original Products</p>
+        <p class="spec">Pay on delivery might be available</p>
+        <p class="spec">Easy 30 days returns and exchanges</p>
+        <p class="spec">Try & Buy might be available</p>
+        <h3>Best Offers <i class="fa-sharp fa-solid fa-tag"></i></h3>
+        <h4>
+          Best Price:
+          <span id="best_price" style="color: orangered">Rs.209</span>
+        </h4>
+        <ul>
+          <li class="spec">
+            Coupon Discount: Rs. 105 off (check cart for final savings)
+          </li>
+          <li class="spec">
+            Applicable on: Orders above Rs. 599 (only on first purchase)
+          </li>
+          <li class="spec">Coupon code: <b> MYNTRA200</b></li>
+        </ul>
 
-       <h3 id="heading_of">Similar Products</h3>
+        <hr />
 
-    <div id="similar_prod">
+        <h3>Product Details<i class="fa-solid fa-memo-pad"></i></h3>
+        <p class="spec">
+          Keep this hip this season with the HRX Men's Athleisure T-shirt. This
+          versatile T-shirt can be styled any way you like for the ultimate
+          gym-to-street look.
+        </p>
 
+        <h3>Features</h3>
+        <p class="spec">
+          Athleisure T-shirt can be paired with tracks, khakis or jeans
+        </p>
+        <p class="spec">Style: Round Neck</p>
+        <p class="spec">Sleeve: Short Sleeves</p>
+        <p class="spec">Colour: Yellow</p>
+        <p class="spec">Print: Typography</p>
+        <p class="spec">Fit: Regular</p>
+
+        <h3>Size & Fit</h3>
+        <p class="spec">The model height 6' is wearing a size M</p>
+
+        <h3>Material & Care</h3>
+        <p class="spec">100% cotton</p>
+        <p class="spec">Machine-wash</p>
+      </div>
     </div>
 
+    <h3 id="heading_of">Similar Products</h3>
+
+    <div id="similar_prod"></div>
 
     <div id="middle_headings">
-        <div id="more_by">More Tshrits by HRX by Hrithik Roshan<div class="greater_icon"><i class="fa-solid fa-greater-than"></i></div></div>
-        <div id="more_color">More  blue tshirts <div class="greater_icon"><i class="fa-solid fa-greater-than"></i></div></div>
-        <div id="more_item">more tshirts <div class="greater_icon"><i class="fa-solid fa-greater-than"></i></div></div>
+      <div id="more_by">
+        More Tshrits by HRX by Hrithik Roshan
+        <div class="greater_icon"><i class="fa-solid fa-greater-than"></i></div>
+      </div>
+      <div id="more_color">
+        More blue tshirts
+        <div class="greater_icon"><i class="fa-solid fa-greater-than"></i></div>
+      </div>
+      <div id="more_item">
+        more tshirts
+        <div class="greater_icon"><i class="fa-solid fa-greater-than"></i></div>
+      </div>
     </div>
 
     <h3 id="heading_of">Customer Also Liked</h3>
 
-    <div id="custmr_like">
-
-    </div>
-    
-</body>
+    <div id="custmr_like"></div>
+  </body>
 </html>
 
 <script>
-    var similar_prod_data=[
-        {img_url:"product_imgs/similar_imgs/1_wrogn.jpg",
-        name:"WROGN",
-        desc:"Self Design Welt Pocket T-shirt",
-        price:629,
-        striked: 1399,
-        disc: 55,},
+  var similar_prod_data = [
+    {
+      img_url: "product_imgs/similar_imgs/1_wrogn.jpg",
+      name: "WROGN",
+      desc: "Self Design Welt Pocket T-shirt",
+      price: 629,
+      striked: 1399,
+      disc: 55,
+    },
 
-        {img_url:"product_imgs/similar_imgs/2_hrx.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Rapid Dry Training T-shirt",
-        price:549 ,
-        striked:1099 ,
-        disc: 50,},
+    {
+      img_url: "product_imgs/similar_imgs/2_hrx.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Rapid Dry Training T-shirt",
+      price: 549,
+      striked: 1099,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/3_hrx.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Abstract Active T-shirt",
-        price:549 ,
-        striked:1099 ,
-        disc: 50,},
+    {
+      img_url: "product_imgs/similar_imgs/3_hrx.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Abstract Active T-shirt",
+      price: 549,
+      striked: 1099,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/4_organised.jpg",
-        name:"Huetrap",
-        desc:"Typography",
-        price:439 ,
-        striked: 1099,
-        disc:60 ,},
+    {
+      img_url: "product_imgs/similar_imgs/4_organised.jpg",
+      name: "Huetrap",
+      desc: "Typography",
+      price: 439,
+      striked: 1099,
+      disc: 60,
+    },
 
-        {img_url:"product_imgs/similar_imgs/5_red.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"High Nect T-shirt",
-        price:749 ,
-        striked: 1499,
-        disc:50,},
+    {
+      img_url: "product_imgs/similar_imgs/5_red.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "High Nect T-shirt",
+      price: 749,
+      striked: 1499,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/6_cool.jpg",
-        name:"FIDO DIDO",
-        desc:"Printed Polo Collar T-shirt",
-        price:559 ,
-        striked: 1399,
-        disc: 60,},
+    {
+      img_url: "product_imgs/similar_imgs/6_cool.jpg",
+      name: "FIDO DIDO",
+      desc: "Printed Polo Collar T-shirt",
+      price: 559,
+      striked: 1399,
+      disc: 60,
+    },
 
-        {img_url:"product_imgs/similar_imgs/7_orange.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Printed T-shirt",
-        price:349 ,
-        striked:699 ,
-        disc:50 ,},
+    {
+      img_url: "product_imgs/similar_imgs/7_orange.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Printed T-shirt",
+      price: 349,
+      striked: 699,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/8_teal.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Printed Athleisure Cotton T-shirt",
-        price:349 ,
-        striked: 699,
-        disc:50 ,},
+    {
+      img_url: "product_imgs/similar_imgs/8_teal.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Printed Athleisure Cotton T-shirt",
+      price: 349,
+      striked: 699,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/9_blue.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Running Rapid Dry T-shirt",
-        price:449 ,
-        striked:899 ,
-        disc: 50,},
+    {
+      img_url: "product_imgs/similar_imgs/9_blue.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Running Rapid Dry T-shirt",
+      price: 449,
+      striked: 899,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/10_gery.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Raglan Sleeved T-shirt",
-        price:449 ,
-        striked:899 ,
-        disc: 50,},
+    {
+      img_url: "product_imgs/similar_imgs/10_gery.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Raglan Sleeved T-shirt",
+      price: 449,
+      striked: 899,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/11_hrx.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Lifestyle Bio-wash Pure Cotton",
-        price:449 ,
-        striked:899 ,
-        disc:50 ,},
+    {
+      img_url: "product_imgs/similar_imgs/11_hrx.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Lifestyle Bio-wash Pure Cotton",
+      price: 449,
+      striked: 899,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/12_sport.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Slim Rapid Dry Raglan T-shirt",
-        price:449 ,
-        striked:899 ,
-        disc:50 ,},
+    {
+      img_url: "product_imgs/similar_imgs/12_sport.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Slim Rapid Dry Raglan T-shirt",
+      price: 449,
+      striked: 899,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/13_blkrd.jpg",
-        name:"Moda Rapido",
-        desc:"Printed Cotton T-shirt",
-        price:335 ,
-        striked:799 ,
-        disc: 58,},
+    {
+      img_url: "product_imgs/similar_imgs/13_blkrd.jpg",
+      name: "Moda Rapido",
+      desc: "Printed Cotton T-shirt",
+      price: 335,
+      striked: 799,
+      disc: 58,
+    },
 
+    {
+      img_url: "product_imgs/similar_imgs/14_lower.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Men Solid T-shirt",
+      price: 749,
+      striked: 1499,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/14_lower.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Men Solid T-shirt",
-        price:749 ,
-        striked:1499 ,
-        disc: 50,},
+    {
+      img_url: "product_imgs/similar_imgs/15_white.jpg",
+      name: "Huetrap",
+      desc: "Graphic Cotton T-shirt",
+      price: 489,
+      striked: 1399,
+      disc: 65,
+    },
+  ];
 
-        {img_url:"product_imgs/similar_imgs/15_white.jpg",
-        name:"Huetrap",
-        desc:"Graphic Cotton T-shirt",
-        price:489 ,
-        striked:1399 ,
-        disc: 65,}
-    ];
+  similar_prod_data.map(function (ele, ind) {
+    var child = document.createElement("a");
+    child.setAttribute("href", "product.html");
+    child.setAttribute("class", "child");
+    child.style.cursor = "pointer";
 
-    similar_prod_data.map(function(ele,ind){
-        var child=document.createElement("a");
-        child.setAttribute("href","product.html");
-        child.setAttribute("class","child");
-        child.style.cursor="pointer";
+    var subchild = document.createElement("div");
+    subchild.setAttribute("class", "subchild");
 
-        var subchild=document.createElement("div");
-        subchild.setAttribute("class","subchild");
+    var img = document.createElement("img");
+    img.setAttribute("src", ele.img_url);
+    img.setAttribute("class", "simi_imgs");
+    var name = document.createElement("p");
+    name.setAttribute("class", "name_para");
+    name.innerText = ele.name;
+    var desc = document.createElement("p");
+    desc.setAttribute("class", "desc_para");
+    desc.innerText = ele.desc;
 
-        var img=document.createElement("img");
-        img.setAttribute("src",ele.img_url);
-        img.setAttribute("class","simi_imgs")
-         var name=document.createElement("p");
-         name.setAttribute("class","name_para");
-         name.innerText=ele.name;
-         var desc=document.createElement("p");
-         desc.setAttribute("class","desc_para");
-         desc.innerText=ele.desc;
+    var pricebox = document.createElement("div");
+    pricebox.setAttribute("class", "pricebox");
+    var price = document.createElement("p");
+    price.innerText = "Rs." + ele.price;
+    price.setAttribute("class", "price_css");
 
-         var pricebox=document.createElement("div");
-         pricebox.setAttribute("class","pricebox")
-         var price=document.createElement("p");
-         price.innerText="Rs."+ele.price;
-         price.setAttribute("class","price_css");
+    var striked = document.createElement("p");
+    striked.setAttribute("class", "striked_price");
+    striked.innerText = "Rs." + ele.striked;
+    // striked.setAttribute("class","striked_css");
 
-         var striked=document.createElement("p");
-         striked.setAttribute("class","striked_price");
-         striked.innerText="Rs."+ele.striked;
-        // striked.setAttribute("class","striked_css");
+    var discount = document.createElement("p");
+    discount.innerText = "(" + ele.disc + "% off)";
 
-         var discount=document.createElement("p");
-         discount.innerText="("+ele.disc+"% off)";
+    discount.setAttribute("class", "disc_css");
 
-         discount.setAttribute("class","disc_css");
+    pricebox.append(price, striked, discount);
+    subchild.append(img, name, desc, pricebox);
+    child.append(subchild);
 
-         pricebox.append(price,striked,discount);
-         subchild.append(img,name,desc,pricebox);
-         child.append(subchild);
+    document.querySelector("#similar_prod").append(child);
+  });
 
-         document.querySelector("#similar_prod").append(child);
+  var similar_prod_data = [
+    {
+      img_url: "product_imgs/similar_imgs/1_wrogn.jpg",
+      name: "WROGN",
+      desc: "Self Design Welt Pocket T-shirt",
+      price: 629,
+      striked: 1399,
+      disc: 55,
+    },
 
-    })
+    {
+      img_url: "product_imgs/similar_imgs/2_hrx.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Rapid Dry Training T-shirt",
+      price: 549,
+      striked: 1099,
+      disc: 50,
+    },
 
-    var similar_prod_data=[
-        {img_url:"product_imgs/similar_imgs/1_wrogn.jpg",
-        name:"WROGN",
-        desc:"Self Design Welt Pocket T-shirt",
-        price:629,
-        striked: 1399,
-        disc: 55,},
+    {
+      img_url: "product_imgs/similar_imgs/3_hrx.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Abstract Active T-shirt",
+      price: 549,
+      striked: 1099,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/2_hrx.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Rapid Dry Training T-shirt",
-        price:549 ,
-        striked:1099 ,
-        disc: 50,},
+    {
+      img_url: "product_imgs/similar_imgs/4_organised.jpg",
+      name: "Huetrap",
+      desc: "Typography",
+      price: 439,
+      striked: 1099,
+      disc: 60,
+    },
 
-        {img_url:"product_imgs/similar_imgs/3_hrx.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Abstract Active T-shirt",
-        price:549 ,
-        striked:1099 ,
-        disc: 50,},
+    {
+      img_url: "product_imgs/similar_imgs/5_red.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "High Nect T-shirt",
+      price: 749,
+      striked: 1499,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/4_organised.jpg",
-        name:"Huetrap",
-        desc:"Typography",
-        price:439 ,
-        striked: 1099,
-        disc:60 ,},
+    {
+      img_url: "product_imgs/similar_imgs/6_cool.jpg",
+      name: "FIDO DIDO",
+      desc: "Printed Polo Collar T-shirt",
+      price: 559,
+      striked: 1399,
+      disc: 60,
+    },
 
-        {img_url:"product_imgs/similar_imgs/5_red.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"High Nect T-shirt",
-        price:749 ,
-        striked: 1499,
-        disc:50,},
+    {
+      img_url: "product_imgs/similar_imgs/7_orange.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Printed T-shirt",
+      price: 349,
+      striked: 699,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/6_cool.jpg",
-        name:"FIDO DIDO",
-        desc:"Printed Polo Collar T-shirt",
-        price:559 ,
-        striked: 1399,
-        disc: 60,},
+    {
+      img_url: "product_imgs/similar_imgs/8_teal.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Printed Athleisure Cotton T-shirt",
+      price: 349,
+      striked: 699,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/7_orange.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Printed T-shirt",
-        price:349 ,
-        striked:699 ,
-        disc:50 ,},
+    {
+      img_url: "product_imgs/similar_imgs/9_blue.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Running Rapid Dry T-shirt",
+      price: 449,
+      striked: 899,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/8_teal.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Printed Athleisure Cotton T-shirt",
-        price:349 ,
-        striked: 699,
-        disc:50 ,},
+    {
+      img_url: "product_imgs/similar_imgs/10_gery.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Raglan Sleeved T-shirt",
+      price: 449,
+      striked: 899,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/9_blue.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Running Rapid Dry T-shirt",
-        price:449 ,
-        striked:899 ,
-        disc: 50,},
+    {
+      img_url: "product_imgs/similar_imgs/11_hrx.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Lifestyle Bio-wash Pure Cotton",
+      price: 449,
+      striked: 899,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/10_gery.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Raglan Sleeved T-shirt",
-        price:449 ,
-        striked:899 ,
-        disc: 50,},
+    {
+      img_url: "product_imgs/similar_imgs/12_sport.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Slim Rapid Dry Raglan T-shirt",
+      price: 449,
+      striked: 899,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/11_hrx.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Lifestyle Bio-wash Pure Cotton",
-        price:449 ,
-        striked:899 ,
-        disc:50 ,},
+    {
+      img_url: "product_imgs/similar_imgs/13_blkrd.jpg",
+      name: "Moda Rapido",
+      desc: "Printed Cotton T-shirt",
+      price: 335,
+      striked: 799,
+      disc: 58,
+    },
 
-        {img_url:"product_imgs/similar_imgs/12_sport.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Slim Rapid Dry Raglan T-shirt",
-        price:449 ,
-        striked:899 ,
-        disc:50 ,},
+    {
+      img_url: "product_imgs/similar_imgs/14_lower.jpg",
+      name: "HRX by Hrithik Roshan",
+      desc: "Men Solid T-shirt",
+      price: 749,
+      striked: 1499,
+      disc: 50,
+    },
 
-        {img_url:"product_imgs/similar_imgs/13_blkrd.jpg",
-        name:"Moda Rapido",
-        desc:"Printed Cotton T-shirt",
-        price:335 ,
-        striked:799 ,
-        disc: 58,},
+    {
+      img_url: "product_imgs/similar_imgs/15_white.jpg",
+      name: "Huetrap",
+      desc: "Graphic Cotton T-shirt",
+      price: 489,
+      striked: 1399,
+      disc: 65,
+    },
+  ];
 
+  similar_prod_data.map(function (ele, ind) {
+    var child = document.createElement("a");
+    child.setAttribute("href", "product.html");
+    child.setAttribute("class", "child");
+    child.style.cursor = "pointer";
 
-        {img_url:"product_imgs/similar_imgs/14_lower.jpg",
-        name:"HRX by Hrithik Roshan",
-        desc:"Men Solid T-shirt",
-        price:749 ,
-        striked:1499 ,
-        disc: 50,},
+    var subchild = document.createElement("div");
+    subchild.setAttribute("class", "subchild");
 
-        {img_url:"product_imgs/similar_imgs/15_white.jpg",
-        name:"Huetrap",
-        desc:"Graphic Cotton T-shirt",
-        price:489 ,
-        striked:1399 ,
-        disc: 65,}
-    ];
+    var img = document.createElement("img");
+    img.setAttribute("src", ele.img_url);
+    img.setAttribute("class", "simi_imgs");
+    var name = document.createElement("p");
+    name.setAttribute("class", "name_para");
+    name.innerText = ele.name;
+    var desc = document.createElement("p");
+    desc.setAttribute("class", "desc_para");
+    desc.innerText = ele.desc;
 
-    similar_prod_data.map(function(ele,ind){
-        var child=document.createElement("a");
-        child.setAttribute("href","product.html");
-        child.setAttribute("class","child");
-        child.style.cursor="pointer";
+    var pricebox = document.createElement("div");
+    pricebox.setAttribute("class", "pricebox");
+    var price = document.createElement("p");
+    price.innerText = "Rs." + ele.price;
+    price.setAttribute("class", "price_css");
 
-        var subchild=document.createElement("div");
-        subchild.setAttribute("class","subchild");
+    var striked = document.createElement("p");
+    striked.setAttribute("class", "striked_price");
+    striked.innerText = "Rs." + ele.striked;
+    // striked.setAttribute("class","striked_css");
 
-        var img=document.createElement("img");
-        img.setAttribute("src",ele.img_url);
-        img.setAttribute("class","simi_imgs")
-         var name=document.createElement("p");
-         name.setAttribute("class","name_para");
-         name.innerText=ele.name;
-         var desc=document.createElement("p");
-         desc.setAttribute("class","desc_para");
-         desc.innerText=ele.desc;
+    var discount = document.createElement("p");
+    discount.innerText = "(" + ele.disc + "% off)";
 
-         var pricebox=document.createElement("div");
-         pricebox.setAttribute("class","pricebox")
-         var price=document.createElement("p");
-         price.innerText="Rs."+ele.price;
-         price.setAttribute("class","price_css");
+    discount.setAttribute("class", "disc_css");
 
-         var striked=document.createElement("p");
-         striked.setAttribute("class","striked_price");
-         striked.innerText="Rs."+ele.striked;
-        // striked.setAttribute("class","striked_css");
+    pricebox.append(price, striked, discount);
+    subchild.append(img, name, desc, pricebox);
+    child.append(subchild);
 
-         var discount=document.createElement("p");
-         discount.innerText="("+ele.disc+"% off)";
+    document.querySelector("#custmr_like").append(child);
+  });
 
-         discount.setAttribute("class","disc_css");
+  var img_container_data = [
+    {
+      img_url: [
+        "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17395092/2022/4/22/ddd415a8-41d3-4ca7-925d-000d64d160ac1650609135710-Puma-Men-Black--Gold-Toned-Brand-Logo-Printed-T-shirt-426165-1.jpg",
+        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17395092/2022/4/22/f15ed9ba-e7f1-4877-b37e-3e6be81075261650609135700-Puma-Men-Black--Gold-Toned-Brand-Logo-Printed-T-shirt-426165-2.jpg",
+        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17395092/2022/4/22/8e913e0d-9a47-41dd-bfbf-0decfec09e471650609135689-Puma-Men-Black--Gold-Toned-Brand-Logo-Printed-T-shirt-426165-3.jpg",
+        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17395092/2022/4/22/c5f7b441-1b25-4b73-8839-51c9d9be12871650609135654-Puma-Men-Black--Gold-Toned-Brand-Logo-Printed-T-shirt-426165-6.jpg",
+        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17395092/2022/4/22/c5f7b441-1b25-4b73-8839-51c9d9be12871650609135654-Puma-Men-Black--Gold-Toned-Brand-Logo-Printed-T-shirt-426165-6.jpg",
+      ],
+      brand: "Roadster",
+      description: "Men Solid Knitted T-shirt",
+      price: 499,
+      discPrice: 199,
+      discount: 60,
+    },
+  ];
 
-         pricebox.append(price,striked,discount);
-         subchild.append(img,name,desc,pricebox);
-         child.append(subchild);
+  //local storage data is mapped in product page by anurag
+  var localData = JSON.parse(localStorage.getItem("productObj")) || [];
+  var localDataArr = [localData];
+  console.log(localData);
+  // localData.forEach(function(ele){
+  console.log("map function got hit");
+  var img_arr_len = localData.img.length;
+  for (var i = 0; i < img_arr_len; i++) {
+    console.log("for loop is hit");
+    var child = document.createElement("div");
+    child.setAttribute("class", "child_div");
+    var img = document.createElement("img");
+    img.setAttribute("class", "container_img");
+    var imgArr = localData.img;
+    console.log(imgArr);
+    img.setAttribute("src", imgArr[i]);
+    child.append(img);
+    document.querySelector("#img_container").append(child);
+  }
+  document.querySelector("#brand").innerText = localData.brand;
+  document.querySelector("#description").innerText = localData.description;
+  document.querySelector("#price").innerHTML =
+    '<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.discPrice;
+  document.querySelector("#striked").innerHTML =
+    '<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.price;
+  document.querySelector("#dis").innerText =
+    "(" + localData.discount + "% off)";
+  document.querySelector("#best_price").innerText = localData.discPrice - 20;
 
-         document.querySelector("#custmr_like").append(child);
+  document.querySelector("#dis").innerText =
+    "(" + localData.discount + "% off)";
+  document.querySelector("#best_price").innerText = localData.discPrice - 20;
+  //commented ashish code
 
-    })
+  function add_to_bag() {
+    var cart_imgs_to_add =
+      JSON.parse(localStorage.getItem("cart_object_imgs")) || [];
 
-
-    var img_container_data=[
-        {
-       img_url: [
-      "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17395092/2022/4/22/ddd415a8-41d3-4ca7-925d-000d64d160ac1650609135710-Puma-Men-Black--Gold-Toned-Brand-Logo-Printed-T-shirt-426165-1.jpg",
-      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17395092/2022/4/22/f15ed9ba-e7f1-4877-b37e-3e6be81075261650609135700-Puma-Men-Black--Gold-Toned-Brand-Logo-Printed-T-shirt-426165-2.jpg",
-      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17395092/2022/4/22/8e913e0d-9a47-41dd-bfbf-0decfec09e471650609135689-Puma-Men-Black--Gold-Toned-Brand-Logo-Printed-T-shirt-426165-3.jpg",
-      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17395092/2022/4/22/c5f7b441-1b25-4b73-8839-51c9d9be12871650609135654-Puma-Men-Black--Gold-Toned-Brand-Logo-Printed-T-shirt-426165-6.jpg",
-      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/17395092/2022/4/22/c5f7b441-1b25-4b73-8839-51c9d9be12871650609135654-Puma-Men-Black--Gold-Toned-Brand-Logo-Printed-T-shirt-426165-6.jpg",
-       ],
-    brand: "Roadster",
-    description: "Men Solid Knitted T-shirt",
-    price: 499,
-    discPrice: 199,
-    discount: 60,
-        }
-    ];
-
-    //local storage data is mapped in product page by anurag
     var localData = JSON.parse(localStorage.getItem("productObj")) || [];
-    var localDataArr = [localData];
-    console.log(localData);
-    // localData.forEach(function(ele){
-        console.log("map function got hit");
-        var img_arr_len = localData.img.length;
-        for (var i = 0; i < img_arr_len; i++){
-            console.log("for loop is hit");
-            var child=document.createElement("div");
-            child.setAttribute("class","child_div");
-            var img=document.createElement("img");
-            img.setAttribute("class","container_img");
-            var imgArr = localData.img;
-            console.log(imgArr);
-            img.setAttribute("src",imgArr[i]);
-            child.append(img);
-            document.querySelector("#img_container").append(child);
-        };
-        document.querySelector("#brand").innerText= localData.brand;
-    document.querySelector("#description").innerText= localData.description;
-    document.querySelector("#price").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.discPrice;
-    document.querySelector("#striked").innerHTML='<i class="fa-solid fa-indian-rupee-sign"></i>' + localData.price;
-    document.querySelector("#dis").innerText="("+ localData.discount+"% off)";
-    document.querySelector("#best_price").innerText=localData.discPrice-20;
-                   
-   
-     document.querySelector("#dis").innerText="("+localData.discount+"% off)";
-     document.querySelector("#best_price").innerText=localData.discPrice-20;
-     //commented ashish code
-    
+    cart_imgs_to_add.push(localData);
 
+    localStorage.setItem("cart_object_imgs", JSON.stringify(cart_imgs_to_add));
+    window.location.assign("../myntracart.html");
+  }
 
-   
-
-    function add_to_bag(){
-       var cart_imgs_to_add=JSON.parse(localStorage.getItem("cart_object_imgs")) || [];
-
-     
-
-       var localData = JSON.parse(localStorage.getItem("productObj")) || [];
-       cart_imgs_to_add.push(localData);
-       
-       localStorage.setItem("cart_object_imgs",JSON.stringify(cart_imgs_to_add));
-       window. location. assign("../myntracart.html");
-
-    }
-
-    
-
-   
-
-
-
-
-      //{img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-       // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-       // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-       // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-       // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-       // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
-     
-
+  //{img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
+  // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
+  // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
+  // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
+  // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
+  // {img_url:"https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/1700944/2022/3/2/093bc645-d461-4128-94a1-0692803944141646215571321-HRX-by-Hrithik-Roshan-Men-Yellow-Printed-Cotton-Pure-Cotton--1.jpg",},
 </script>
 
-<script src="https://kit.fontawesome.com/65941814f8.js" crossorigin="anonymous"></script>
+<script
+  src="https://kit.fontawesome.com/65941814f8.js"
+  crossorigin="anonymous"
+></script>
