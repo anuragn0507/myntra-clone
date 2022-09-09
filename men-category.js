@@ -11,16 +11,23 @@ var products = [
     price: 499,
     discPrice: 199,
     discount: 60,
+    color:"Grey",
+    category: "T-shirt",
   },
   {
     img: [
-      "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11948298/2022/3/24/ba4a8e4a-8e7b-4bfe-9ea2-fd5693598f931648115076887-Roadster-Men-Grey-Melange-T-shirt-8701648115076447-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/3314157/2018/4/18/11524041081440-Roadster-Men-Grey-Melange-Solid-Round-Neck-T-shirt-3461524041081257-1.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/3314157/2018/4/18/11524041081413-Roadster-Men-Grey-Melange-Solid-Round-Neck-T-shirt-3461524041081257-2.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/3314157/2018/4/18/11524041081398-Roadster-Men-Grey-Melange-Solid-Round-Neck-T-shirt-3461524041081257-3.jpg",
+      "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/3314157/2018/4/18/11524041081378-Roadster-Men-Grey-Melange-Solid-Round-Neck-T-shirt-3461524041081257-4.jpg",
     ],
     brand: "Roadster",
-    description: "Solid Round Neck T-shirt",
+    description: "Men Grey Melange Solid Round Neck T-shirt",
     price: 399,
-    discPrice: 176,
-    discount: 55,
+    discPrice: 159,
+    discount: 60,
+    color:"Grey",
+    category: "T-shirt",
   },
   {
     img: [
@@ -454,15 +461,59 @@ var products = [
   },
 ];
 
+//Men top filter section last changes on 08Sep22 4am
+// sortby filter dropdown
+var sortbyBtn = document.querySelector(".sortby-dropdown");
+var sortbyMenu = document.querySelector(".sortby-dropdown-menu");
+sortbyBtn.addEventListener("mouseover", () => {
+  sortbyMenu.classList.toggle("hide");
+});
+var bundleBtn = document.querySelector(".bundle-dropdown-btn");
+var bundleMenu = document.querySelector(".bundle-dropdown-menu");
+
+bundleBtn.addEventListener("click", () => {
+  bundleMenu.classList.toggle("bhide");
+});
+
+//coi filter dropdown
+var coiBtn = document.querySelector(".coi-dropdown-btn");
+var coiMenu = document.querySelector(".coi-dropdown-menu");
+
+coiBtn.addEventListener("click", () => {
+  console.log("bundle on click is called");
+  coiMenu.classList.toggle("coihide");
+});
+
+//Showing the products on men's category section
+
 
 function showProducts() {
   document.getElementById("product-container").innerHTML = null;
   products.forEach(function (ele) {
-    // console.log(ele.price);
     var pdiv = document.createElement("div");
     pdiv.setAttribute("class", "product-div");
     var pimg = document.createElement("img");
     pimg.src = ele.img[0];
+
+    //On hover image slideshow js code
+    var imgArr = [...ele.img];
+    var interval;
+    pimg.addEventListener("mouseover", function () {
+      var i = 0;
+      interval = setInterval(function () {
+        if (i < imgArr.length) {
+          pimg.src = imgArr[i];
+          i++;
+        } else {
+          i = 0;
+        }
+      }, 700);
+    });
+    pimg.addEventListener("mouseout", function () {
+      clearInterval(interval);
+      pimg.src = ele.img[0];
+    });
+
     var pbrand = document.createElement("h3");
     pbrand.innerText = ele.brand;
     var pdescription = document.createElement("h4");
@@ -482,15 +533,25 @@ function showProducts() {
     pdiscount.setAttribute("class", "discount-span");
 
     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
-    //   console.log(pdiv);
+    
     document.getElementById("product-container").append(pdiv);
+
+    // Data storing in LS on click on the product card 
+
+    pdiv.addEventListener("click", function(){
+      var localData = JSON.parse(localStorage.getItem("productObj")) || [] ;
+      localData = null;
+      localStorage.setItem("productObj", JSON.stringify(ele));      
+      window.location.href = "./product/product.html"
+      
+    });
+
   });
 }
 showProducts();
 
 //onChecked filterationa
 var checkbox = document.querySelectorAll(".brand-input");
-console.log(checkbox);
 
 checkbox.forEach(function (e) {
   e.addEventListener("change", function () {
@@ -498,30 +559,19 @@ checkbox.forEach(function (e) {
       var value = e.value;
       checkBox(value);
       console.log("checkbox function is called");
-    } 
-    else {
-        showProducts()
+    } else {
+      showProducts();
     }
   });
 });
 
-function checkBox(value) {
-  // var brand = document.querySelector("input").value;
-  console.log(value);
-  // console.log(brand);
+function checkBox(value) { 
 
-  console.log("brand checkbox clicked");
-  // var b = document.getElementById("roadster").value;
   var brandList = products.filter(function (elem) {
     return elem.brand == value;
   });
-  console.log(brandList);
-
-  //empty product container to before appending the filter products
-
   document.getElementById("product-container").innerHTML = null;
   brandList.forEach(function (ele) {
-    // console.log(ele.price);
     var pdiv = document.createElement("div");
     pdiv.setAttribute("class", "product-div");
     var pimg = document.createElement("img");
@@ -530,7 +580,6 @@ function checkBox(value) {
     pbrand.innerText = ele.brand;
     var pdescription = document.createElement("h4");
     pdescription.innerText = ele.description;
-    // console.log(pdescription);
 
     var pdratespan = document.createElement("span");
     pdratespan.innerText = "Rs. " + ele.discPrice;
@@ -545,12 +594,12 @@ function checkBox(value) {
     pdiscount.setAttribute("class", "discount-span");
 
     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
-    // console.log(pdiv);
+    
     document.getElementById("product-container").append(pdiv);
   });
 }
 
-                                                    //filter by rates
+//filter by rates
 var checkbox = document.querySelectorAll(".price-input");
 console.log(checkbox);
 
@@ -561,48 +610,48 @@ checkbox.forEach(function (e) {
       var min = e.name;
       filterRate(min, max);
       console.log("checkbox function is called");
-    } 
-    else {
-        showProducts()
+    } else {
+      showProducts();
     }
   });
 });
 
 function filterRate(min, max) {
-    console.log("brand checkbox clicked");e;
-    var brandList = products.filter(function (elem) {
-      return elem.discPrice >= min && elem.discPrice <= max ;
-    });
-  
-    document.getElementById("product-container").innerHTML = null;
-    brandList.forEach(function (ele) {
-      var pdiv = document.createElement("div");
-      pdiv.setAttribute("class", "product-div");
-      var pimg = document.createElement("img");
-      pimg.src = ele.img;
-      var pbrand = document.createElement("h3");
-      pbrand.innerText = ele.brand;
-      var pdescription = document.createElement("h4");
-      pdescription.innerText = ele.description;
-  
-      var pdratespan = document.createElement("span");
-      pdratespan.innerText = "Rs. " + ele.discPrice;
-      pdratespan.setAttribute("class", "drate-span");
-  
-      var pratespan = document.createElement("span");
-      pratespan.innerText = "Rs. " + ele.price;
-      pratespan.setAttribute("class", "rate-span");
-  
-      var pdiscount = document.createElement("span");
-      pdiscount.innerText = "(" + ele.discount + "% OFF)";
-      pdiscount.setAttribute("class", "discount-span");
-  
-      pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
-      document.getElementById("product-container").append(pdiv);
-    });
-  }
+  console.log("brand checkbox clicked");
+  e;
+  var brandList = products.filter(function (elem) {
+    return elem.discPrice >= min && elem.discPrice <= max;
+  });
 
-                                                //filter by discount
+  document.getElementById("product-container").innerHTML = null;
+  brandList.forEach(function (ele) {
+    var pdiv = document.createElement("div");
+    pdiv.setAttribute("class", "product-div");
+    var pimg = document.createElement("img");
+    pimg.src = ele.img;
+    var pbrand = document.createElement("h3");
+    pbrand.innerText = ele.brand;
+    var pdescription = document.createElement("h4");
+    pdescription.innerText = ele.description;
+
+    var pdratespan = document.createElement("span");
+    pdratespan.innerText = "Rs. " + ele.discPrice;
+    pdratespan.setAttribute("class", "drate-span");
+
+    var pratespan = document.createElement("span");
+    pratespan.innerText = "Rs. " + ele.price;
+    pratespan.setAttribute("class", "rate-span");
+
+    var pdiscount = document.createElement("span");
+    pdiscount.innerText = "(" + ele.discount + "% OFF)";
+    pdiscount.setAttribute("class", "discount-span");
+
+    pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+    document.getElementById("product-container").append(pdiv);
+  });
+}
+
+//filter by discount
 
 var checkbox = document.querySelectorAll(".discount-input");
 console.log(checkbox);
@@ -614,45 +663,42 @@ checkbox.forEach(function (e) {
       console.log("discount is " + discount);
       filterDiscount(discount);
       console.log("checkbox function is called");
-    } 
-    else {
-        showProducts()
+    } else {
+      showProducts();
     }
   });
-}); 
+});
 
 function filterDiscount(discount) {
-    console.log("brand checkbox clicked");
-    var brandList = products.filter(function (elem) {
-      return elem.discount >= discount;
-    });
-    console.log(brandList);
-    document.getElementById("product-container").innerHTML = null;
-    brandList.forEach(function (ele) {
-      var pdiv = document.createElement("div");
-      pdiv.setAttribute("class", "product-div");
-      var pimg = document.createElement("img");
-      pimg.src = ele.img;
-      var pbrand = document.createElement("h3");
-      pbrand.innerText = ele.brand;
-      var pdescription = document.createElement("h4");
-      pdescription.innerText = ele.description;
-  
-      var pdratespan = document.createElement("span");
-      pdratespan.innerText = "Rs. " + ele.discPrice;
-      pdratespan.setAttribute("class", "drate-span");
-  
-      var pratespan = document.createElement("span");
-      pratespan.innerText = "Rs. " + ele.price;
-      pratespan.setAttribute("class", "rate-span");
-  
-      var pdiscount = document.createElement("span");
-      pdiscount.innerText = "(" + ele.discount + "% OFF)";
-      pdiscount.setAttribute("class", "discount-span");
-  
-      pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
-      document.getElementById("product-container").append(pdiv);
-    });
-  }
+  console.log("brand checkbox clicked");
+  var brandList = products.filter(function (elem) {
+    return elem.discount >= discount;
+  });
+  console.log(brandList);
+  document.getElementById("product-container").innerHTML = null;
+  brandList.forEach(function (ele) {
+    var pdiv = document.createElement("div");
+    pdiv.setAttribute("class", "product-div");
+    var pimg = document.createElement("img");
+    pimg.src = ele.img;
+    var pbrand = document.createElement("h3");
+    pbrand.innerText = ele.brand;
+    var pdescription = document.createElement("h4");
+    pdescription.innerText = ele.description;
 
+    var pdratespan = document.createElement("span");
+    pdratespan.innerText = "Rs. " + ele.discPrice;
+    pdratespan.setAttribute("class", "drate-span");
 
+    var pratespan = document.createElement("span");
+    pratespan.innerText = "Rs. " + ele.price;
+    pratespan.setAttribute("class", "rate-span");
+
+    var pdiscount = document.createElement("span");
+    pdiscount.innerText = "(" + ele.discount + "% OFF)";
+    pdiscount.setAttribute("class", "discount-span");
+
+    pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+    document.getElementById("product-container").append(pdiv);
+  });
+}
