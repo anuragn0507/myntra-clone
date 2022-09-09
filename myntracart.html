@@ -507,6 +507,13 @@
             anchor.setAttribute("href","myntraaddress.html")
             var btn=document.createElement("button")
             btn.innerText="PLACE ORDER"
+           // var logged_in=JSON.parse(localStorage.getItem("user_active"))||[];
+           // if(logged_in[0]===1){
+            btn.addEventListener("click",function(){
+                window.location.href="/myntraadress.html";
+            });
+
+           // }
             anchor.append(btn)
             price.append(div1,div2,div3,div4,div6,anchor)
     }
