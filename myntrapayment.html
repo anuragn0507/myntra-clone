@@ -495,10 +495,19 @@
             pay.innerText=""
             var check1=document.createElement("button")
             check1.innerText="Paytm"
+            check1.addEventListener("click",function(){
+                alert("Your Order Is Placed")
+            })
             var check2=document.createElement("button")
             check2.innerText="Phonepe"
+            check2.addEventListener("click",function(){
+                alert("Your Order Is Placed")
+            })
             var check3=document.createElement("button")
             check3.innerText="Google Pay"
+            check3.addEventListener("click",function(){
+                alert("Your Order Is Placed")
+            })
             pay.append(check1,check2,check3)
         }
         function less(){
