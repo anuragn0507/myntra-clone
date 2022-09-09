@@ -433,7 +433,7 @@
             var image=document.createElement("img");
 
 
-            image.setAttribute("src",ele.img_url[0]);
+            image.setAttribute("src",ele.img[0]);
 
 
             div1.append(image)
@@ -466,8 +466,10 @@
     console.log(index)
     localStorage.setItem("cart_object_imgs",JSON.stringify(cartproducts))
     displayproducts();
+    docalculation();
 }
     function docalculation(){
+        price.innerHTML="";
         var total=cartproducts.reduce(function(acc,el){
             return acc+el.discPrice;
         },0)
