@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500&family=Roboto+Condensed:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200;300;400&display=swap');
 #mainDiv{
-    width: 63%;
+    width: 72%;
     /* height: 1200px; */
     /* border: 1px solid maroon; */
     margin: auto;
@@ -40,9 +40,10 @@
    cursor: pointer;
 }
 #footer>div>p{
-    font-size: 9px;
-    line-height: 6px;
+    font-size: 14px;
+    line-height: 9px;
     cursor: pointer;
+    font-weight: 250;
 }
 .line{
     margin-bottom: 30px;
@@ -69,63 +70,80 @@
     padding: 10px;
     background-color: #fafbfc;
     margin-top: 10px;
+    font-weight: 250;
 }
 #down>p{
     /* justify-content: space-between; */
     font-family: 'Prompt', sans-serif;
-    font-size: 9px;
-    line-height: 17px;
+    font-size: 14px;
+    line-height: 25px;
     display: flex;
     /* cursor: pointer; */
+    font-weight: 250;
 }
 #down1{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 10px;
     background-color: #fafbfc;
     margin-top: 10px;
+    font-weight: 250;
 }
 #down1>p{
     font-family: 'Prompt', sans-serif;
-    font-size: 9px;
-    line-height: 17px;
+    font-size: 14px;
+    line-height: 25px;
     /* cursor: pointer; */
+    font-weight: 250;
 }
 #down2{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 10px;
     background-color: #fafbfc;
     margin-top: 10px;
+    font-weight: 250;
 }
 #down2>p{
     font-family: 'Prompt', sans-serif;
-    font-size: 9px;
-    line-height: 17px;
+    font-size: 14px;
+    line-height: 25px;
     display: grid;
     row-gap: 100px;
+    font-weight: 250;
 }
 #down3{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 10px;
     background-color: #fafbfc;
     margin-top: 10px;
+    font-weight: 250;
 }
 #down3>ol>p{
     font-family: 'Prompt', sans-serif;
-    font-size: 9px;
-    line-height: 17px;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 250;
 }
 #down3>p{
     font-family: 'Prompt', sans-serif;
-    font-size: 9px;
-    line-height: 17px; 
+    font-size: 14px;
+    line-height: 25px; 
+    font-weight: 250;
 }
 ul>p{
     font-family: 'Prompt', sans-serif;
-    font-size: 9px;
-    line-height: 17px
+    font-size: 14px;
+    line-height: 25px
+    font-weight: 250;
+    
 }
 li>p{
     font-family: 'Prompt', sans-serif;
-    font-size: 9px;
-    line-height: 17px
+    font-size: 14px;
+    line-height: 25px
+    font-weight: 250;
+}
+@media only screen and(min-wid:51px) and (max-width:700px)  {
+   #mainiv,#footer,#down,#down1,#down2,#down3,#down4{
+        font-size: 9px;
+    }
 }
