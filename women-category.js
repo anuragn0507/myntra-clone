@@ -879,6 +879,13 @@ function showProducts() {
     pdiscount.setAttribute("class", "discount-span");
 
     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+    pdiv.addEventListener("click", function(){
+      var localData = JSON.parse(localStorage.getItem("productObj")) || [] ;
+      localData = null;
+      localStorage.setItem("productObj", JSON.stringify(ele));      
+      window.location.href = "product/product.html"
+      
+    });
     
     document.getElementById("product-container").append(pdiv);
   });
