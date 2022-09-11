@@ -637,92 +637,92 @@ var products = [
 
 // //Men top filter section last changes on 08Sep22 4am
 // // sortby filter dropdown
-// var sortbyBtn = document.querySelector(".sortby-dropdown");
-// var sortbyMenu = document.querySelector(".sortby-dropdown-menu");
-// sortbyBtn.addEventListener("mouseover", () => {
-//   sortbyMenu.classList.toggle("hide");
-// });
-// var bundleBtn = document.querySelector(".bundle-dropdown-btn");
-// var bundleMenu = document.querySelector(".bundle-dropdown-menu");
+var sortbyBtn = document.querySelector(".sortby-dropdown");
+var sortbyMenu = document.querySelector(".sortby-dropdown-menu");
+sortbyBtn.addEventListener("mouseover", () => {
+  sortbyMenu.classList.toggle("hide");
+});
+var bundleBtn = document.querySelector(".bundle-dropdown-btn");
+var bundleMenu = document.querySelector(".bundle-dropdown-menu");
 
-// bundleBtn.addEventListener("click", () => {
-//   bundleMenu.classList.toggle("bhide");
-// });
+bundleBtn.addEventListener("click", () => {
+  bundleMenu.classList.toggle("bhide");
+});
 
 // //coi filter dropdown
-// var coiBtn = document.querySelector(".coi-dropdown-btn");
-// var coiMenu = document.querySelector(".coi-dropdown-menu");
+var coiBtn = document.querySelector(".coi-dropdown-btn");
+var coiMenu = document.querySelector(".coi-dropdown-menu");
 
-// coiBtn.addEventListener("click", () => {
-//   console.log("bundle on click is called");
-//   coiMenu.classList.toggle("coihide");
-// });
+coiBtn.addEventListener("click", () => {
+  console.log("bundle on click is called");
+  coiMenu.classList.toggle("coihide");
+});
 
 // //Showing the products on men's category section
 
 
-// function showProducts() {
-//   document.getElementById("product-container").innerHTML = null;
-//   products.forEach(function (ele) {
-//     var pdiv = document.createElement("div");
-//     pdiv.setAttribute("class", "product-div");
-//     var pimg = document.createElement("img");
-//     pimg.src = ele.img[0];
+function showProducts() {
+  document.getElementById("product-container").innerHTML = null;
+  products.forEach(function (ele) {
+    var pdiv = document.createElement("div");
+    pdiv.setAttribute("class", "product-div");
+    var pimg = document.createElement("img");
+    pimg.src = ele.img[0];
 
 //     //On hover image slideshow js code
-//     var imgArr = [...ele.img];
-//     var interval;
-//     pimg.addEventListener("mouseover", function () {
-//       var i = 0;
-//       interval = setInterval(function () {
-//         if (i < imgArr.length) {
-//           pimg.src = imgArr[i];
-//           i++;
-//         } else {
-//           i = 0;
-//         }
-//       }, 700);
-//     });
-//     pimg.addEventListener("mouseout", function () {
-//       clearInterval(interval);
-//       pimg.src = ele.img[0];
-//     });
+    var imgArr = [...ele.img];
+    var interval;
+    pimg.addEventListener("mouseover", function () {
+      var i = 0;
+      interval = setInterval(function () {
+        if (i < imgArr.length) {
+          pimg.src = imgArr[i];
+          i++;
+        } else {
+          i = 0;
+        }
+      }, 700);
+    });
+    pimg.addEventListener("mouseout", function () {
+      clearInterval(interval);
+      pimg.src = ele.img[0];
+    });
 
-//     var pbrand = document.createElement("h3");
-//     pbrand.innerText = ele.brand;
-//     var pdescription = document.createElement("h4");
-//     pdescription.innerText = ele.description;
+    var pbrand = document.createElement("h3");
+    pbrand.innerText = ele.brand;
+    var pdescription = document.createElement("h4");
+    pdescription.innerText = ele.description;
 //     //   console.log(pdescription);
 
-//     var pdratespan = document.createElement("span");
-//     pdratespan.innerText = "Rs. " + ele.discPrice;
-//     pdratespan.setAttribute("class", "drate-span");
+    var pdratespan = document.createElement("span");
+    pdratespan.innerText = "Rs. " + ele.discPrice;
+    pdratespan.setAttribute("class", "drate-span");
 
-//     var pratespan = document.createElement("span");
-//     pratespan.innerText = "Rs. " + ele.price;
-//     pratespan.setAttribute("class", "rate-span");
+    var pratespan = document.createElement("span");
+    pratespan.innerText = "Rs. " + ele.price;
+    pratespan.setAttribute("class", "rate-span");
 
-//     var pdiscount = document.createElement("span");
-//     pdiscount.innerText = "(" + ele.discount + "% OFF)";
-//     pdiscount.setAttribute("class", "discount-span");
+    var pdiscount = document.createElement("span");
+    pdiscount.innerText = "(" + ele.discount + "% OFF)";
+    pdiscount.setAttribute("class", "discount-span");
 
-//     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+    pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
     
-//     document.getElementById("product-container").append(pdiv);
+    document.getElementById("product-container").append(pdiv);
 
 //     // Data storing in LS on click on the product card 
 
-//     pdiv.addEventListener("click", function(){
-//       var localData = JSON.parse(localStorage.getItem("productObj")) || [] ;
-//       localData = null;
-//       localStorage.setItem("productObj", JSON.stringify(ele));      
-//       window.location.href = "./product/product.html"
+    pdiv.addEventListener("click", function(){
+      var localData = JSON.parse(localStorage.getItem("productObj")) || [] ;
+      localData = null;
+      localStorage.setItem("productObj", JSON.stringify(ele));      
+      window.location.href = "product/product.html"
       
-//     });
+    });
 
-//   });
-// }
-// showProducts();
+  });
+}
+showProducts();
 
 // //onChecked filterationa
 // var checkbox = document.querySelectorAll(".brand-input");
@@ -903,60 +903,60 @@ coiBtn.addEventListener("click", () =>{
 
 
 
-function showProducts() {
-  document.getElementById("product-container").innerHTML = null;
-  products.forEach(function (ele) {
+// function showProducts() {
+//   document.getElementById("product-container").innerHTML = null;
+//   products.forEach(function (ele) {
     
-    var pdiv = document.createElement("div");
-    pdiv.setAttribute("class", "product-div");
-    var pimg = document.createElement("img");
-    pimg.src = ele.img[0];
-    var imgArr = [...ele.img];
+//     var pdiv = document.createElement("div");
+//     pdiv.setAttribute("class", "product-div");
+//     var pimg = document.createElement("img");
+//     pimg.src = ele.img[0];
+//     var imgArr = [...ele.img];
     
-    var interval
-    pimg.addEventListener("mouseover", function(){
+//     var interval
+//     pimg.addEventListener("mouseover", function(){
       
-      var i=0;
-     interval =  setInterval(function(){    
-        if(i< imgArr.length){
-          pimg.src = imgArr[i];
-          i++;
-        }
-        else{
-          i = 0
-        }
-      }, 1000)
-    });
-    pimg.addEventListener("mouseout", function(){
-      clearInterval(interval);
-      pimg.src = ele.img[0];
-    });
+//       var i=0;
+//      interval =  setInterval(function(){    
+//         if(i< imgArr.length){
+//           pimg.src = imgArr[i];
+//           i++;
+//         }
+//         else{
+//           i = 0
+//         }
+//       }, 1000)
+//     });
+//     pimg.addEventListener("mouseout", function(){
+//       clearInterval(interval);
+//       pimg.src = ele.img[0];
+//     });
 
-    var pbrand = document.createElement("h3");
-    pbrand.innerText = ele.brand;
-    var pdescription = document.createElement("h4");
-    pdescription.innerText = ele.description;
+//     var pbrand = document.createElement("h3");
+//     pbrand.innerText = ele.brand;
+//     var pdescription = document.createElement("h4");
+//     pdescription.innerText = ele.description;
     
     
 
-    var pdratespan = document.createElement("span");
-    pdratespan.innerText = "Rs. " + ele.discPrice;
-    pdratespan.setAttribute("class", "drate-span");
+//     var pdratespan = document.createElement("span");
+//     pdratespan.innerText = "Rs. " + ele.discPrice;
+//     pdratespan.setAttribute("class", "drate-span");
 
-    var pratespan = document.createElement("span");
-    pratespan.innerText = "Rs. " + ele.price;
-    pratespan.setAttribute("class", "rate-span");
+//     var pratespan = document.createElement("span");
+//     pratespan.innerText = "Rs. " + ele.price;
+//     pratespan.setAttribute("class", "rate-span");
 
-    var pdiscount = document.createElement("span");
-    pdiscount.innerText = "(" + ele.discount + "% OFF)";
-    pdiscount.setAttribute("class", "discount-span");
+//     var pdiscount = document.createElement("span");
+//     pdiscount.innerText = "(" + ele.discount + "% OFF)";
+//     pdiscount.setAttribute("class", "discount-span");
 
-    pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
+//     pdiv.append(pimg, pbrand, pdescription, pdratespan, pratespan, pdiscount);
     
-    document.getElementById("product-container").append(pdiv);
-  });
-}
-showProducts();
+//     document.getElementById("product-container").append(pdiv);
+//   });
+// }
+// showProducts();
 
 //function onhover image slideshow
 function slideShow(imgArr){
