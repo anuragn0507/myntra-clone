@@ -46,18 +46,19 @@ PROJECT LINKS
 ## CART PAGE :-
 ![image](https://user-images.githubusercontent.com/71437909/207566355-fc931623-5667-4300-885d-84949066be1c.png)
 
-## CART PAGE(EMPTY) :-
-PAYMENT PAGE :-
-Tools :-
-GITHUB
-NETLIFY
+## PAYMENT PAGE :-
+![image](https://user-images.githubusercontent.com/71437909/207568967-2ee6adb2-df9a-4161-be95-5b26ddef531f.png)
 
-TECHNOLOGIES
-HTML
-CSS
-JAVASCRIPT
-DOM
-BOOTSTRAP
+## Tools :-
+- GITHUB
+- NETLIFY
 
-THANK YOU !
-TEAM MYNTRA CLONE
+## TECHNOLOGIES
+- HTML
+- CSS
+- JAVASCRIPT
+- DOM
+- BOOTSTRAP
+
+## THANK YOU !
+## TEAM MYNTRA CLONE
