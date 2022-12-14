@@ -2,7 +2,7 @@
 
 
 # Myntra-Clone
-Clone of "https://www.blissworld.com".
+Clone of "https://www.myntra.com".
 
 Deployed link- https://myntra-clone-saans.netlify.app/
 
